@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#002b5c",
+              "primary": "#610000",
+              "inverse-surface": "#2b3135",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e9eef3",
+              "surface-dim": "#d5dbdf",
+              "secondary": "#515f74",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface": "#f5faff",
+              "on-primary-container": "#ff907f",
+              "on-tertiary-container": "#81afff",
+              "outline": "#8e706b",
+              "on-secondary-fixed": "#0d1c2f",
+              "secondary-fixed-dim": "#b9c7e0",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#5a403c",
+              "surface-bright": "#f5faff",
+              "on-secondary-container": "#57657b",
+              "on-primary-fixed-variant": "#920703",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#ecf1f6",
+              "primary-fixed-dim": "#ffb4a8",
+              "primary-container": "#8b0000",
+              "outline-variant": "#e3beb8",
+              "on-secondary-fixed-variant": "#3a485c",
+              "on-tertiary-fixed-variant": "#00458d",
+              "background": "#f5faff",
+              "surface-variant": "#dee3e8",
+              "secondary-container": "#d5e3fd",
+              "tertiary-fixed-dim": "#aac7ff",
+              "surface-container-low": "#eff4f9",
+              "primary-fixed": "#ffdad4",
+              "surface-container-high": "#e4e9ee",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#dee3e8",
+              "secondary-fixed": "#d5e3fd",
+              "inverse-primary": "#ffb4a8",
+              "on-tertiary-fixed": "#001b3e",
+              "on-background": "#171c20",
+              "on-primary-fixed": "#410000",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#d6e3ff",
+              "tertiary-container": "#004185",
+              "on-surface": "#171c20",
+              "surface-tint": "#b52619"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(16px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar Navigation -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] px-6 h-16 w-full flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-red-900 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] hover:text-red-900 transition-colors px-1" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
+<a class="text-red-900 dark:text-red-500 font-semibold font-['Plus_Jakarta_Sans'] px-1" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 font-['Plus_Jakarta_Sans'] hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+</nav>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-md font-semibold text-sm active:scale-95 duration-200 transition-all">
+            Prueba Gratis
+        </button>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<article class="max-w-7xl mx-auto px-6">
+<header class="mb-16">
+<div class="flex items-center gap-2 mb-6">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded">Legal Tech 2026</span>
+<span class="text-secondary text-xs font-medium">• 8 min de lectura</span>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-background leading-[1.1] tracking-tight mb-8 max-w-4xl">
+                    Cómo la IA está transformando la redacción de demandas en 2026
+                </h1>
+<div class="flex items-center gap-4 mb-12">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden border-2 border-primary/10">
+<img alt="Autor" class="w-full h-full object-cover" data-alt="Professional portrait of a middle-aged male lawyer in a dark suit with a focused and intelligent expression, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE3YtrnC8seieUFBcGrcaQfJpxiTsSgiULF1S9Jnetxa6v8K-y9YFoGGTD0voqE9rG-aQ5q38R48Mrmf1NnCLcFnHuNhXlJcfopgNz4x0WZ-f3oYicUlKsrZTycnlLI5w_rG_AyQbXd-qTGX0BM0C2f0WFwUS55PKHgc1cqT5rJlV9tBq1wojpzw9c0n_caawnDMd3VWP124-srul75GTX4fKXTOasAS9dODhL9VV51O19pkV1HYGLy7a71v_jR9JrE37-uUE64Z5R"/>
+</div>
+<div>
+<p class="text-on-surface font-bold">Alejandro de la Vega</p>
+<p class="text-secondary text-sm">Especialista en Derecho Procesal &amp; AI</p>
+</div>
+</div>
+<div class="relative w-full h-[500px] rounded-xl overflow-hidden shadow-2xl">
+<img alt="Legal AI" class="w-full h-full object-cover" data-alt="Modern justice scales standing on a high-tech glass desk with holographic neural network patterns glowing in deep burgundy and gold tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtN9wYm3bIkyeub6mfAAuNFY3pgGeR7A8aLLx3S-pdegkmSJVTKz3fnyaWcHIG1qF3QPvZi9_VSpa8mOnZSFWmSm-W2dza78JABfkImpEUTGOI9sLRNpKWUMSIg6cf0r1dg0PP7BDCQLI0KTykZPoNc9ke9PBO6U-b9sGVL9RNr_9vqVNOy4Bq2ha1y4H8QZ0P7wJ-nWEHr1_axgNvYwkarZMNgUCjBwDKaoCt3t73tGPS53JVZAhWfXX9_X50PT2tGNN-mPbp8e2R"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Article Content -->
+<div class="lg:col-span-8 space-y-8 text-on-surface text-lg leading-relaxed">
+<p class="text-xl font-medium text-on-surface-variant">
+                        La práctica del derecho ha dejado de ser una cuestión de volumen documental para convertirse en una disciplina de precisión quirúrgica. En 2026, la redacción de demandas ya no comienza con un folio en blanco, sino con una síntesis cognitiva procesada por IusPilot.
+                    </p>
+<h2 class="font-headline text-3xl font-bold text-primary pt-4">El fin de la redacción mecánica</h2>
+<p>
+                        Hasta hace pocos años, el abogado dedicaba el 70% de su tiempo a tareas de estructuración, búsqueda de jurisprudencia y redacción de hechos. Hoy, los modelos de lenguaje masivos especializados en legislación española han invertido esta métrica. La IA no solo "escribe", sino que analiza la viabilidad del argumento antes de que la primera palabra sea plasmada.
+                    </p>
+<blockquote class="border-l-4 border-primary pl-8 py-4 my-10 bg-surface-container-low italic text-2xl font-headline text-on-secondary-container">
+                        "La tecnología no sustituye el criterio del jurista; eleva su capacidad para encontrar el nexo causal perfecto entre la norma y la realidad fáctica."
+                    </blockquote>
+<h3 class="font-headline text-2xl font-bold text-on-background">Jurisprudencia Predictiva: El motor de IusPilot</h3>
+<p>
+                        Una de las innovaciones más disruptivas de este año es la integración de la jurisprudencia en tiempo real. IusPilot no solo cita sentencias; analiza la tendencia de resolución de tribunales específicos, sugiriendo giros argumentales que han demostrado mayor tasa de éxito en casos análogos.
+                    </p>
+<div class="bg-surface-container-low p-8 rounded-xl my-12 overflow-hidden relative">
+<div class="relative z-10">
+<h4 class="font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+                                Ventajas Clave en 2026
+                            </h4>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Reducción del 85% en el tiempo de borrador inicial.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Detección automática de nulidades procesales.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span>Adaptación estilística según el juzgado de destino.</span>
+</li>
+</ul>
+</div>
+</div>
+<h2 class="font-headline text-3xl font-bold text-primary pt-4">Ética y Supervisión Humana</h2>
+<p>
+                        A pesar del avance tecnológico, la firma del abogado sigue siendo el sello de garantía. El sistema "Human-in-the-loop" de IusPilot asegura que cada párrafo generado sea validado, permitiendo al profesional centrarse en la estrategia de alto nivel mientras la IA gestiona la densidad técnica.
+                    </p>
+</div>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- CTA Card -->
+<div class="bg-primary-container p-8 rounded-xl shadow-xl text-on-primary relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[160px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 relative z-10">Transforma tu despacho</h3>
+<p class="mb-8 text-on-primary-container text-sm leading-relaxed relative z-10">
+                            Únete a los más de 2.500 despachos que ya utilizan IusPilot para liderar la vanguardia jurídica.
+                        </p>
+<button class="w-full bg-white text-primary py-4 rounded font-bold hover:bg-surface-container transition-all relative z-10">
+                            Prueba IusPilot hoy
+                        </button>
+</div>
+<!-- Newsletter -->
+<div class="bg-white p-8 rounded-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)]">
+<h3 class="font-headline text-xl font-bold mb-4">Legal Insights</h3>
+<p class="text-secondary text-sm mb-6">Recibe semanalmente las últimas tendencias en IA y Derecho.</p>
+<form class="space-y-4">
+<input class="w-full px-4 py-3 bg-surface-container-low border-transparent focus:border-primary focus:ring-0 rounded text-sm outline-none transition-all" placeholder="Tu correo electrónico" type="email"/>
+<button class="w-full border border-primary text-primary py-3 rounded font-semibold hover:bg-primary hover:text-white transition-all text-sm">
+                                Suscribirse
+                            </button>
+</form>
+</div>
+<!-- Related Posts -->
+<div class="space-y-4">
+<h3 class="font-label text-xs font-bold tracking-widest text-secondary uppercase">Artículos Relacionados</h3>
+<div class="group cursor-pointer">
+<p class="text-sm font-bold group-hover:text-primary transition-colors">La nueva Ley de Eficiencia Procesal y el entorno digital</p>
+<p class="text-xs text-secondary mt-1">Marzo 12, 2026</p>
+</div>
+<div class="group cursor-pointer">
+<p class="text-sm font-bold group-hover:text-primary transition-colors">Ciberseguridad: Protegiendo el secreto profesional</p>
+<p class="text-xs text-secondary mt-1">Febrero 28, 2026</p>
+</div>
+</div>
+</aside>
+</div>
+</article>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-950 text-stone-400 py-20 px-6 border-t border-stone-800">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-red-600" data-icon="gavel">gavel</span>
+<span class="text-2xl font-bold text-white font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+</div>
+<p class="max-w-sm leading-relaxed text-stone-500">
+                    Liderando la evolución del derecho a través de inteligencia artificial ética y precisa. Diseñado para los juristas del futuro.
+                </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Explorar</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-red-500 transition-colors" href="#">Plataforma</a></li>
+<li><a class="hover:text-red-500 transition-colors" href="#">Jurisprudencia</a></li>
+<li><a class="hover:text-red-500 transition-colors" href="#">Casos de Éxito</a></li>
+<li><a class="hover:text-red-500 transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Legal</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-red-500 transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-red-500 transition-colors" href="#">Términos de Uso</a></li>
+<li><a class="hover:text-red-500 transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500 font-medium uppercase tracking-widest">
+<p>© 2026 IusPilot Legal Technologies S.L. Todos los derechos reservados.</p>
+<p>La referencia legal en Extremadura</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white dark:bg-stone-950 border-t border-stone-100/10 shadow-[0_-10px_30px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="servicios.html">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>Servicios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Precios</span>
+</a>
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 font-medium font-['Inter'] text-[10px] uppercase tracking-wider">
+<span class="material-symbols-outlined" data-icon="article" style="font-variation-settings: 'FILL' 1;">article</span>
+<span>Blog</span>
+</div>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="nosotros.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Nosotros</span>
+</a>
+</nav>
+</body></html>

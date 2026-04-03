@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#002b5c",
+              "primary": "#610000",
+              "inverse-surface": "#2b3135",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e9eef3",
+              "surface-dim": "#d5dbdf",
+              "secondary": "#515f74",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface": "#f5faff",
+              "on-primary-container": "#ff907f",
+              "on-tertiary-container": "#81afff",
+              "outline": "#8e706b",
+              "on-secondary-fixed": "#0d1c2f",
+              "secondary-fixed-dim": "#b9c7e0",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#5a403c",
+              "surface-bright": "#f5faff",
+              "on-secondary-container": "#57657b",
+              "on-primary-fixed-variant": "#920703",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#ecf1f6",
+              "primary-fixed-dim": "#ffb4a8",
+              "primary-container": "#8b0000",
+              "outline-variant": "#e3beb8",
+              "on-secondary-fixed-variant": "#3a485c",
+              "on-tertiary-fixed-variant": "#00458d",
+              "background": "#f5faff",
+              "surface-variant": "#dee3e8",
+              "secondary-container": "#d5e3fd",
+              "tertiary-fixed-dim": "#aac7ff",
+              "surface-container-low": "#eff4f9",
+              "primary-fixed": "#ffdad4",
+              "surface-container-high": "#e4e9ee",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#dee3e8",
+              "secondary-fixed": "#d5e3fd",
+              "inverse-primary": "#ffb4a8",
+              "on-tertiary-fixed": "#001b3e",
+              "on-background": "#171c20",
+              "on-primary-fixed": "#410000",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#d6e3ff",
+              "tertiary-container": "#004185",
+              "on-surface": "#171c20",
+              "surface-tint": "#b52619"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .ambient-shadow {
+        box-shadow: 0 20px 40px rgba(23, 28, 32, 0.06);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed-dim">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-red-900 dark:text-red-500 font-semibold px-1" href="pricing.html">Precios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+</nav>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-medium text-sm active:scale-95 duration-200">Prueba Gratis</button>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Strategy Section -->
+<section class="text-center mb-20">
+<h1 class="text-4xl md:text-7xl font-headline font-bold text-on-surface mb-8">
+                        La Abogacía del Futuro en <br/><span class="text-primary italic">Extremadura</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg text-secondary leading-relaxed mb-10">
+                Elige el plan que potencie la escala de tu despacho. Inteligencia artificial diseñada por y para abogados de élite.
+            </p>
+<!-- Toggle Mensual/Anual -->
+<div class="flex items-center justify-center gap-4 mb-12">
+<span class="text-sm font-semibold text-on-surface">Mensual</span>
+<button class="relative w-14 h-7 bg-surface-container-highest rounded-full p-1 transition-colors duration-300">
+<div class="absolute right-1 top-1 w-5 h-5 bg-primary rounded-full translate-x-0"></div>
+</button>
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold text-primary">Anual</span>
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">-20%</span>
+</div>
+</div>
+</section>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
+<!-- Free -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col border border-transparent hover:border-outline-variant transition-all duration-300">
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2">Gratuito</h3>
+<p class="text-sm text-secondary min-h-[40px]">Para estudiantes y profesionales explorando el sistema.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-background">0€</span>
+<span class="text-secondary text-sm">/mes</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>5 consultas AI/mes</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>Acceso a Jurisprudencia Básica</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-outline-variant text-on-surface font-semibold hover:bg-surface-container transition-colors">Empezar gratis</button>
+</div>
+<!-- Pro -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col border border-transparent hover:border-outline-variant transition-all duration-300">
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2">Pro</h3>
+<p class="text-sm text-secondary min-h-[40px]">Para abogados independientes con alta carga de trabajo.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-background">75€</span>
+<span class="text-secondary text-sm">/mes</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>Consultas AI ilimitadas</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>Análisis de documentos (50MB)</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+<span>Redacción de escritos procesales</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-outline-variant text-on-surface font-semibold hover:bg-surface-container transition-colors">Seleccionar Pro</button>
+</div>
+<!-- Teams (Featured) -->
+<div class="bg-primary-container p-8 rounded-xl ambient-shadow flex flex-col relative overflow-hidden transform scale-105 z-10">
+<div class="absolute top-0 right-0 bg-primary-fixed text-on-primary-fixed px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-bl-lg">Más Popular</div>
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2 text-on-primary">Teams</h3>
+<p class="text-sm text-on-primary/70 min-h-[40px]">Colaboración total para departamentos y firmas medianas.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-primary">135€</span>
+<span class="text-on-primary/70 text-sm">/mes</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3 text-sm text-on-primary">
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
+<span>Hasta 5 usuarios incluidos</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-primary">
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
+<span>Biblioteca de casos compartida</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-primary">
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
+<span>API de integración básica</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-primary">
+<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
+<span>Soporte prioritario 24/7</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-on-primary text-primary font-bold hover:bg-white transition-colors shadow-lg">Mejorar a Teams</button>
+</div>
+<!-- Custom -->
+<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col border border-transparent hover:border-outline-variant transition-all duration-300">
+<div class="mb-8">
+<h3 class="font-headline text-xl font-bold mb-2">A Medida</h3>
+<p class="text-sm text-secondary min-h-[40px]">Soluciones Enterprise con despliegue on-premise o cloud privada.</p>
+</div>
+<div class="mb-8">
+<span class="text-4xl font-extrabold text-on-background">A medida</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
+<span>Seguridad avanzada &amp; SSO</span>
+</li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
+<span>Entrenamiento con datos propios</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-semibold hover:bg-primary/5 transition-colors">Contactar Ventas</button>
+</div>
+</div>
+<!-- Comparison Table -->
+<section class="mb-32">
+<h2 class="font-headline text-3xl font-bold text-center mb-16">Comparativa de Capacidades</h2>
+<div class="overflow-hidden rounded-2xl ambient-shadow bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/10">
+<th class="p-6 text-sm font-bold uppercase tracking-wider text-secondary">Funcionalidad</th>
+<th class="p-6 text-sm font-bold uppercase tracking-wider text-on-background">Gratuito</th>
+<th class="p-6 text-sm font-bold uppercase tracking-wider text-on-background">Pro</th>
+<th class="p-6 text-sm font-bold uppercase tracking-wider text-primary">Teams</th>
+<th class="p-6 text-sm font-bold uppercase tracking-wider text-on-background">Empresas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr>
+<td class="p-6 font-semibold">Consultas Mensuales</td>
+<td class="p-6 text-secondary">5</td>
+<td class="p-6 text-secondary">Ilimitadas</td>
+<td class="p-6 text-primary font-medium">Ilimitadas</td>
+<td class="p-6 text-secondary">Ilimitadas</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">Análisis de Sentencias</td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">Modelos de Redacción</td>
+<td class="p-6 text-secondary">Básico</td>
+<td class="p-6 text-secondary">Avanzado</td>
+<td class="p-6 text-primary font-medium">Avanzado + IA</td>
+<td class="p-6 text-secondary">Personalizado</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">Integración de Documentos</td>
+<td class="p-6 text-secondary">—</td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">Colaboración en Tiempo Real</td>
+<td class="p-6 text-secondary">—</td>
+<td class="p-6 text-secondary">—</td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+<td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- FAQs -->
+<section class="max-w-4xl mx-auto mb-32">
+<h2 class="font-headline text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<button class="w-full flex justify-between items-center text-left font-bold text-on-surface">
+<span>¿Es segura mi información confidencial?</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+<div class="mt-4 text-secondary leading-relaxed text-sm">
+                        Absolutamente. IusPilot no utiliza tus documentos ni consultas para entrenar modelos públicos. Toda la información está cifrada de extremo a extremo y cumplimos con RGPD y estándares SOC2.
+                    </div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<button class="w-full flex justify-between items-center text-left font-bold text-on-surface">
+<span>¿Puedo cambiar de plan en cualquier momento?</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<button class="w-full flex justify-between items-center text-left font-bold text-on-surface">
+<span>¿Ofrecéis periodos de prueba para equipos?</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Trust & Security -->
+<section class="border-t border-surface-container pt-12 text-center">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-8">Tecnología Protegida por Estándares Globales</p>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" data-icon="security">security</span>
+<span class="font-bold">SOC2 COMPLIANT</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" data-icon="payments">payments</span>
+<span class="font-bold">STRIPE SECURE</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" data-icon="encrypted">encrypted</span>
+<span class="font-bold">AES-256 BIT</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" data-icon="policy">policy</span>
+<span class="font-bold">RGPD READY</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-stone-100 py-16 px-6">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 px-6">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-red-900 text-2xl" data-icon="gavel">gavel</span>
+<span class="text-2xl font-bold text-red-900 font-headline tracking-tight">IusPilot</span>
+</div>
+<p class="text-secondary max-w-sm mb-8">El Vanguardista del Derecho Digital. Elevando el estándar de la práctica legal a través de la inteligencia artificial ética.</p>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface uppercase text-[10px] tracking-widest">Producto</h4>
+<ul class="space-y-4 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="servicios.html">Servicios</a></li>
+<li><a class="hover:text-primary transition-colors" href="pricing.html">Precios</a></li>
+<li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface uppercase text-[10px] tracking-widest">Compañía</h4>
+<ul class="space-y-4 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="nosotros.html">Sobre nosotros</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Términos</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-400 uppercase tracking-widest font-medium px-6">
+<p>© 2024 IusPilot AI Technologies. Todos los derechos reservados.</p>
+<p>La referencia legal en Extremadura</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white dark:bg-stone-950 shadow-[0_-10px_30px_rgba(0,0,0,0.04)] border-t border-stone-100/10">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="servicios.html">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Servicios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 transition-all" href="pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Precios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="blog.html">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Blog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="nosotros.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Nosotros</span>
+</a>
+</nav>
+</body></html>

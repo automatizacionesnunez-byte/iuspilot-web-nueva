@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#002b5c",
+              "primary": "#610000",
+              "inverse-surface": "#2b3135",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e9eef3",
+              "surface-dim": "#d5dbdf",
+              "secondary": "#515f74",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface": "#f5faff",
+              "on-primary-container": "#ff907f",
+              "on-tertiary-container": "#81afff",
+              "outline": "#8e706b",
+              "on-secondary-fixed": "#0d1c2f",
+              "secondary-fixed-dim": "#b9c7e0",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#5a403c",
+              "surface-bright": "#f5faff",
+              "on-secondary-container": "#57657b",
+              "on-primary-fixed-variant": "#920703",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#ecf1f6",
+              "primary-fixed-dim": "#ffb4a8",
+              "primary-container": "#8b0000",
+              "outline-variant": "#e3beb8",
+              "on-secondary-fixed-variant": "#3a485c",
+              "on-tertiary-fixed-variant": "#00458d",
+              "background": "#f5faff",
+              "surface-variant": "#dee3e8",
+              "secondary-container": "#d5e3fd",
+              "tertiary-fixed-dim": "#aac7ff",
+              "surface-container-low": "#eff4f9",
+              "primary-fixed": "#ffdad4",
+              "surface-container-high": "#e4e9ee",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#dee3e8",
+              "secondary-fixed": "#d5e3fd",
+              "inverse-primary": "#ffb4a8",
+              "on-tertiary-fixed": "#001b3e",
+              "on-background": "#171c20",
+              "on-primary-fixed": "#410000",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#d6e3ff",
+              "tertiary-container": "#004185",
+              "on-surface": "#171c20",
+              "surface-tint": "#b52619"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(23, 28, 32, 0.06);
+        }
+        .red-hero-gradient {
+            background: radial-gradient(circle at top right, #8b0000, #610000);
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-fixed-dim">
+<!-- TopAppBar Shell -->
+<header class="bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_20px_40px_rgba(23,28,32,0.06)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 font-medium transition-colors hover:text-red-900" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
+<a class="text-red-900 dark:text-red-500 font-semibold" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-5 py-2 rounded-md font-semibold text-sm active:scale-95 transition-all duration-200">
+                Prueba Gratis
+            </button>
+</div>
+</header>
+<main class="pt-24 pb-32 max-w-7xl mx-auto px-6">
+<!-- Editorial Header -->
+<div class="mb-16">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Actualidad Legal en Extremadura</p>
+<h1 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6">Actualidad Jurídica en Extremadura</h1>
+<p class="text-lg text-secondary max-w-2xl leading-relaxed">
+                Explorando la intersección entre la jurisprudencia tradicional y la inteligencia artificial avanzada para el abogado moderno.
+            </p>
+</div>
+<!-- Featured Section (Bento Inspired) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
+<div class="lg:col-span-8 group relative overflow-hidden rounded-xl editorial-shadow bg-surface-container-lowest">
+<div class="relative h-[500px]">
+<img alt="Premium Law Office" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Interior of a luxury modern law office with dark wood panels, floor-to-ceiling windows, and soft moody ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5gHtmyYQPtYGwtTJesLvtOLn-FBNUk5X5KtgLGLNcTR72I90UD2ITjWTtsvDaxzc1TN1LU3fsw92vwxWr6aZ_38xttfShYfTBSLy5nZ5Dl_dwubb07aCjXfXNucDGwvkZmNeS6BPuJMBxSmd6dZ5MWuZ8yHaW_raqcmdnCkOG2uI-xsGlpnZw8usP5vkKceQhQWIEPax1gv9kx8aSh4FYEClu4UGrX5W7GYUQzgrLTxj-WQHOmzZu1ghZWZ7LEUT5AVXKWfuEoVi_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 p-10 text-white">
+<span class="inline-block bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4">Destacado</span>
+<h2 class="text-4xl font-bold mb-4 leading-tight">Análisis del TSJ de Extremadura: Nuevos criterios sobre propiedad rústica.</h2>
+<div class="flex items-center gap-6 text-sm text-surface-variant/80">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 12 min lectura
+                            </span>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span> Dr. Santiago Mendoza
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Featured Info -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<div class="bg-primary-container p-8 rounded-xl editorial-shadow text-on-primary relative overflow-hidden flex-1">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="text-2xl font-bold mb-4">Análisis Predictivo</h3>
+<p class="text-white/80 mb-6 text-sm leading-relaxed">Cómo nuestra nueva IA predice sentencias de la Corte Suprema con un 94% de precisión basándose en precedentes históricos.</p>
+<a class="inline-flex items-center gap-2 font-bold text-sm uppercase tracking-wider group" href="#">
+                            Ver Reporte <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 flex-1">
+<h3 class="text-lg font-bold mb-6 flex items-center justify-between">
+                        Temas Calientes
+                        <span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="text-primary font-bold">01.</span>
+<p class="text-sm font-medium hover:text-primary cursor-pointer transition-colors">Regulación de la IA en la Unión Europea 2024</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-primary font-bold">02.</span>
+<p class="text-sm font-medium hover:text-primary cursor-pointer transition-colors">Ciberseguridad para Despachos de Abogados</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="text-primary font-bold">03.</span>
+<p class="text-sm font-medium hover:text-primary cursor-pointer transition-colors">Contratos Inteligentes y Blockchain en LatAm</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Filters -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-surface-container pb-6">
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-semibold">Todos</button>
+<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-colors">Legal Tech</button>
+<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-colors">Case Studies</button>
+<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-colors">Product Updates</button>
+</div>
+<div class="relative group">
+<input class="bg-white border-none focus:ring-1 focus:ring-primary rounded-lg pl-10 pr-4 py-2 text-sm w-full md:w-64 editorial-shadow transition-all" placeholder="Buscar artículos..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-lg" data-icon="search">search</span>
+</div>
+</div>
+<!-- Recent Posts Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<article class="flex flex-col group">
+<div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+<img alt="Law Documents" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up of elegant legal documents with a fountain pen and glasses on a wooden desk, focused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Vfyx-8yErBajg5Mut2c_FiUkYnEz_dXBbcPKi0gioVA0DYDhTKW0uwjv4I2cCh-wNBevp1Y1l8SGmN_HKbGtH0YCBou_poeJ_BVsgJW9qbnJrHkDGDSataV3_CPDdhWBGlX5dIMepsNUgMk5zKZMKCKzQ9WLJ9y4qv_EFqtJxdOyubr0lb82aiRN2PCrszrhKXm2Fxp0kxdSPTI5Pf1jt9R4gl3R7Oh1d0LD4X9lCz8HppT2psb39zfitw7iSF5uiy0PUgw-LOrt"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Legal Tech</span>
+<span class="text-xs text-stone-400">•</span>
+<span class="text-xs text-stone-500">22 May, 2024</span>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Eficiencia en la gestión de expedientes: El rol de la IA generativa.</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Analizamos cómo las herramientas de lenguaje natural están reduciendo hasta en un 60% el tiempo dedicado a la revisión documental en litigios complejos.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span> 8 min
+                    </span>
+<a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="articulo.html">
+                        Leer más 
+                        <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="flex flex-col group">
+<div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+<img alt="Meeting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Professional handshake between two lawyers in a modern glass office, high contrast cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1jCR7FbVmdkLwAJNJOypgejKiiBgmFSy-p40eA5VvTFkP5nU44PvUbTOY_6hpkooiwu0lY8mRs4ka9jPQu8ne8Y9hgcDHpIgxlt3Gu4LUL6EAB005f3eOaZZjBUjGPUlZfLtHCfPRAcuDFNw0oP3qC4qZmze_Q1sd6xBrQyL8uhfkfqpxokT7-J_qTFwXsHvZjPajsWsonlsSVEglo9tfz6xAK_HFemfHrjlRRVvvnICcm-ane8uLl6wif68vldQOHc1xiFTz0OUQ"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Case Studies</span>
+<span class="text-xs text-stone-400">•</span>
+<span class="text-xs text-stone-500">18 May, 2024</span>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Cómo el despacho 'López &amp; Asociados' digitalizó 20 años de archivos.</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Un caso real sobre la transición de lo analógico a lo digital utilizando OCR avanzado y etiquetado automático por inteligencia artificial.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span> 15 min
+                    </span>
+<a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="#">
+                        Informe Completo 
+                        <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="flex flex-col group">
+<div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+<img alt="Cybersecurity" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a server circuit board with blue glowing lights, representing high tech infrastructure and cybersecurity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8KrHrttfr85HBfAYmftZ8ZUNYnSgShRw3QqvMk6ysUYnGkHBgYoJ-Uglmpc6dQSgAVTRPTCQTeWA31qlFtqbxOLjwfvks7kn6NRx6Rk3C_AWcmTfG7KGJuxfXkPatfjmrV5HOdubamvgOMcQ16NwrbHzncZWPBh-n8uwny1t5BHQqImkaKxpvw1l1SzaytFVGtGFxLW8MZAKU0kxyviSu68KPIWmVDYV8Chv6oy-VuxzA5vChOTE91ZSp5quKZoH7aPAXDcT_0jNi"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Product Updates</span>
+<span class="text-xs text-stone-400">•</span>
+<span class="text-xs text-stone-500">10 May, 2024</span>
+</div>
+<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Actualización v2.4: Nuevos protocolos de seguridad militar.</h3>
+<p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Presentamos encriptación de extremo a extremo para chats de clientes y auditorías de acceso automáticas para garantizar la confidencialidad.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span> 5 min
+                    </span>
+<a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="#">
+                        Informe Completo 
+                        <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
+</a>
+</div>
+</article>
+</section>
+<!-- Newsletter Subscription -->
+<section class="mt-24 bg-surface-container-highest rounded-2xl overflow-hidden relative border border-outline-variant/10">
+<div class="flex flex-col lg:flex-row items-stretch">
+<div class="p-12 lg:w-3/5">
+<h2 class="text-3xl font-bold mb-4">Manténgase a la vanguardia.</h2>
+<p class="text-secondary mb-8 max-w-lg leading-relaxed">Reciba mensualmente un análisis curado de las tendencias legales que están transformando la industria. Sin spam, solo inteligencia.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg">
+<input class="flex-1 bg-white border-none rounded-lg px-6 py-4 text-sm focus:ring-1 focus:ring-primary editorial-shadow" placeholder="Su correo corporativo" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-sm transition-all hover:bg-primary-container active:scale-95 whitespace-nowrap">Suscribirse</button>
+</form>
+<p class="text-[10px] text-stone-400 mt-6 uppercase tracking-widest font-medium">Al suscribirse acepta nuestras políticas de privacidad y protección de datos.</p>
+</div>
+<div class="lg:w-2/5 hidden lg:block bg-primary/5 relative">
+<img alt="Newsletter Hero" class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Abstract architectural shot of a modern courthouse with repeating white pillars and strong shadows, minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhI2b8GE0NdJ6Q4mUfvP0r9ITTsNERyTW-uyQ7wvCqSGBsv076KkpU8_5XELLYKFoo6mO9f5LF7OmgatA2MOYnY2JI2WHUy-QAk4uT0U-QghWPeXKaE6rj-qpqxQ2xNwNlnMbhYD1Wg2SN4wq_7p9cjqZvzvF7XbBzIQX0Le5MiaWnyMMnCwksVbRR5he_OZUp7llolV6I8uXs1_VLjPlyxNKZa_Tea2UW_3eUeYHu6SwxrpiTx6UDL4xLACAbAFdfNWeJl-8KMUyo"/>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white dark:bg-stone-950 border-t border-stone-100/10 shadow-[0_-10px_30px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all focus:text-red-900" href="servicios.html">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Servicios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all focus:text-red-900" href="pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Precios</span>
+</a>
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 font-medium font-['Inter'] text-[10px] uppercase tracking-wider">
+<span class="material-symbols-outlined" data-icon="article" style="font-variation-settings: 'FILL' 1;">article</span>
+<span>Blog</span>
+</div>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all focus:text-red-900" href="nosotros.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Nosotros</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-12 px-6 border-t border-surface-container mt-12 mb-20 md:mb-0">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-primary tracking-tight">IusPilot</span>
+</div>
+<div class="flex gap-8 text-sm text-secondary font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Términos</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+<div class="flex flex-col items-center md:items-end gap-1">
+<p class="text-xs text-stone-400">© 2024 IusPilot AI. Todos los derechos reservados.</p>
+<p class="text-[10px] text-stone-400 uppercase tracking-widest font-medium">La referencia legal en Extremadura</p>
+</div>
+</div>
+</footer>
+</body></html>

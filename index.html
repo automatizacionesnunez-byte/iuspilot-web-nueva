@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IusPilot - El Vanguardista de la IA Legal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#002b5c",
+              "primary": "#610000",
+              "inverse-surface": "#2b3135",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#e9eef3",
+              "surface-dim": "#d5dbdf",
+              "secondary": "#515f74",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface": "#f5faff",
+              "on-primary-container": "#ff907f",
+              "on-tertiary-container": "#81afff",
+              "outline": "#8e706b",
+              "on-secondary-fixed": "#0d1c2f",
+              "secondary-fixed-dim": "#b9c7e0",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#5a403c",
+              "surface-bright": "#f5faff",
+              "on-secondary-container": "#57657b",
+              "on-primary-fixed-variant": "#920703",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#ecf1f6",
+              "primary-fixed-dim": "#ffb4a8",
+              "primary-container": "#8b0000",
+              "outline-variant": "#e3beb8",
+              "on-secondary-fixed-variant": "#3a485c",
+              "on-tertiary-fixed-variant": "#00458d",
+              "background": "#f5faff",
+              "surface-variant": "#dee3e8",
+              "secondary-container": "#d5e3fd",
+              "tertiary-fixed-dim": "#aac7ff",
+              "surface-container-low": "#eff4f9",
+              "primary-fixed": "#ffdad4",
+              "surface-container-high": "#e4e9ee",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#dee3e8",
+              "secondary-fixed": "#d5e3fd",
+              "inverse-primary": "#ffb4a8",
+              "on-tertiary-fixed": "#001b3e",
+              "on-background": "#171c20",
+              "on-primary-fixed": "#410000",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#d6e3ff",
+              "tertiary-container": "#004185",
+              "on-surface": "#171c20",
+              "surface-tint": "#b52619"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+      }
+      .lex-glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(16px);
+      }
+      .dark .lex-glass {
+        background: rgba(23, 28, 32, 0.7);
+        backdrop-filter: blur(16px);
+      }
+      .hero-gradient {
+        background: radial-gradient(circle at top right, #8B0000 0%, #610000 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)]">
+<nav class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-900 dark:text-red-500 text-2xl" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-red-900 dark:text-red-500 font-semibold transition-colors" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-xl font-semibold text-sm active:scale-95 duration-200 shadow-lg shadow-primary/20">Prueba Gratis</button>
+</div>
+</nav>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex items-center overflow-hidden hero-gradient">
+<div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-red-400 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-red-900 blur-[100px] rounded-full"></div>
+</div>
+<div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 py-20">
+<div class="flex-1 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-6">
+<span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        IA de Grado Jurídico
+                    </div>
+<h1 class="text-5xl md:text-7xl font-headline font-bold text-white leading-[1.1] mb-8 tracking-tighter">
+                        La Vanguardia Digital del Derecho en <span class="text-on-primary-container">Extremadura</span>.
+                    </h1>
+<p class="text-lg md:text-xl text-white/80 mb-10 max-w-2xl font-body leading-relaxed">
+                        Optimice su despacho con el copiloto más avanzado. Análisis del DOE, BOE y redacción automatizada diseñada para el abogado extremeño moderno.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<button class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-stone-100 transition-all shadow-2xl active:scale-95">
+                            Prueba Gratis de 14 Días
+                        </button>
+<button class="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white border border-white/30 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                            Ver Demo
+                        </button>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-primary-container rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-stone-900 rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-video md:aspect-[4/3] flex items-center justify-center">
+<img alt="Ambiente legal profesional" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Interior de oficina legal moderna en Extremadura, atmósfera profesional con libros jurídicos y tecnología" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArCZ4gcZFbHX-EpP-COd5uSPX4bn0eWXN1Zka1rPAdscvBQjGXd9-L3HdWJBxNZAE0unWbTHK2tY6FnmCVVXV_GHDR3wejbC4CcYCpKiGhJ7Kq82s_twSNG0JGDZmZiB6wNT2kdoyXk_cNJq7nuzypQTFJI9GbZDRuf1Lt7PCh24EgAqxL7QcHqNLc9gfUZmzH6bdb-bKWcw0DzAonHjqJq46cEzrldfaTMoEQWBYhcMsL-cVFFME9yGC3G_3iwHa7g2anMCy_WDpP"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="lex-glass p-6 rounded-2xl border border-white/20 w-[80%]">
+<div class="flex gap-2 mb-4">
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+<div class="w-3 h-3 rounded-full bg-amber-500"></div>
+<div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+</div>
+<div class="space-y-3">
+<div class="h-2 w-3/4 bg-red-900/20 rounded"></div>
+<div class="h-2 w-full bg-red-900/20 rounded"></div>
+<div class="h-2 w-1/2 bg-red-900/40 rounded"></div>
+</div>
+<div class="mt-6 flex justify-end">
+<div class="h-8 w-24 bg-primary rounded-lg"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Signals -->
+<section class="py-12 bg-white dark:bg-stone-950 border-y border-stone-100/10">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 opacity-60">
+<p class="text-sm font-bold uppercase tracking-widest text-on-surface/60 font-label">Confianza en más de 500 Firmas</p>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16">
+<span class="font-headline font-bold text-xl text-on-surface">LEGAL&amp;CO</span>
+<span class="font-headline font-bold text-xl text-on-surface">JUS.GROUP</span>
+<span class="font-headline font-bold text-xl text-on-surface">VERITAS</span>
+<span class="font-headline font-bold text-xl text-on-surface">PILOT.LEX</span>
+<span class="font-headline font-bold text-xl text-on-surface">ABOG.AI</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pain vs Solution - Bento Grid Style -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-6">El futuro es eficiencia, no esfuerzo.</h2>
+<p class="text-secondary max-w-2xl mx-auto">Deje atrás los procesos manuales y el error humano. Adopte la precisión quirúrgica.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Pain Card -->
+<div class="md:col-span-5 bg-white p-8 rounded-2xl shadow-sm flex flex-col justify-between border-l-4 border-stone-200">
+<div>
+<span class="material-symbols-outlined text-stone-400 mb-6 text-4xl" data-icon="block">block</span>
+<h3 class="text-2xl font-headline font-bold mb-4 text-stone-500">La Práctica Tradicional</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-stone-500">
+<span class="material-symbols-outlined text-red-500 text-xl" data-icon="close">close</span>
+<span>Horas perdidas en redacción repetitiva.</span>
+</li>
+<li class="flex items-start gap-3 text-stone-500">
+<span class="material-symbols-outlined text-red-500 text-xl" data-icon="close">close</span>
+<span>Riesgo de errores en cálculos de plazos.</span>
+</li>
+<li class="flex items-start gap-3 text-stone-500">
+<span class="material-symbols-outlined text-red-500 text-xl" data-icon="close">close</span>
+<span>Dificultad para procesar jurisprudencia masiva.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Visual Transition -->
+<div class="md:col-span-2 flex items-center justify-center">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white shadow-xl shadow-primary/30">
+<span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</div>
+</div>
+<!-- Solution Card -->
+<div class="md:col-span-5 bg-primary-container p-8 rounded-2xl shadow-2xl flex flex-col justify-between transform md:scale-105">
+<div>
+<span class="material-symbols-outlined text-white mb-6 text-4xl" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="text-2xl font-headline font-bold mb-4 text-white">La Evolución IusPilot</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-white">
+<span class="material-symbols-outlined text-on-primary-container text-xl" data-icon="check_circle">check_circle</span>
+<span>Redacción inteligente en segundos.</span>
+</li>
+<li class="flex items-start gap-3 text-white">
+<span class="material-symbols-outlined text-on-primary-container text-xl" data-icon="check_circle">check_circle</span>
+<span>Cálculos automatizados con precisión legal.</span>
+</li>
+<li class="flex items-start gap-3 text-white">
+<span class="material-symbols-outlined text-on-primary-container text-xl" data-icon="check_circle">check_circle</span>
+<span>Copiloto activo en cada etapa del proceso.</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-white/10">
+<p class="text-white/60 text-sm italic">"IusPilot ha reducido nuestro tiempo de investigación en un 70%."</p>
+<p class="text-white text-xs font-bold mt-2 uppercase tracking-tighter">Socia Directora, Firma González &amp; Asoc.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Tools -->
+<section class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-headline font-bold text-on-surface mb-4 tracking-tight">Instrumental de Alta Precisión</h2>
+<p class="text-secondary">Herramientas diseñadas bajo el rigor del derecho continental y anglosajón.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                        Ver todas las herramientas
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Tool 1: Copiloto -->
+<div class="bg-surface-container-low p-8 rounded-2xl group hover:bg-primary-container transition-colors duration-500">
+<div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="psychology">psychology</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-white transition-colors">Copiloto IA</h3>
+<p class="text-secondary group-hover:text-white/70 transition-colors mb-6">Diálogo en lenguaje natural con su expediente. Analice, resuma y extraiga insights críticos al instante.</p>
+<div class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
+                            Explorar <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Tool 2: Redactor -->
+<div class="bg-surface-container-low p-8 rounded-2xl group hover:bg-primary-container transition-colors duration-500">
+<div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="edit_note">edit_note</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-white transition-colors">Redactor Lex</h3>
+<p class="text-secondary group-hover:text-white/70 transition-colors mb-6">Más de 24 plantillas inteligentes. Desde demandas civiles hasta contratos complejos con un clic.</p>
+<div class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
+                            Ver Plantillas <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Tool 3: Calculators -->
+<div class="bg-surface-container-low p-8 rounded-2xl group hover:bg-primary-container transition-colors duration-500">
+<div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="calculate">calculate</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-white transition-colors">Calculadoras</h3>
+<p class="text-secondary group-hover:text-white/70 transition-colors mb-6">Plazos procesales, indemnizaciones y tasas. Sin errores, con base legal actualizada diariamente.</p>
+<div class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
+                            Calcular ahora <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="py-24 bg-on-background text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-red-500 text-6xl mb-8" data-icon="shield_lock" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+<h2 class="text-4xl md:text-5xl font-headline font-bold mb-8">Blindaje Jurídico &amp; Digital</h2>
+<p class="text-xl text-stone-400 mb-16 leading-relaxed">
+                        Su información es su mayor activo. Aplicamos los estándares más estrictos de seguridad global para garantizar que sus datos y los de sus clientes permanezcan privados.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-red-400" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Cifrado AES-256</h4>
+<p class="text-sm text-stone-500">Estándar militar en reposo y tránsito.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-red-400" data-icon="policy">policy</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">Cumplimiento GDPR</h4>
+<p class="text-sm text-stone-500">Privacidad total bajo normativa europea.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-red-400" data-icon="gpp_good">gpp_good</span>
+</div>
+<div>
+<h4 class="font-bold mb-1">SOC2 Tipo II</h4>
+<p class="text-sm text-stone-500">Auditorías externas de control.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-surface-container-high">
+<div class="container mx-auto px-6 text-center">
+<div class="max-w-3xl mx-auto lex-glass p-12 md:p-20 rounded-[2.5rem] border border-white shadow-2xl relative">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-primary rounded-3xl flex items-center justify-center text-white rotate-12 shadow-xl">
+<span class="material-symbols-outlined text-4xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h2 class="text-4xl md:text-6xl font-headline font-bold text-on-surface mb-8 tracking-tighter">¿Preparado para transformar tu despacho?</h2>
+<p class="text-lg text-secondary mb-12">Únase a los líderes de la industria que ya están utilizando IusPilot para dominar el panorama legal moderno.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
+                            Iniciar Prueba Gratuita
+                        </button>
+<button class="bg-white text-on-surface border border-surface-variant px-10 py-5 rounded-2xl font-bold text-xl hover:bg-surface-container-low transition-all">
+                            Contactar Ventas
+                        </button>
+</div>
+<p class="mt-8 text-sm text-secondary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        No requiere tarjeta de crédito • Instalación en 30 segundos
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-stone-100 py-16">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-red-900 text-2xl" data-icon="gavel">gavel</span>
+<span class="text-2xl font-bold text-red-900 font-headline tracking-tight">IusPilot</span>
+</div>
+<p class="text-secondary max-w-xs mb-8">Redefiniendo la justicia mediante la inteligencia artificial avanzada y la seguridad absoluta.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="public">public</span>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Producto</h5>
+<ul class="space-y-4 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Funcionalidades</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Seguridad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Redactor</a></li>
+<li><a class="hover:text-primary transition-colors" href="pricing.html">Precios</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Compañía</h5>
+<ul class="space-y-4 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="nosotros.html">Sobre nosotros</a></li>
+<li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Prensa</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Carreras</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Legal</h5>
+<ul class="space-y-4 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Términos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-400 uppercase tracking-widest font-medium">
+<p>© 2024 IusPilot AI Technologies. Todos los derechos reservados.</p>
+<p>La referencia legal en Extremadura</p>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white dark:bg-stone-950 shadow-[0_-10px_30px_rgba(0,0,0,0.04)] border-t border-stone-100/10">
+<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 transition-all" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="servicios.html">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Servicios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Precios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="blog.html">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Blog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all" href="nosotros.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Nosotros</span>
+</a>
+</nav>
+</body></html>
