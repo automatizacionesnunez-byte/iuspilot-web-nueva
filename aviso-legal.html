@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "primary": "#610000",
+                  "background": "#f5faff",
+                  "on-background": "#171c20",
+                  "secondary": "#515f74",
+                  "surface-container": "#e9eef3",
+                  "inverse-surface": "#2b3135",
+                  "on-primary": "#ffffff"
+                },
+                fontFamily: {
+                  "headline": ["Plus Jakarta Sans"],
+                  "body": ["Inter"]
+                }
+              }
+            }
+          }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+    <title>Aviso Legal | IusPilot</title>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+    <!-- TopAppBar Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-6 h-16 w-full">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-red-900 dark:text-red-500" data-icon="gavel">gavel</span>
+            <span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="index.html">Inicio</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-semibold active:scale-95 duration-200 text-sm">Prueba Gratis</button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto bg-white p-12 rounded-3xl shadow-xl">
+            <h1 class="text-4xl font-headline font-bold text-primary mb-8">Aviso Legal</h1>
+            
+            <section class="space-y-6 text-secondary leading-relaxed">
+                <div>
+                    <h2 class="text-xl font-bold text-on-background mb-3">1. Datos del Titular</h2>
+                    <p>En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informan los siguientes datos:</p>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li><strong>Titular:</strong> Miguel Ángel Regalado Guerra</li>
+                        <li><strong>NIF:</strong> 76049366G</li>
+                        <li><strong>Domicilio Profesional:</strong> C/ Juan Pablo Forner, 2, 3ºD, 10005, Cáceres, España.</li>
+                        <li><strong>Email de contacto:</strong> administracion@iuspilot.com</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-on-background mb-3">2. Objeto y Aceptación</h2>
+                    <p>El presente aviso legal regula el uso del sitio web www.iuspilot.com. El acceso a la web le atribuye la condición de usuario e implica la aceptación total de todas las disposiciones incluidas en este documento.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-on-background mb-3">3. Propiedad Intelectual e Industrial</h2>
+                    <p>Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a IusPilot, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-on-background mb-3">4. Limitación de Responsabilidad</h2>
+                    <p>Las herramientas basadas en Inteligencia Artificial proporcionadas en este sitio web tienen carácter de mero apoyo y optimización de flujos de trabajo. Bajo ningún concepto sustituyen el asesoramiento jurídico profesional, la interpretación de la norma por un jurista colegiado o el dictamen de un tribunal competente. IusPilot no se responsabiliza de las decisiones tomadas basadas exclusivamente en el output de la IA sin la debida revisión profesional.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-on-background mb-3">5. Legislación y Jurisdicción</h2>
+                    <p>Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales de la ciudad de Cáceres.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-400 py-20 px-6 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-red-600" data-icon="gavel">gavel</span>
+                    <span class="text-2xl font-bold text-white font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+                </div>
+                <p class="max-w-sm leading-relaxed text-stone-500">
+                    Liderando la evolución del derecho a través de inteligencia artificial ética y precisa. Diseñado para los juristas del futuro.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Explorar</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-red-500 transition-colors" href="index.html">Inicio</a></li>
+                    <li><a class="hover:text-red-500 transition-colors" href="servicios.html">Servicios</a></li>
+                    <li><a class="hover:text-red-500 transition-colors" href="pricing.html">Precios</a></li>
+                    <li><a class="hover:text-red-500 transition-colors" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Legal</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a class="hover:text-red-500 transition-colors font-bold text-red-500" href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a class="hover:text-red-500 transition-colors" href="privacidad.html">Privacidad</a></li>
+                    <li><a class="hover:text-red-500 transition-colors" href="cookies.html">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500 font-medium uppercase tracking-widest">
+            <p>© 2026 IusPilot Legal Technologies S.L. Todos los derechos reservados.</p>
+            <p>La referencia legal en Extremadura</p>
+        </div>
+    </footer>
+
+    <!-- BottomNavBar for Mobile -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-stone-950 flex justify-around items-center px-4 pb-6 pt-3 shadow-[0_-10px_30px_rgba(0,0,0,0.04)] border-t border-stone-100/10">
+        <a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="index.html">
+            <span class="material-symbols-outlined" data-icon="home">home</span>
+            <span>Inicio</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="servicios.html">
+            <span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+            <span>Servicios</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="pricing.html">
+            <span class="material-symbols-outlined" data-icon="payments">payments</span>
+            <span>Precios</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="blog.html">
+            <span class="material-symbols-outlined" data-icon="article">article</span>
+            <span>Blog</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 hover:text-red-800 transition-all font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="nosotros.html">
+            <span class="material-symbols-outlined" data-icon="group">group</span>
+            <span>Nosotros</span>
+        </a>
+    </nav>
+</body>
+</html>
