@@ -95,7 +95,7 @@
   </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-red-900 dark:text-red-500 text-2xl" data-icon="gavel">gavel</span>
 <span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
@@ -107,16 +107,16 @@
 <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
 <a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
 </nav>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md font-medium text-sm active:scale-95 duration-200 transition-all shadow-lg shadow-primary/20">Prueba Gratis</button>
+<button class="bg-primary text-on-primary px-4 md:px-6 py-2 md:py-2.5 rounded-lg md:rounded-md font-medium text-xs md:text-sm active:scale-95 duration-200 transition-all shadow-lg shadow-primary/20">Prueba Gratis</button>
 </header>
-<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto space-y-32">
+<main class="pt-24 md:pt-32 pb-16 md:pb-24 px-6 max-w-7xl mx-auto space-y-20 md:space-y-32">
 <!-- Hero Section Services -->
-<section class="text-center space-y-6">
+<section class="text-center space-y-6 text-balance">
 <span class="text-primary font-bold tracking-[0.2em] uppercase text-xs">Ecosistema Legal Digital</span>
-<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-surface tracking-tighter max-w-4xl mx-auto leading-[1.1]">
+<h1 class="text-4xl md:text-7xl font-headline font-extrabold text-on-surface tracking-tighter max-w-4xl mx-auto leading-[1.1]">
                 Herramientas de <span class="text-primary italic">Alta Precisión</span> para el jurista extremeño.
             </h1>
-<p class="text-secondary max-w-2xl mx-auto text-lg leading-relaxed">
+<p class="text-base md:text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
                 Transformamos la práctica legal en Extremadura con inteligencia artificial soberana, automatización de documentos y análisis del DOE/BOE.
             </p>
 </section>
@@ -127,10 +127,10 @@
 <div class="w-12 h-12 bg-primary-container flex items-center justify-center rounded-xl">
 <span class="material-symbols-outlined text-white" data-icon="psychology">psychology</span>
 </div>
-<h1 class="text-4xl md:text-6xl font-headline font-bold text-on-surface mb-6">
+<h2 class="text-3xl md:text-6xl font-headline font-bold text-on-surface mb-6">
                         Maestría Jurídica Regional para <span class="text-primary">Extremadura</span>
-                    </h1>
-<p class="text-on-secondary-container leading-relaxed">
+                    </h2>
+<p class="text-base md:text-lg text-on-secondary-container leading-relaxed">
                         Análisis en tiempo real de normativas vigentes. Nuestra IA no solo responde, sino que fundamenta cada palabra con enlaces directos al DOE, BOE y citas de jurisprudencia actualizada.
                     </p>
 </div>
@@ -175,8 +175,8 @@
 <div class="md:col-span-5 space-y-8">
 <div class="space-y-4">
 <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Documentación Inteligente</span>
-<h2 class="text-4xl font-headline font-bold text-on-surface">Redactor de Documentos</h2>
-<p class="text-secondary">
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface">Redactor de Documentos</h2>
+<p class="text-base md:text-lg text-secondary">
                             Acceso a más de 24 plantillas dinámicas que se ajustan a tu caso. Edita en tiempo real con nuestra vista previa dividida y exporta con un clic.
                         </p>
 </div>
@@ -225,18 +225,18 @@
 </section>
 <!-- Calculadoras Legales -->
 <section class="space-y-12">
-<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="flex flex-col md:flex-row justify-between md:items-end gap-6 text-center md:text-left">
 <div class="max-w-xl space-y-4">
-<h2 class="text-4xl font-headline font-bold text-on-surface">Calculadoras Legales</h2>
-<p class="text-secondary leading-relaxed">
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface">Calculadoras Legales</h2>
+<p class="text-base md:text-lg text-secondary leading-relaxed">
                         Precisión aritmética en cada cálculo. Olvídate de los errores manuales en liquidaciones complejas o intereses de demora.
                     </p>
 </div>
-<button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-md font-bold hover:bg-surface-dim transition-all">
+<button class="w-full md:w-auto bg-surface-container-highest text-on-surface px-6 py-3 rounded-md font-bold hover:bg-surface-dim transition-all">
                     Probar Calculadoras Gratis
                 </button>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
 <!-- Calc 1 -->
 <div class="p-6 bg-white rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-stone-100 hover:border-primary/20 transition-all group">
 <span class="material-symbols-outlined text-primary mb-4 block group-hover:scale-110 transition-transform" data-icon="family_history">family_history</span>
@@ -288,9 +288,9 @@
 </div>
 </div>
 <div class="space-y-8">
-<div class="space-y-4">
-<h2 class="text-4xl font-headline font-bold text-on-surface leading-tight">Control Total de <span class="text-primary">Plazos Procesales</span></h2>
-<p class="text-secondary leading-relaxed">
+<div class="space-y-4 text-center md:text-left">
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface leading-tight">Control Total de <span class="text-primary">Plazos Procesales</span></h2>
+<p class="text-base md:text-lg text-secondary leading-relaxed text-balance">
                         Nunca más pierdas un vencimiento. Nuestro sistema calcula automáticamente los plazos según la ley vigente y te notifica donde prefieras.
                     </p>
 </div>
@@ -322,9 +322,9 @@
 </section>
 </main>
 <!-- Final CTA -->
-<section class="lex-vanguard-gradient py-24 text-center text-white">
+<section class="lex-vanguard-gradient py-16 md:py-24 text-center text-white overflow-hidden">
 <div class="max-w-4xl mx-auto px-6 space-y-10">
-<h2 class="text-4xl md:text-6xl font-headline font-extrabold tracking-tight">El futuro de la abogacía es hoy.</h2>
+<h2 class="text-3xl md:text-6xl font-headline font-extrabold tracking-tight">El futuro de la abogacía es hoy.</h2>
 <div class="flex flex-col md:flex-row gap-4 justify-center">
 <button class="bg-white text-primary px-10 py-5 rounded-md font-bold text-lg hover:bg-stone-100 transition-all">Empieza Gratis Ahora</button>
 <button class="bg-primary-container/30 border border-white/20 backdrop-blur-md px-10 py-5 rounded-md font-bold text-lg hover:bg-white/10 transition-all">Ver Planes Premium</button>

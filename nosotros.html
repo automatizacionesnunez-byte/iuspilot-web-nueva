@@ -95,7 +95,7 @@
   </head>
 <body class="bg-background text-on-background font-body antialiased">
 <!-- TopAppBar Navigation -->
-<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-red-900 dark:text-red-500" data-icon="gavel">gavel</span>
 <span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
@@ -108,32 +108,32 @@
 <a class="text-red-900 dark:text-red-500 font-semibold px-1" href="nosotros.html">Sobre nosotros</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-semibold active:scale-95 duration-200 text-sm">Prueba Gratis</button>
+<button class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-semibold active:scale-95 duration-200 text-xs md:text-sm">Prueba Gratis</button>
 </div>
 </header>
-<main class="pt-16">
+<main class="pt-16 overflow-x-hidden">
 <!-- Hero Section: The Union of Legal Mastery & Synthetic Intelligence -->
-<section class="relative overflow-hidden pt-24 pb-32 px-6">
-<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-<div class="lg:w-1/2 z-10">
+<section class="relative overflow-hidden pt-12 md:pt-24 pb-16 md:pb-32 px-6">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 md:gap-16">
+<div class="lg:w-1/2 z-10 text-center lg:text-left">
 <span class="text-primary font-bold tracking-widest text-xs uppercase mb-6 block">Nuestra Identidad</span>
-<h1 class="text-5xl md:text-7xl font-headline font-bold text-primary mb-8 leading-tight">
+<h1 class="text-4xl md:text-7xl font-headline font-bold text-primary mb-6 md:mb-8 leading-tight">
                         Dos juristas extremeños <span class="text-secondary opacity-70 italic font-medium">redefiniendo el derecho</span>
                     </h1>
-                    <p class="text-xl text-secondary/80 leading-relaxed mb-10 max-w-xl font-medium">
+                    <p class="text-lg md:text-xl text-secondary/80 leading-relaxed mb-8 md:mb-10 max-w-xl font-medium mx-auto lg:mx-0">
                         IusPilot nace de la unión de dos profesionales del derecho en Extremadura con una misión clara: convertir la inteligencia artificial en el aliado estratégico del jurista moderno.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex justify-center lg:justify-start gap-4">
                         <div class="flex items-center gap-2 text-primary font-bold bg-primary/5 px-4 py-2 rounded-full border border-primary/10">
                             <span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
-                            <span class="text-xs uppercase tracking-widest">Excelencia Regional</span>
+                            <span class="text-[10px] md:text-xs uppercase tracking-widest">Excelencia Regional</span>
                         </div>
                     </div>
                 </div>
-                <div class="lg:w-1/2 relative">
+                <div class="lg:w-1/2 relative w-full">
                     <div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
                     <div class="relative rounded-2xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)] border border-stone-100">
-                        <img alt="Identidad IusPilot Extremadura" class="w-full h-[550px] object-cover hover:scale-105 transition-transform duration-700" src="images/nosotros_premium.png"/>
+                        <img alt="Identidad IusPilot Extremadura" class="w-full h-[300px] md:h-[550px] object-cover hover:scale-105 transition-transform duration-700" src="images/nosotros_premium.png"/>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40"></div>
                     </div>
                 </div>
@@ -181,9 +181,9 @@
 </div>
 </section>
 <!-- Values: Transparency, Security, Precision -->
-<section class="py-32 px-6 bg-white">
-<div class="max-w-7xl mx-auto text-center mb-20">
-<h2 class="text-6xl md:text-8xl font-headline font-bold text-primary tracking-tighter mb-8 italic">Nuestros Pilares</h2>
+<section class="py-16 md:py-32 px-6 bg-white overflow-hidden text-balance">
+<div class="max-w-7xl mx-auto text-center mb-12 md:mb-20">
+<h2 class="text-4xl md:text-8xl font-headline font-bold text-primary tracking-tighter mb-8 italic">Nuestros Pilares</h2>
 <div class="w-24 h-1 bg-primary mx-auto"></div>
 </div>
 <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
@@ -264,11 +264,11 @@ Especialista en cumplimiento normativo y protección de datos, garantizando que 
 </div>
 </section>
 <!-- Final CTA Section: Red Hero aesthetic -->
-<section class="py-24 px-6 relative overflow-hidden">
+<section class="py-16 md:py-24 px-6 relative overflow-hidden">
 <div class="absolute inset-0 red-gradient-bg"></div>
 <div class="max-w-4xl mx-auto relative z-10 text-center text-on-primary">
-<h2 class="text-5xl lg:text-6xl font-headline font-extrabold tracking-tighter mb-8">Escribamos el futuro de su firma juntos.</h2>
-<p class="text-xl opacity-90 mb-12 max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-6xl font-headline font-extrabold tracking-tighter mb-8">Escribamos el futuro de su firma juntos.</h2>
+<p class="text-lg md:text-xl opacity-90 mb-8 md:mb-12 max-w-2xl mx-auto">
                     Únase a la élite legal que ya utiliza la inteligencia sintética para transformar la práctica del derecho.
                 </p>
 <div class="flex flex-col sm:flex-row justify-center gap-6">
