@@ -121,12 +121,12 @@
 </header>
 <main class="pt-16">
 <!-- Hero Section -->
-<section class="relative min-h-[795px] flex items-center overflow-hidden hero-gradient">
+<section class="relative min-h-[850px] md:min-h-[900px] flex items-center overflow-hidden hero-gradient">
 <div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
 <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary blur-[120px] rounded-full"></div>
 <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#C74E4E] blur-[100px] rounded-full"></div>
 </div>
-<div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 py-12 md:py-20 text-balance">
+<div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 pt-24 pb-48 md:pt-32 md:pb-64 text-balance">
 <div class="flex-1 text-center md:text-left">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
 <span class="material-symbols-outlined text-[14px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
@@ -172,8 +172,8 @@
         </div>
     </div>
 
-    <!-- Feature Strip (Option 1: Floating Glass) -->
-    <div class="absolute bottom-0 left-0 w-full translate-y-1/2 z-20 px-6">
+    <!-- Feature Strip (Inside Hero) -->
+    <div class="absolute bottom-12 left-0 w-full z-20 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Feature 1: Consultas -->
             <div class="group relative overflow-hidden rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:shadow-primary/20 transition-all duration-500 h-64">
@@ -221,11 +221,11 @@
 </section>
 
 <!-- Calculadoras Públicas (Integración Home) -->
-<section id="calculadoras-publicas" class="py-16 md:py-24 bg-surface-container-low border-b border-stone-100">
+<section id="calculadoras-publicas" class="py-24 md:py-32 bg-surface-container-low border-b border-stone-100">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-6">Herramientas Jurídicas Gratuitas</h2>
-            <p class="text-secondary max-w-2xl mx-auto">Pruebe nuestras calculadoras avanzadas sin compromiso. Precisión técnica a su servicio.</p>
+            <h2 class="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-6">Instrumental de <span class="text-primary italic">Alta Precisión</span></h2>
+            <p class="text-secondary max-w-2xl mx-auto">Herramientas diseñadas bajo el rigor del derecho continental.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Calc 1 -->
@@ -353,8 +353,8 @@
 <div class="container mx-auto px-6 text-balance">
 <div class="flex flex-col md:flex-row justify-between md:items-end mb-12 md:mb-16 gap-6">
 <div class="max-w-2xl text-center md:text-left">
-<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface mb-4 tracking-tight">Instrumental de Alta Precisión</h2>
-<p class="text-secondary">Herramientas diseñadas bajo el rigor del derecho continental y anglosajón.</p>
+<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface mb-4 tracking-tight">Capacidades de <span class="text-primary italic">Grado Jurídico</span></h2>
+<p class="text-secondary">La suite más completa para el despacho moderno.</p>
 </div>
 <a class="text-primary font-bold flex items-center justify-center md:justify-start gap-2 group" href="#">
                         Ver todas las herramientas
@@ -444,20 +444,30 @@
     </div>
 </section>
 
+<!-- CTA Final -->
+<section class="py-24 md:py-32 bg-surface">
+    <div class="container mx-auto px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-headline font-extrabold text-on-surface mb-8 tracking-tighter leading-[1.1]">
+                Únase a la <span class="text-primary italic">Vanguardia Jurídica</span> hoy mismo.
+            </h2>
+            <p class="text-lg md:text-xl text-secondary mb-12 max-w-2xl mx-auto">
+                No deje que la burocracia frene su talento. Adopte la tecnología que está redefiniendo el derecho en Extremadura.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
+                <button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-primary-emphasis transition-all active:scale-95 shadow-xl shadow-primary/20">
                     Iniciar Prueba Gratuita
                 </button>
                 <button class="bg-white text-on-surface border border-surface-variant px-10 py-5 rounded-2xl font-bold text-xl hover:bg-surface-container-low transition-all">
                     Contactar Ventas
                 </button>
             </div>
-<p class="mt-8 text-sm text-secondary flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                        No requiere tarjeta de crédito • Instalación en 30 segundos
-                    </p>
-</div>
-</div>
+            <p class="mt-8 text-sm text-secondary flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                No requiere tarjeta de crédito • Instalación en 30 segundos
+            </p>
+        </div>
+    </div>
 </section>
 </main>
 <!-- Footer -->
