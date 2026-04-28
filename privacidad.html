@@ -12,7 +12,7 @@
             theme: {
               extend: {
                 colors: {
-                  "primary": "#d20000",
+                  "primary": "#C74E4E", "primary-emphasis": "#540202",
                   "background": "#f5faff",
                   "on-background": "#171c20",
                   "secondary": "#515f74",
@@ -36,16 +36,13 @@
 <body class="bg-background text-on-background font-body antialiased">
     <!-- TopAppBar Navigation -->
     <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
-        <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-[#d20000] dark:text-red-500" data-icon="gavel">gavel</span>
-            <span class="text-xl font-bold text-[#d20000] dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
-        </div>
+        <a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-10 w-auto group-hover:opacity-80 transition-opacity"></a>
         <nav class="hidden md:flex items-center gap-8">
-            <a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="index.html">Inicio</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="servicios.html">Servicios</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="pricing.html">Precios</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="blog.html">Blog</a>
-            <a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="index.html">Inicio</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="servicios.html">Servicios</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="pricing.html">Precios</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="blog.html">Blog</a>
+            <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
         </nav>
         <div class="flex items-center gap-4">
             <button class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-semibold active:scale-95 duration-200 text-xs md:text-sm">Prueba Gratis</button>
@@ -101,10 +98,7 @@
     <footer class="bg-stone-950 text-stone-400 py-20 px-6 border-t border-stone-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
             <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="material-symbols-outlined text-red-600" data-icon="gavel">gavel</span>
-                    <span class="text-2xl font-bold text-white font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
-                </div>
+                <a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-10 w-auto group-hover:opacity-80 transition-opacity"></a>
                 <p class="max-w-sm leading-relaxed text-stone-500">
                     Liderando la evolución del derecho a través de inteligencia artificial ética y precisa. Diseñado para los juristas del futuro.
                 </p>
