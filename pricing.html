@@ -92,7 +92,7 @@
   </head>
 <body class="bg-background text-on-background font-body selection:bg-primary-fixed-dim">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-24 w-full">
 <a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-20 w-auto group-hover:opacity-80 transition-opacity"></a>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#A02020] transition-colors px-1" href="index.html">Inicio</a>
@@ -102,10 +102,10 @@
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#A02020] transition-colors px-1" href="blog.html">Blog</a>
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#A02020] transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
 </nav>
-<button class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-medium text-xs md:text-sm active:scale-95 duration-200">Prueba Gratis</button>
+<div class="flex items-center gap-4 md:gap-8"><a href="https://ius-pilot-ai.lovable.app/login" class="text-on-surface font-semibold text-xs md:text-sm hover:text-primary transition-colors">Acceder</a><button class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-medium text-xs md:text-sm active:scale-95 duration-200">Prueba Gratis</button></div>
 </header>
 <!-- Main Content -->
-<main class="pt-24 md:pt-32 pb-16 md:pb-24 px-6 max-w-7xl mx-auto overflow-x-hidden">
+<main class="pt-32 md:pt-40 pb-16 md:pb-24 px-6 max-w-7xl mx-auto overflow-x-hidden">
     
     <!-- Feature-Rich Free Trial Card (As per image) -->
     <div class="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-stone-100 mb-20 relative overflow-hidden">
@@ -204,30 +204,66 @@
                 </div>
                 <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider">IVA no incluido</p>
             </div>
-            <button class="w-full bg-primary text-white py-4 rounded-xl font-bold text-base hover:brightness-110 transition-all mb-10">Contratar ahora</button>
+            <button class="w-full bg-[#A02020] text-white py-4 rounded-xl font-bold text-base hover:brightness-110 transition-all mb-10">Contratar ahora</button>
             
             <div class="space-y-4">
                 <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Incluye:</p>
-                <ul class="space-y-4">
+                <ul class="space-y-3">
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
                         <span>1 usuario</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
-                        <span>Copiloto jurídico entrenado con legislación, jurisprudencia y modelos reales</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span class="leading-tight">Copiloto jurídico entrenado con legislación, jurisprudencia y modelos reales</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
-                        <span>Redactor Lex: +24 plantillas</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Consultas ilimitadas</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Redactor de documentos ilimitado</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Calculadoras sin límites</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Festivos autonómicos en cálculo de plazos</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Subida de documentos (PDF, DOCX, imágenes)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span class="leading-tight">Generación de contratos, demandas, escritos, recursos y documentos jurídicos</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Cifrado y seguridad de acceso (AES-256)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Acceso a historial completo</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Panel privado e individual</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Soporte por email</span>
                     </li>
                 </ul>
             </div>
         </div>
 
         <!-- Teams Plan (Featured) -->
-        <div class="bg-white p-10 rounded-[2.5rem] border-2 border-primary shadow-2xl relative flex flex-col transform md:scale-105 z-10">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">Más popular</div>
+        <div class="bg-white p-10 rounded-[2.5rem] border-2 border-[#A02020] shadow-2xl relative flex flex-col transform md:scale-105 z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#A02020] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">Más popular</div>
             <div class="mb-8">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-2 text-primary">
@@ -250,22 +286,46 @@
                 </div>
                 <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider">IVA no incluido</p>
             </div>
-            <button class="w-full border-2 border-primary text-primary py-4 rounded-xl font-bold text-base hover:bg-primary/5 transition-all mb-10">Solicitar información</button>
+            <button class="w-full border-2 border-[#A02020] text-[#A02020] py-4 rounded-xl font-bold text-base hover:bg-[#A02020]/5 transition-all mb-10">Solicitar información</button>
             
             <div class="space-y-4">
                 <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Incluye todo del plan Pro y además:</p>
-                <ul class="space-y-4">
+                <ul class="space-y-3">
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
                         <span>De 2 a 5 usuarios</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
                         <span>Entorno privado con gestión de equipo</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
-                        <span>Historial compartido y base de datos propia</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Control de acceso por roles</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Historial compartido</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Subida de documentos del equipo</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span class="leading-tight">Motor jurídico optimizado para trabajo colaborativo</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span class="leading-tight">Panel de administración para gestionar usuarios y permisos</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Soporte prioritario por email</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Preparado para futura base de conocimiento privada</span>
                     </li>
                 </ul>
             </div>
@@ -291,18 +351,42 @@
             
             <div class="space-y-4">
                 <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Incluye todo lo anterior y además:</p>
-                <ul class="space-y-4">
+                <ul class="space-y-3">
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
-                        <span>Usuarios ilimitados (Licencia por organización)</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span class="leading-tight">Usuarios ilimitados (Licencia por organización)</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
                         <span>Entorno privado con gestión avanzada</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-stone-600">
-                        <span class="material-symbols-outlined text-primary text-lg" data-icon="check">check</span>
-                        <span>Soporte 24/7 con Account Manager</span>
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Integración API y automatizaciones</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Formación en Legal Prompting para equipos</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Asistencia prioritaria por teléfono y email</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span class="leading-tight">Conexión a bases de conocimiento privadas del cliente</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>SLA Premium (Disponibilidad ≥ 99,9%)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Informes de uso del equipo</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-stone-600">
+                        <span class="material-symbols-outlined text-[#A02020] text-lg" data-icon="check">check</span>
+                        <span>Personalización de modelos y flujos</span>
                     </li>
                 </ul>
             </div>
@@ -374,35 +458,89 @@
 </div>
 </div>
 </section>
-<!-- FAQs with Visual Support -->
+<!-- FAQs -->
 <section class="max-w-6xl mx-auto mb-20 md:mb-32">
-    <div class="text-center mb-16">
-        <h2 class="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6">Claridad sin letra pequeña</h2>
-        <p class="text-secondary max-w-2xl mx-auto">Resolvemos sus dudas para que pueda centrarse en lo que importa: su práctica jurídica.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-6">
-            <div class="group bg-white p-8 rounded-3xl border border-stone-100 hover:border-primary/20 transition-all shadow-sm">
-                <button class="w-full flex justify-between items-center text-left font-bold text-on-surface text-lg">
-                    <span>¿Es segura mi información confidencial?</span>
-                    <span class="material-symbols-outlined group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-4">
+            <h2 class="font-headline text-4xl font-bold text-on-surface mb-6">Preguntas frecuentes</h2>
+            <p class="text-secondary mb-10">Resolvemos todas tus dudas. Si tienes más:</p>
+            <a href="nosotros.html" class="inline-block border border-stone-200 px-8 py-3 rounded-full font-bold text-on-surface hover:bg-stone-50 transition-all">Contacta con nosotros</a>
+        </div>
+        
+        <div class="lg:col-span-8 space-y-4">
+            <!-- FAQ 1 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Qué es IusPilot?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
                 </button>
-                <div class="mt-4 text-secondary leading-relaxed text-sm">
-                    Absolutamente. IusPilot no utiliza tus documentos ni consultas para entrenar modelos públicos. Toda la información está cifrada de extremo a extremo y cumplimos con RGPD y estándares SOC2.
-                </div>
             </div>
-            
-            <div class="group bg-white p-8 rounded-3xl border border-stone-100 hover:border-primary/20 transition-all shadow-sm">
-                <button class="w-full flex justify-between items-center text-left font-bold text-on-surface text-lg">
+            <!-- FAQ 2 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿A qué profesionales está dirigido IusPilot?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Con qué tipos de documentos puede trabajar IusPilot?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Cómo funciona la prueba gratuita?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Qué incluyen los festivos autonómicos?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 6 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Cómo puedo cancelar o modificar mi suscripción?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 7 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Mis datos y documentos están seguros?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 8 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
                     <span>¿Puedo cambiar de plan en cualquier momento?</span>
-                    <span class="material-symbols-outlined group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
                 </button>
-                <div class="mt-4 text-secondary leading-relaxed text-sm">
-                    Sí, puedes escalar o reducir tu plan en cualquier momento desde tu panel de ajustes. Los cambios se aplicarán proporcionalmente en tu siguiente ciclo de facturación.
-                </div>
             </div>
-
+            <!-- FAQ 9 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿Qué pasa si mi equipo tiene más de 5 usuarios?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+            <!-- FAQ 10 -->
+            <div class="border-b border-stone-100 pb-4">
+                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group">
+                    <span>¿IusPilot sustituye el criterio del abogado?</span>
+                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
             <div class="group bg-white p-8 rounded-3xl border border-stone-100 hover:border-primary/20 transition-all shadow-sm">
                 <button class="w-full flex justify-between items-center text-left font-bold text-on-surface text-lg">
                     <span>¿Qué ocurre tras agotar el periodo de prueba?</span>
@@ -507,3 +645,5 @@
 </a>
 </nav>
 </body></html>
+
+
