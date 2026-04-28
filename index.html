@@ -105,7 +105,7 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)]">
 <nav class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
-<a href="index.html" class="flex items-center"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-10 w-auto"></a>
+<a href="index.html" class="flex items-center"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-14 w-auto"></a>
 <div class="hidden md:flex gap-8 items-center">
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="index.html">Inicio</a>
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#C74E4E] transition-colors px-1" href="servicios.html">Servicios</a>
@@ -216,6 +216,56 @@
                     <p class="text-secondary text-sm leading-relaxed">El pulso del derecho en Extremadura, siempre actualizado y a su alcance.</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Calculadoras Públicas (Integración Home) -->
+<section id="calculadoras-publicas" class="py-16 md:py-24 bg-surface-container-low border-b border-stone-100">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-6">Herramientas Jurídicas Gratuitas</h2>
+            <p class="text-secondary max-w-2xl mx-auto">Pruebe nuestras calculadoras avanzadas sin compromiso. Precisión técnica a su servicio.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Calc 1 -->
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/pensiones" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-primary" data-icon="family_history">family_history</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-on-surface">Pensiones Alimenticias</h3>
+                <p class="text-secondary text-sm mb-6 flex-grow">Cálculo de pensiones según el Baremo del CGPJ.</p>
+                <div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                </div>
+            </a>
+            <!-- Calc 2 -->
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/intereses" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-primary" data-icon="percent">percent</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-on-surface">Intereses de Demora</h3>
+                <p class="text-secondary text-sm mb-6 flex-grow">Intereses legales y de demora procesal.</p>
+                <div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                </div>
+            </a>
+            <!-- Calc 3 -->
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/despido" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-primary" data-icon="work_off">work_off</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-on-surface">Indemnización Despido</h3>
+                <p class="text-secondary text-sm mb-6 flex-grow">Cálculo según la normativa laboral vigente.</p>
+                <div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                    Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                </div>
+            </a>
+        </div>
+        <div class="text-center mt-12">
+            <a href="servicios.html#calculadoras" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+                Ver todas las calculadoras <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+            </a>
         </div>
     </div>
 </section>
@@ -334,161 +384,74 @@
                             Ver Plantillas <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
 </div>
 </div>
-<!-- Tool 3: Calculators -->
-<div class="bg-surface-container-low p-8 rounded-2xl group hover:bg-primary-container transition-colors duration-500">
-<div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="calculate">calculate</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-white transition-colors">Calculadoras</h3>
-<p class="text-secondary group-hover:text-white/70 transition-colors mb-6">Plazos procesales, indemnizaciones y tasas. Sin errores, con base legal actualizada diariamente.</p>
-<a href="#calculadoras-publicas" class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
-                            Calcular ahora <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Calculadoras Públicas -->
-<section id="calculadoras-publicas" class="py-16 md:py-24 bg-surface-container-low border-t border-stone-100">
-<div class="container mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-6">Herramientas Jurídicas Gratuitas</h2>
-<p class="text-secondary max-w-2xl mx-auto">Pruebe nuestras calculadoras avanzadas sin compromiso. Precisión técnica a su servicio.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Calc 1 -->
-<a href="https://ius-pilot-ai.lovable.app/calculadora/pensiones" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary" data-icon="family_history">family_history</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Pensiones Alimenticias</h3>
-<p class="text-secondary text-sm mb-6 flex-grow">Cálculo de pensiones según el Baremo del CGPJ.</p>
-<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</div>
-</a>
-<!-- Calc 2 -->
-<a href="https://ius-pilot-ai.lovable.app/calculadora/intereses" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary" data-icon="percent">percent</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Intereses de Demora</h3>
-<p class="text-secondary text-sm mb-6 flex-grow">Intereses legales y de demora procesal.</p>
-<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</div>
-</a>
-<!-- Calc 3 -->
-<a href="https://ius-pilot-ai.lovable.app/calculadora/despido" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary" data-icon="work_off">work_off</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Indemnización Despido</h3>
-<p class="text-secondary text-sm mb-6 flex-grow">Cálculo según la normativa laboral vigente.</p>
-<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</div>
-</a>
-<!-- Calc 4 -->
-<a href="https://ius-pilot-ai.lovable.app/calculadora/penas" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Calculadora de Penas</h3>
-<p class="text-secondary text-sm mb-6 flex-grow">Determinación de grados y condenas penales.</p>
-<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</div>
-</a>
-<!-- Calc 5 -->
-<a href="https://ius-pilot-ai.lovable.app/calculadora/baremo" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary" data-icon="monitor_heart">monitor_heart</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Baremo de Tráfico</h3>
-<p class="text-secondary text-sm mb-6 flex-grow">Indemnizaciones por accidentes de tráfico.</p>
-<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</div>
-</a>
-<!-- Calc 6 -->
-<a href="https://ius-pilot-ai.lovable.app/calculadora/plazos" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Calendario de Plazos</h3>
-<p class="text-secondary text-sm mb-6 flex-grow">Cálculo de plazos procesales y administrativos.</p>
-<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
-</div>
-</a>
-</div>
-</div>
+            <!-- Tool 3: Seguridad Jurídica -->
+            <div class="bg-surface-container-low p-8 rounded-2xl group hover:bg-primary-container transition-colors duration-500">
+                <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors">
+                    <span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="verified_user">verified_user</span>
+                </div>
+                <h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-white transition-colors">Seguridad Jurídica</h3>
+                <p class="text-secondary group-hover:text-white/70 transition-colors mb-6">Cifrado AES-256 y cumplimiento estricto de la GDPR. Sus datos y los de sus clientes bajo máxima protección.</p>
+                <div class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
+                    Más información <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Security Section -->
 <section class="py-16 md:py-24 bg-on-background text-white relative overflow-hidden">
-<div class="absolute inset-0 opacity-10">
-<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 40px 40px;"></div>
-</div>
-<div class="container mx-auto px-6 relative z-10">
-<div class="max-w-4xl mx-auto text-center">
-<span class="material-symbols-outlined text-red-500 text-5xl md:text-6xl mb-8" data-icon="shield_lock" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
-<h2 class="text-3xl md:text-5xl font-headline font-bold mb-6 md:mb-8">Blindaje Jurídico &amp; Digital</h2>
-<p class="text-lg md:text-xl text-stone-400 mb-12 md:mb-16 leading-relaxed">
-                        Su información es su mayor activo. Aplicamos los estándares más estrictos de seguridad global para garantizar que sus datos y los de sus clientes permanezcan privados.
-                    </p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-red-400" data-icon="verified_user">verified_user</span>
-</div>
-<div>
-<h4 class="font-bold mb-1">Cifrado AES-256</h4>
-<p class="text-sm text-stone-500">Estándar militar en reposo y tránsito.</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-red-400" data-icon="policy">policy</span>
-</div>
-<div>
-<h4 class="font-bold mb-1">Cumplimiento GDPR</h4>
-<p class="text-sm text-stone-500">Privacidad total bajo normativa europea.</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-red-400" data-icon="gpp_good">gpp_good</span>
-</div>
-<div>
-<h4 class="font-bold mb-1">SOC2 Tipo II</h4>
-<p class="text-sm text-stone-500">Auditorías externas de control.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="material-symbols-outlined text-[#C74E4E] text-5xl md:text-6xl mb-8" data-icon="shield_lock" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+            <h2 class="text-3xl md:text-5xl font-headline font-bold mb-6 md:mb-8">Blindaje Jurídico & Digital</h2>
+            <p class="text-lg md:text-xl text-stone-400 mb-12 md:mb-16 leading-relaxed">
+                Su información es su mayor activo. Aplicamos los estándares más estrictos de seguridad global para garantizar que sus datos y los de sus clientes permanezcan privados.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#C74E4E]" data-icon="verified_user">verified_user</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-1">Cifrado AES-256</h4>
+                        <p class="text-sm text-stone-500">Estándar militar en reposo y tránsito.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#C74E4E]" data-icon="policy">policy</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-1">Cumplimiento GDPR</h4>
+                        <p class="text-sm text-stone-500">Privacidad total bajo normativa europea.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-white/5 rounded-full flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#C74E4E]" data-icon="gpp_good">gpp_good</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-1">SOC2 Tipo II</h4>
+                        <p class="text-sm text-stone-500">Auditorías externas de control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Final CTA -->
-<section class="py-16 md:py-24 bg-surface-container-high overflow-hidden">
-<div class="container mx-auto px-6 text-center">
-<div class="max-w-3xl mx-auto lex-glass p-8 md:p-20 rounded-[2rem] md:rounded-[2.5rem] border border-white shadow-2xl relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-16 md:w-20 h-16 md:h-20 bg-primary rounded-2xl md:rounded-3xl flex items-center justify-center text-white rotate-12 shadow-xl">
-<span class="material-symbols-outlined text-3xl md:text-4xl" data-icon="auto_awesome">auto_awesome</span>
-</div>
-<h2 class="text-2xl md:text-6xl font-headline font-bold text-on-surface mb-6 md:mb-8 tracking-tighter">¿Preparado para transformar tu despacho?</h2>
-<p class="text-base md:text-lg text-secondary mb-8 md:mb-12">Únase a los líderes de la industria que ya están utilizando IusPilot para dominar el panorama legal moderno.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a href="calculadoras.html" class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-md font-bold text-lg hover:bg-surface-dim transition-all active:scale-95 duration-200">Probar Calculadoras</a>
-<button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
-                            Iniciar Prueba Gratuita
-                        </button>
-<button class="bg-white text-on-surface border border-surface-variant px-10 py-5 rounded-2xl font-bold text-xl hover:bg-surface-container-low transition-all">
-                            Contactar Ventas
-                        </button>
-</div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
+                    Iniciar Prueba Gratuita
+                </button>
+                <button class="bg-white text-on-surface border border-surface-variant px-10 py-5 rounded-2xl font-bold text-xl hover:bg-surface-container-low transition-all">
+                    Contactar Ventas
+                </button>
+            </div>
 <p class="mt-8 text-sm text-secondary flex items-center justify-center gap-2">
 <span class="material-symbols-outlined text-emerald-600" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
                         No requiere tarjeta de crédito • Instalación en 30 segundos
@@ -502,14 +465,18 @@
 <div class="container mx-auto px-6">
 <div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
 <div class="col-span-2">
-<a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-10 w-auto group-hover:opacity-80 transition-opacity"></a>
+<a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-14 w-auto group-hover:opacity-80 transition-opacity"></a>
 <p class="text-secondary max-w-xs mb-8">Redefiniendo la justicia mediante la inteligencia artificial avanzada y la seguridad absoluta.</p>
 <div class="flex gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
-</div>
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="public">public</span>
+    <a href="https://es.linkedin.com/in/ius-pilot-994b19399" target="_blank" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300" title="LinkedIn">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/iuspilot/" target="_blank" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300" title="Instagram">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/iuspilot/" target="_blank" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all duration-300" title="Instagram">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
 </div>
 </div>
 </div>
@@ -542,7 +509,7 @@
 </div>
 </div>
 <div class="pt-8 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-400 uppercase tracking-widest font-medium">
-<p>© 2024 IusPilot AI Technologies. Todos los derechos reservados.</p>
+<p>© 2025 IusPilot AI Technologies. Todos los derechos reservados.</p>
 <p>La referencia legal en Extremadura</p>
 </div>
 </div>
