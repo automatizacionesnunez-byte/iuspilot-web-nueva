@@ -14,7 +14,7 @@
           extend: {
             colors: {
               "tertiary": "#002b5c",
-              "primary": "#610000",
+              "primary": "#d20000",
               "inverse-surface": "#2b3135",
               "on-tertiary": "#ffffff",
               "surface-container": "#e9eef3",
@@ -32,11 +32,11 @@
               "on-surface-variant": "#5a403c",
               "surface-bright": "#f5faff",
               "on-secondary-container": "#57657b",
-              "on-primary-fixed-variant": "#920703",
+              "on-primary-fixed-variant": "#d20000",
               "on-error-container": "#93000a",
               "inverse-on-surface": "#ecf1f6",
               "primary-fixed-dim": "#ffb4a8",
-              "primary-container": "#8b0000",
+              "primary-container": "#ff4d4d",
               "outline-variant": "#e3beb8",
               "on-secondary-fixed-variant": "#3a485c",
               "on-tertiary-fixed-variant": "#00458d",
@@ -54,7 +54,7 @@
               "inverse-primary": "#ffb4a8",
               "on-tertiary-fixed": "#001b3e",
               "on-background": "#171c20",
-              "on-primary-fixed": "#410000",
+              "on-primary-fixed": "#600000",
               "error": "#ba1a1a",
               "tertiary-fixed": "#d6e3ff",
               "tertiary-container": "#004185",
@@ -81,7 +81,7 @@
         -webkit-backdrop-filter: blur(16px);
       }
       .red-gradient-bg {
-        background: radial-gradient(circle at top right, #8B0000, #610000);
+        background: radial-gradient(circle at top right, #ff4d4d, #d20000);
       }
       .ambient-shadow {
         box-shadow: 0 20px 40px rgba(23, 28, 32, 0.06);
@@ -97,15 +97,16 @@
 <!-- TopAppBar Navigation -->
 <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-red-900 dark:text-red-500" data-icon="gavel">gavel</span>
-<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+<span class="material-symbols-outlined text-[#d20000] dark:text-red-500" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-[#d20000] dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="index.html">Inicio</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
-<a class="text-red-900 dark:text-red-500 font-semibold px-1" href="nosotros.html">Sobre nosotros</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="calculadoras.html">Calculadoras</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="pricing.html">Precios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="blog.html">Blog</a>
+<a class="text-[#d20000] dark:text-red-500 font-semibold px-1" href="nosotros.html">Sobre nosotros</a>
 </nav>
 <div class="flex items-center gap-4">
 <button class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-semibold active:scale-95 duration-200 text-xs md:text-sm">Prueba Gratis</button>
@@ -341,7 +342,7 @@ Especialista en cumplimiento normativo y protección de datos, garantizando que 
 <span class="material-symbols-outlined" data-icon="article">article</span>
 <span>Blog</span>
 </a>
-<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="nosotros.html">
+<a class="flex flex-col items-center justify-center text-[#d20000] dark:text-red-400 bg-red-50 dark:bg-[#600000]/30 rounded-xl px-2 py-1 font-medium font-['Inter'] text-[10px] uppercase tracking-wider" href="nosotros.html">
 <span class="material-symbols-outlined" data-icon="group">group</span>
 <span>Nosotros</span>
 </a>

@@ -20,7 +20,7 @@
           extend: {
             colors: {
               "tertiary": "#002b5c",
-              "primary": "#610000",
+              "primary": "#d20000",
               "inverse-surface": "#2b3135",
               "on-tertiary": "#ffffff",
               "surface-container": "#e9eef3",
@@ -38,11 +38,11 @@
               "on-surface-variant": "#5a403c",
               "surface-bright": "#f5faff",
               "on-secondary-container": "#57657b",
-              "on-primary-fixed-variant": "#920703",
+              "on-primary-fixed-variant": "#d20000",
               "on-error-container": "#93000a",
               "inverse-on-surface": "#ecf1f6",
               "primary-fixed-dim": "#ffb4a8",
-              "primary-container": "#8b0000",
+              "primary-container": "#ff4d4d",
               "outline-variant": "#e3beb8",
               "on-secondary-fixed-variant": "#3a485c",
               "on-tertiary-fixed-variant": "#00458d",
@@ -60,7 +60,7 @@
               "inverse-primary": "#ffb4a8",
               "on-tertiary-fixed": "#001b3e",
               "on-background": "#171c20",
-              "on-primary-fixed": "#410000",
+              "on-primary-fixed": "#600000",
               "error": "#ba1a1a",
               "tertiary-fixed": "#d6e3ff",
               "tertiary-container": "#004185",
@@ -92,7 +92,7 @@
         backdrop-filter: blur(16px);
       }
       .hero-gradient {
-        background: radial-gradient(circle at top right, #8B0000 0%, #610000 100%);
+        background: radial-gradient(circle at top right, #ff4d4d 0%, #d20000 100%);
       }
     </style>
 <style>
@@ -106,15 +106,16 @@
 <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)]">
 <nav class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-red-900 dark:text-red-500 text-2xl" data-icon="gavel">gavel</span>
-<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+<span class="material-symbols-outlined text-[#d20000] dark:text-red-500 text-2xl" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-[#d20000] dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
 </div>
 <div class="hidden md:flex gap-8 items-center">
-<a class="text-red-900 dark:text-red-500 font-semibold transition-colors" href="index.html">Inicio</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="calculadoras.html">Calculadoras</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="pricing.html">Precios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
 </div>
 <div class="flex items-center gap-4">
 <button class="bg-primary text-on-primary px-5 py-2.5 rounded-xl font-semibold text-sm active:scale-95 duration-200 shadow-lg shadow-primary/20">Prueba Gratis</button>
@@ -126,7 +127,7 @@
 <section class="relative min-h-[795px] flex items-center overflow-hidden hero-gradient">
 <div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
 <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-red-400 blur-[120px] rounded-full"></div>
-<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-red-900 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#d20000] blur-[100px] rounded-full"></div>
 </div>
 <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 py-12 md:py-20 text-balance">
 <div class="flex-1 text-center md:text-left">
@@ -163,20 +164,65 @@
 <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
 </div>
 <div class="space-y-3">
-<div class="h-2 w-3/4 bg-red-900/20 rounded"></div>
-<div class="h-2 w-full bg-red-900/20 rounded"></div>
-<div class="h-2 w-1/2 bg-red-900/40 rounded"></div>
+<div class="h-2 w-3/4 bg-[#d20000]/20 rounded"></div>
+<div class="h-2 w-full bg-[#d20000]/20 rounded"></div>
+<div class="h-2 w-1/2 bg-[#d20000]/40 rounded"></div>
 </div>
 <div class="mt-6 flex justify-end">
 <div class="h-8 w-24 bg-primary rounded-lg"></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Strip (Option 1: Floating Glass) -->
+    <div class="absolute bottom-0 left-0 w-full translate-y-1/2 z-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Feature 1: Consultas -->
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:shadow-primary/20 transition-all duration-500 h-64">
+                <div class="absolute inset-0">
+                    <img src="images/hero_consultas.png" alt="Consultas Rápidas" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                </div>
+                <div class="relative p-8 h-full flex flex-col justify-end">
+                    <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-2xl" data-icon="search_spark">search_spark</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-2 text-on-surface">Consultas Rápidas</h3>
+                    <p class="text-secondary text-sm leading-relaxed">Inteligencia jurídica instantánea para decisiones críticas en segundos.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Redacción -->
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:shadow-primary/20 transition-all duration-500 h-64">
+                <div class="absolute inset-0">
+                    <img src="images/hero_redaccion.png" alt="Redacción Automática" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                </div>
+                <div class="relative p-8 h-full flex flex-col justify-end">
+                    <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-2xl" data-icon="edit_document">edit_document</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-2 text-on-surface">Redacción Automática</h3>
+                    <p class="text-secondary text-sm leading-relaxed">Documentación procesal generada con precisión quirúrgica y rigor legal.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3: Blog -->
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:shadow-primary/20 transition-all duration-500 h-64">
+                <div class="absolute inset-0">
+                    <img src="images/hero_blog.png" alt="Blog y Recursos" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                </div>
+                <div class="relative p-8 h-full flex flex-col justify-end">
+                    <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-2xl" data-icon="article">article</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline mb-2 text-on-surface">Blog y Recursos</h3>
+                    <p class="text-secondary text-sm leading-relaxed">El pulso del derecho en Extremadura, siempre actualizado y a su alcance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- Trust Signals -->
 <section class="py-12 bg-white dark:bg-stone-950 border-y border-stone-100/10">
 <div class="container mx-auto px-6">
@@ -298,13 +344,92 @@
 </div>
 <h3 class="text-2xl font-headline font-bold mb-4 group-hover:text-white transition-colors">Calculadoras</h3>
 <p class="text-secondary group-hover:text-white/70 transition-colors mb-6">Plazos procesales, indemnizaciones y tasas. Sin errores, con base legal actualizada diariamente.</p>
-<div class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
+<a href="#calculadoras-publicas" class="flex items-center text-primary group-hover:text-white font-bold gap-1 text-sm cursor-pointer">
                             Calcular ahora <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
-</div>
+</a>
 </div>
 </div>
 </div>
 </section>
+
+<!-- Calculadoras Públicas -->
+<section id="calculadoras-publicas" class="py-16 md:py-24 bg-surface-container-low border-t border-stone-100">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-6">Herramientas Jurídicas Gratuitas</h2>
+<p class="text-secondary max-w-2xl mx-auto">Pruebe nuestras calculadoras avanzadas sin compromiso. Precisión técnica a su servicio.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Calc 1 -->
+<a href="https://ius-pilot-ai.lovable.app/calculadora/pensiones" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="family_history">family_history</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Pensiones Alimenticias</h3>
+<p class="text-secondary text-sm mb-6 flex-grow">Cálculo de pensiones según el Baremo del CGPJ.</p>
+<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+<!-- Calc 2 -->
+<a href="https://ius-pilot-ai.lovable.app/calculadora/intereses" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="percent">percent</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Intereses de Demora</h3>
+<p class="text-secondary text-sm mb-6 flex-grow">Intereses legales y de demora procesal.</p>
+<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+<!-- Calc 3 -->
+<a href="https://ius-pilot-ai.lovable.app/calculadora/despido" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="work_off">work_off</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Indemnización Despido</h3>
+<p class="text-secondary text-sm mb-6 flex-grow">Cálculo según la normativa laboral vigente.</p>
+<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+<!-- Calc 4 -->
+<a href="https://ius-pilot-ai.lovable.app/calculadora/penas" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Calculadora de Penas</h3>
+<p class="text-secondary text-sm mb-6 flex-grow">Determinación de grados y condenas penales.</p>
+<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+<!-- Calc 5 -->
+<a href="https://ius-pilot-ai.lovable.app/calculadora/baremo" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="monitor_heart">monitor_heart</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Baremo de Tráfico</h3>
+<p class="text-secondary text-sm mb-6 flex-grow">Indemnizaciones por accidentes de tráfico.</p>
+<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+<!-- Calc 6 -->
+<a href="https://ius-pilot-ai.lovable.app/calculadora/plazos" target="_blank" class="lex-glass p-8 rounded-2xl border border-white hover:border-primary/30 transition-all group shadow-sm flex flex-col h-full">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Calendario de Plazos</h3>
+<p class="text-secondary text-sm mb-6 flex-grow">Cálculo de plazos procesales y administrativos.</p>
+<div class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                            Probar Ahora <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
 <!-- Security Section -->
 <section class="py-16 md:py-24 bg-on-background text-white relative overflow-hidden">
 <div class="absolute inset-0 opacity-10">
@@ -359,6 +484,7 @@
 <h2 class="text-2xl md:text-6xl font-headline font-bold text-on-surface mb-6 md:mb-8 tracking-tighter">¿Preparado para transformar tu despacho?</h2>
 <p class="text-base md:text-lg text-secondary mb-8 md:mb-12">Únase a los líderes de la industria que ya están utilizando IusPilot para dominar el panorama legal moderno.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="calculadoras.html" class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-md font-bold text-lg hover:bg-surface-dim transition-all active:scale-95 duration-200">Probar Calculadoras</a>
 <button class="bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-primary-container transition-all active:scale-95 shadow-xl shadow-primary/20">
                             Iniciar Prueba Gratuita
                         </button>
@@ -380,8 +506,8 @@
 <div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
 <div class="col-span-2">
 <div class="flex items-center gap-2 mb-6">
-<span class="material-symbols-outlined text-red-900 text-2xl" data-icon="gavel">gavel</span>
-<span class="text-2xl font-bold text-red-900 font-headline tracking-tight">IusPilot</span>
+<span class="material-symbols-outlined text-[#d20000] text-2xl" data-icon="gavel">gavel</span>
+<span class="text-2xl font-bold text-[#d20000] font-headline tracking-tight">IusPilot</span>
 </div>
 <p class="text-secondary max-w-xs mb-8">Redefiniendo la justicia mediante la inteligencia artificial avanzada y la seguridad absoluta.</p>
 <div class="flex gap-4">
@@ -396,10 +522,10 @@
 <div>
 <h5 class="font-bold mb-6 text-on-surface">Producto</h5>
 <ul class="space-y-4 text-secondary text-sm">
-<li><a class="hover:text-primary transition-colors" href="#">Funcionalidades</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Seguridad</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Redactor</a></li>
+<li><a class="hover:text-primary transition-colors" href="servicios.html">Servicios</a></li>
+<li><a class="hover:text-primary transition-colors" href="calculadoras.html">Calculadoras</a></li>
 <li><a class="hover:text-primary transition-colors" href="pricing.html">Precios</a></li>
+<li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
 </ul>
 </div>
 <div>
@@ -429,7 +555,7 @@
 </footer>
 <!-- BottomNavBar (Mobile Only) -->
 <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white dark:bg-stone-950 shadow-[0_-10px_30px_rgba(0,0,0,0.04)] border-t border-stone-100/10">
-<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 transition-all" href="index.html">
+<a class="flex flex-col items-center justify-center text-[#d20000] dark:text-red-400 bg-red-50 dark:bg-[#600000]/30 rounded-xl px-2 py-1 transition-all" href="index.html">
 <span class="material-symbols-outlined" data-icon="home">home</span>
 <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Inicio</span>
 </a>

@@ -16,7 +16,7 @@
           extend: {
             colors: {
               "tertiary": "#002b5c",
-              "primary": "#610000",
+              "primary": "#d20000",
               "inverse-surface": "#2b3135",
               "on-tertiary": "#ffffff",
               "surface-container": "#e9eef3",
@@ -34,11 +34,11 @@
               "on-surface-variant": "#5a403c",
               "surface-bright": "#f5faff",
               "on-secondary-container": "#57657b",
-              "on-primary-fixed-variant": "#920703",
+              "on-primary-fixed-variant": "#d20000",
               "on-error-container": "#93000a",
               "inverse-on-surface": "#ecf1f6",
               "primary-fixed-dim": "#ffb4a8",
-              "primary-container": "#8b0000",
+              "primary-container": "#ff4d4d",
               "outline-variant": "#e3beb8",
               "on-secondary-fixed-variant": "#3a485c",
               "on-tertiary-fixed-variant": "#00458d",
@@ -56,7 +56,7 @@
               "inverse-primary": "#ffb4a8",
               "on-tertiary-fixed": "#001b3e",
               "on-background": "#171c20",
-              "on-primary-fixed": "#410000",
+              "on-primary-fixed": "#600000",
               "error": "#ba1a1a",
               "tertiary-fixed": "#d6e3ff",
               "tertiary-container": "#004185",
@@ -79,7 +79,7 @@
         vertical-align: middle;
       }
       .lex-vanguard-gradient {
-        background: radial-gradient(circle at top right, #8b0000 0%, #610000 100%);
+        background: radial-gradient(circle at top right, #ff4d4d 0%, #d20000 100%);
       }
       .glass-panel {
         background: rgba(255, 255, 255, 0.7);
@@ -97,15 +97,16 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-red-900 dark:text-red-500 text-2xl" data-icon="gavel">gavel</span>
-<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+<span class="material-symbols-outlined text-[#d20000] dark:text-red-500 text-2xl" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-[#d20000] dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="index.html">Inicio</a>
-<a class="text-red-900 dark:text-red-500 font-semibold px-1" href="servicios.html">Servicios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="pricing.html">Precios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="index.html">Inicio</a>
+<a class="text-[#d20000] dark:text-red-500 font-semibold px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="calculadoras.html">Calculadoras</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="pricing.html">Precios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
 </nav>
 <button class="bg-primary text-on-primary px-4 md:px-6 py-2 md:py-2.5 rounded-lg md:rounded-md font-medium text-xs md:text-sm active:scale-95 duration-200 transition-all shadow-lg shadow-primary/20">Prueba Gratis</button>
 </header>
@@ -190,7 +191,7 @@
 <p class="text-xs text-secondary">Preview en vivo</p>
 </div>
 </div>
-<button class="w-full md:w-auto bg-primary text-on-primary px-8 py-4 rounded-md font-bold hover:bg-red-900 transition-all">
+<button class="w-full md:w-auto bg-primary text-on-primary px-8 py-4 rounded-md font-bold hover:bg-[#d20000] transition-all">
                         Probar Redactor Gratis
                     </button>
 </div>
@@ -221,54 +222,114 @@
 </div>
 </div>
 <!-- Decorative Background Element -->
-<div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div<!-- Calculadoras Legales (Bento UI Premium) -->
+<!-- Calculadoras Legales (Elite Grid Layout) -->
+<section class="space-y-16">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        <div class="max-w-2xl space-y-4">
+            <h2 class="text-4xl md:text-6xl font-headline font-bold text-on-surface tracking-tighter">Instrumental <span class="text-primary italic">Aritmético</span></h2>
+            <p class="text-base md:text-lg text-secondary leading-relaxed max-w-xl">
+                Precisión absoluta para el jurista moderno. Nuestras calculadoras eliminan el error humano en las liquidaciones más complejas con total rigor técnico.
+            </p>
+        </div>
+        <div class="flex flex-col items-center md:items-end gap-3">
+            <span class="px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Acceso Público Gratuito
+            </span>
+            <p class="text-[10px] text-stone-400 font-bold uppercase tracking-widest">Sin necesidad de registro</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Card 1: Pensiones -->
+        <div class="group relative bg-white p-8 rounded-[2.5rem] border border-stone-200/60 shadow-xl shadow-stone-200/40 hover:border-primary/40 hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-primary text-3xl" data-icon="family_history">family_history</span>
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-lg font-extrabold mb-2 font-headline">Pensiones</h3>
+                <p class="text-stone-500 text-xs leading-relaxed mb-8">Alimenticia y compensatoria según baremos CGPJ.</p>
+            </div>
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/pensiones" target="_blank" 
+               class="w-full bg-stone-100 text-stone-900 py-3.5 rounded-2xl font-bold text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn shadow-sm">
+                Calcular
+                <span class="material-symbols-outlined text-[14px] group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Card 2: Intereses -->
+        <div class="group relative bg-white p-8 rounded-[2.5rem] border border-stone-200/60 shadow-xl shadow-stone-200/40 hover:border-primary/40 hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-primary text-3xl" data-icon="percent">percent</span>
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-lg font-extrabold mb-2 font-headline">Intereses</h3>
+                <p class="text-stone-500 text-xs leading-relaxed mb-8">Legales, de demora judicial y tributaria.</p>
+            </div>
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/intereses" target="_blank" 
+               class="w-full bg-stone-100 text-stone-900 py-3.5 rounded-2xl font-bold text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn shadow-sm">
+                Calcular
+                <span class="material-symbols-outlined text-[14px] group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Card 3: Despido -->
+        <div class="group relative bg-white p-8 rounded-[2.5rem] border border-stone-200/60 shadow-xl shadow-stone-200/40 hover:border-primary/40 hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-primary text-3xl" data-icon="work_off">work_off</span>
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-lg font-extrabold mb-2 font-headline">Despido</h3>
+                <p class="text-stone-500 text-xs leading-relaxed mb-8">Cálculo exacto de indemnizaciones laborales.</p>
+            </div>
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/despido" target="_blank" 
+               class="w-full bg-stone-100 text-stone-900 py-3.5 rounded-2xl font-bold text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn shadow-sm">
+                Calcular
+                <span class="material-symbols-outlined text-[14px] group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Card 4: Penas -->
+        <div class="group relative bg-white p-8 rounded-[2.5rem] border border-stone-200/60 shadow-xl shadow-stone-200/40 hover:border-primary/40 hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-primary text-3xl" data-icon="gavel">gavel</span>
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-lg font-extrabold mb-2 font-headline">Penas</h3>
+                <p class="text-stone-500 text-xs leading-relaxed mb-8">Grados, mitades y límites de prisión.</p>
+            </div>
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/penas" target="_blank" 
+               class="w-full bg-stone-100 text-stone-900 py-3.5 rounded-2xl font-bold text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn shadow-sm">
+                Calcular
+                <span class="material-symbols-outlined text-[14px] group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Card 5: Baremo -->
+        <div class="group relative bg-white p-8 rounded-[2.5rem] border border-stone-200/60 shadow-xl shadow-stone-200/40 hover:border-primary/40 hover:shadow-primary/5 transition-all duration-500 flex flex-col h-full overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <span class="material-symbols-outlined text-primary text-3xl" data-icon="monitor_heart">monitor_heart</span>
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-lg font-extrabold mb-2 font-headline">Baremo</h3>
+                <p class="text-stone-500 text-xs leading-relaxed mb-8">Daños en accidentes de circulación.</p>
+            </div>
+            <a href="https://ius-pilot-ai.lovable.app/calculadora/baremo" target="_blank" 
+               class="w-full bg-stone-100 text-stone-900 py-3.5 rounded-2xl font-bold text-[11px] uppercase tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 group/btn shadow-sm">
+                Calcular
+                <span class="material-symbols-outlined text-[14px] group-hover/btn:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+            </a>
+        </div>
+    </div>
 </section>
-<!-- Calculadoras Legales -->
-<section class="space-y-12">
-<div class="flex flex-col md:flex-row justify-between md:items-end gap-6 text-center md:text-left">
-<div class="max-w-xl space-y-4">
-<h2 class="text-3xl md:text-4xl font-headline font-bold text-on-surface">Calculadoras Legales</h2>
-<p class="text-base md:text-lg text-secondary leading-relaxed">
-                        Precisión aritmética en cada cálculo. Olvídate de los errores manuales en liquidaciones complejas o intereses de demora.
-                    </p>
-</div>
-<button class="w-full md:w-auto bg-surface-container-highest text-on-surface px-6 py-3 rounded-md font-bold hover:bg-surface-dim transition-all">
-                    Probar Calculadoras Gratis
-                </button>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-<!-- Calc 1 -->
-<div class="p-6 bg-white rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-stone-100 hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary mb-4 block group-hover:scale-110 transition-transform" data-icon="family_history">family_history</span>
-<h3 class="font-bold text-sm mb-1">Pensiones</h3>
-<p class="text-xs text-secondary">Alimenticia y compensatoria.</p>
-</div>
-<!-- Calc 2 -->
-<div class="p-6 bg-white rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-stone-100 hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary mb-4 block group-hover:scale-110 transition-transform" data-icon="percent">percent</span>
-<h3 class="font-bold text-sm mb-1">Intereses</h3>
-<p class="text-xs text-secondary">Legales y demora judicial.</p>
-</div>
-<!-- Calc 3 -->
-<div class="p-6 bg-white rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-stone-100 hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary mb-4 block group-hover:scale-110 transition-transform" data-icon="work_off">work_off</span>
-<h3 class="font-bold text-sm mb-1">Despido</h3>
-<p class="text-xs text-secondary">Cálculo de indemnizaciones.</p>
-</div>
-<!-- Calc 4 -->
-<div class="p-6 bg-white rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-stone-100 hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary mb-4 block group-hover:scale-110 transition-transform" data-icon="gavel">gavel</span>
-<h3 class="font-bold text-sm mb-1">Penas</h3>
-<p class="text-xs text-secondary">Grados y días de condena.</p>
-</div>
-<!-- Calc 5 -->
-<div class="p-6 bg-white rounded-2xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-stone-100 hover:border-primary/20 transition-all group">
-<span class="material-symbols-outlined text-primary mb-4 block group-hover:scale-110 transition-transform" data-icon="monitor_heart">monitor_heart</span>
-<h3 class="font-bold text-sm mb-1">Baremo</h3>
-<p class="text-xs text-secondary">Accidentes de tráfico.</p>
-</div>
-</div>
-</section>
+
+
 <!-- Calendario de Plazos -->
 <section class="grid md:grid-cols-2 gap-16 items-center">
 <div class="relative h-[400px]">
@@ -314,10 +375,10 @@
 </div>
 </div>
 </div>
-<button class="bg-primary text-on-primary px-8 py-4 rounded-md font-bold flex items-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all">
-                    Configurar Calendario
+<a href="https://ius-pilot-ai.lovable.app/calculadora/plazos" target="_blank" class="bg-primary text-on-primary px-8 py-4 rounded-md font-bold flex items-center gap-2 hover:shadow-xl hover:shadow-primary/30 transition-all w-fit">
+                    Probar Calendario de Plazos
                     <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
-</button>
+</a>
 </div>
 </section>
 </main>
@@ -371,7 +432,7 @@
 <span class="material-symbols-outlined" data-icon="home">home</span>
 <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Inicio</span>
 </a>
-<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 transition-all" href="servicios.html">
+<a class="flex flex-col items-center justify-center text-[#d20000] dark:text-red-400 bg-red-50 dark:bg-[#600000]/30 rounded-xl px-2 py-1 transition-all" href="servicios.html">
 <span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
 <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Servicios</span>
 </a>

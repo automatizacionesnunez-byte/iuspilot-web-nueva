@@ -14,7 +14,7 @@
           extend: {
             colors: {
               "tertiary": "#002b5c",
-              "primary": "#610000",
+              "primary": "#d20000",
               "inverse-surface": "#2b3135",
               "on-tertiary": "#ffffff",
               "surface-container": "#e9eef3",
@@ -32,11 +32,11 @@
               "on-surface-variant": "#5a403c",
               "surface-bright": "#f5faff",
               "on-secondary-container": "#57657b",
-              "on-primary-fixed-variant": "#920703",
+              "on-primary-fixed-variant": "#d20000",
               "on-error-container": "#93000a",
               "inverse-on-surface": "#ecf1f6",
               "primary-fixed-dim": "#ffb4a8",
-              "primary-container": "#8b0000",
+              "primary-container": "#ff4d4d",
               "outline-variant": "#e3beb8",
               "on-secondary-fixed-variant": "#3a485c",
               "on-tertiary-fixed-variant": "#00458d",
@@ -54,7 +54,7 @@
               "inverse-primary": "#ffb4a8",
               "on-tertiary-fixed": "#001b3e",
               "on-background": "#171c20",
-              "on-primary-fixed": "#410000",
+              "on-primary-fixed": "#600000",
               "error": "#ba1a1a",
               "tertiary-fixed": "#d6e3ff",
               "tertiary-container": "#004185",
@@ -94,15 +94,16 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-16 w-full">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-red-900 dark:text-red-500" data-icon="gavel">gavel</span>
-<span class="text-xl font-bold text-red-900 dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
+<span class="material-symbols-outlined text-[#d20000] dark:text-red-500" data-icon="gavel">gavel</span>
+<span class="text-xl font-bold text-[#d20000] dark:text-red-100 font-['Plus_Jakarta_Sans'] tracking-tight">IusPilot</span>
 </div>
 <nav class="hidden md:flex gap-8 items-center">
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="index.html">Inicio</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="servicios.html">Servicios</a>
-<a class="text-red-900 dark:text-red-500 font-semibold px-1" href="pricing.html">Precios</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="blog.html">Blog</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-red-900 transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="index.html">Inicio</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="servicios.html">Servicios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="calculadoras.html">Calculadoras</a>
+<a class="text-[#d20000] dark:text-red-500 font-semibold px-1" href="pricing.html">Precios</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="blog.html">Blog</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#d20000] transition-colors px-1" href="nosotros.html">Sobre nosotros</a>
 </nav>
 <button class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-medium text-xs md:text-sm active:scale-95 duration-200">Prueba Gratis</button>
 </header>
@@ -128,108 +129,171 @@
 </div>
 </section>
 <!-- Pricing Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
-<!-- Free -->
-<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col border border-transparent hover:border-outline-variant transition-all duration-300">
-<div class="mb-8">
-<h3 class="font-headline text-xl font-bold mb-2">Gratuito</h3>
-<p class="text-sm text-secondary min-h-[40px]">Para estudiantes y profesionales explorando el sistema.</p>
+<!-- Feature-Rich Free Trial Card -->
+<div class="col-span-1 md:col-span-2 lg:col-span-4 bg-white rounded-[3rem] p-1 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-stone-100 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+        <div class="lg:col-span-8 p-10 md:p-14">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
+                <span class="material-symbols-outlined text-[14px]" data-icon="redeem">redeem</span>
+                Prueba gratuita
+            </div>
+            <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tighter mb-6">Explora IusPilot <span class="text-primary italic">sin compromiso</span></h2>
+            <p class="text-secondary text-lg mb-10 max-w-xl">Accede a todas las funcionalidades principales con límites generosos. Sin tarjeta de crédito.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xl" data-icon="chat_bubble">chat_bubble</span>
+                    </div>
+                    <p class="text-sm font-medium text-stone-600"><span class="font-bold text-on-surface">20 consultas</span> al copiloto jurídico</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xl" data-icon="description">description</span>
+                    </div>
+                    <p class="text-sm font-medium text-stone-600"><span class="font-bold text-on-surface">4 tipos</span> de documentos en el redactor</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xl" data-icon="calculate">calculate</span>
+                    </div>
+                    <p class="text-sm font-medium text-stone-600"><span class="font-bold text-on-surface">5 usos</span> por calculadora</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xl" data-icon="calendar_today">calendar_today</span>
+                    </div>
+                    <p class="text-sm font-medium text-stone-600">Calendario de plazos completo</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xl" data-icon="auto_awesome">auto_awesome</span>
+                    </div>
+                    <p class="text-sm font-medium text-stone-600">Análisis de documentos con IA</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-xl" data-icon="notifications">notifications</span>
+                    </div>
+                    <p class="text-sm font-medium text-stone-600">Notificaciones por email y Telegram</p>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <button class="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:brightness-110 shadow-xl shadow-primary/30 transition-all active:scale-95">Comenzar gratis</button>
+            </div>
+        </div>
+        
+        <div class="lg:col-span-4 bg-stone-50/50 border-l border-stone-100 p-10 md:p-14 flex flex-col justify-center items-center text-center space-y-12 relative overflow-hidden">
+            <img src="images/hero_consultas.png" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.03] grayscale pointer-events-none">
+            <div class="space-y-1 relative z-10">
+                <p class="text-5xl font-extrabold font-headline text-on-surface">20</p>
+                <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">consultas al copiloto</p>
+            </div>
+            <div class="space-y-1 relative z-10">
+                <p class="text-5xl font-extrabold font-headline text-on-surface">4</p>
+                <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">tipos de documento</p>
+            </div>
+            <div class="space-y-1 relative z-10">
+                <p class="text-5xl font-extrabold font-headline text-on-surface">∞</p>
+                <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">plazos y calendario</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="mb-8">
-<span class="text-4xl font-extrabold text-on-background">0€</span>
-<span class="text-secondary text-sm">/mes</span>
+
+<!-- Main Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32 items-stretch">
+    <!-- Pro -->
+    <div class="bg-surface-container-lowest p-10 rounded-[2.5rem] ambient-shadow flex flex-col border border-stone-100 hover:border-primary/20 transition-all duration-300">
+        <div class="mb-8">
+            <h3 class="font-headline text-2xl font-bold mb-2">Plan Pro</h3>
+            <p class="text-sm text-secondary min-h-[40px]">Para profesionales y juristas independientes con alta carga de trabajo.</p>
+        </div>
+        <div class="mb-8">
+            <span class="text-5xl font-extrabold text-on-background">75€</span>
+            <span class="text-secondary text-sm">/mes</span>
+        </div>
+        <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                <span>Consultas AI ilimitadas</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                <span>Análisis de documentos (100MB)</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                <span>Redacción de escritos procesales</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                <span>Base de datos legal personalizada</span>
+            </li>
+        </ul>
+        <button class="w-full py-4 rounded-xl border border-stone-200 text-on-surface font-bold hover:bg-stone-50 transition-colors">Seleccionar Pro</button>
+    </div>
+
+    <!-- Teams (Featured) -->
+    <div class="bg-primary p-10 rounded-[2.5rem] ambient-shadow flex flex-col relative overflow-hidden transform md:scale-110 z-10 text-white">
+        <div class="absolute top-6 right-6 bg-white/20 backdrop-blur-md text-white px-3 py-1 text-[9px] font-bold uppercase tracking-widest rounded-full border border-white/20">Más Popular</div>
+        <div class="mb-8">
+            <h3 class="font-headline text-2xl font-bold mb-2">Plan Teams</h3>
+            <p class="text-sm text-white/70 min-h-[40px]">Colaboración total para departamentos y firmas medianas.</p>
+        </div>
+        <div class="mb-8">
+            <span class="text-5xl font-extrabold">135€</span>
+            <span class="text-white/70 text-sm">/mes</span>
+        </div>
+        <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-white/50 text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span>Hasta 5 usuarios incluidos</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-white/50 text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span>Biblioteca de casos compartida</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-white/50 text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span>API de integración & Webhooks</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-white/50 text-lg" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span>Soporte prioritario 24/7</span>
+            </li>
+        </ul>
+        <button class="w-full py-5 rounded-2xl bg-white text-primary font-extrabold hover:bg-stone-100 transition-all shadow-xl">Mejorar a Teams</button>
+    </div>
+
+    <!-- Custom -->
+    <div class="bg-surface-container-lowest p-10 rounded-[2.5rem] ambient-shadow flex flex-col border border-stone-100 hover:border-primary/20 transition-all duration-300">
+        <div class="mb-8">
+            <h3 class="font-headline text-2xl font-bold mb-2">A Medida</h3>
+            <p class="text-sm text-secondary min-h-[40px]">Soluciones Enterprise con despliegue on-premise o cloud privada.</p>
+        </div>
+        <div class="mb-8">
+            <span class="text-3xl font-extrabold text-on-background">Personalizado</span>
+        </div>
+        <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
+                <span>Seguridad avanzada & SSO</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
+                <span>Entrenamiento con datos propios</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
+                <span>Account Manager dedicado</span>
+            </li>
+        </ul>
+        <button class="w-full py-4 rounded-xl border border-primary text-primary font-bold hover:bg-primary/5 transition-colors">Contactar Ventas</button>
+    </div>
 </div>
-<ul class="space-y-4 mb-10 flex-grow">
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
-<span>5 consultas AI/mes</span>
-</li>
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
-<span>Acceso a Jurisprudencia Básica</span>
-</li>
-</ul>
-<button class="w-full py-3 rounded-lg border border-outline-variant text-on-surface font-semibold hover:bg-surface-container transition-colors">Empezar gratis</button>
-</div>
-<!-- Pro -->
-<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col border border-transparent hover:border-outline-variant transition-all duration-300">
-<div class="mb-8">
-<h3 class="font-headline text-xl font-bold mb-2">Pro</h3>
-<p class="text-sm text-secondary min-h-[40px]">Para profesionales y juristas independientes con alta carga de trabajo.</p>
-</div>
-<div class="mb-8">
-<span class="text-4xl font-extrabold text-on-background">75€</span>
-<span class="text-secondary text-sm">/mes</span>
-</div>
-<ul class="space-y-4 mb-10 flex-grow">
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
-<span>Consultas AI ilimitadas</span>
-</li>
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
-<span>Análisis de documentos (50MB)</span>
-</li>
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
-<span>Redacción de escritos procesales</span>
-</li>
-</ul>
-<button class="w-full py-3 rounded-lg border border-outline-variant text-on-surface font-semibold hover:bg-surface-container transition-colors">Seleccionar Pro</button>
-</div>
-<!-- Teams (Featured) -->
-<div class="bg-primary-container p-8 rounded-xl ambient-shadow flex flex-col relative overflow-hidden transform scale-105 z-10">
-<div class="absolute top-0 right-0 bg-primary-fixed text-on-primary-fixed px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-bl-lg">Más Popular</div>
-<div class="mb-8">
-<h3 class="font-headline text-xl font-bold mb-2 text-on-primary">Teams</h3>
-<p class="text-sm text-on-primary/70 min-h-[40px]">Colaboración total para departamentos y firmas medianas.</p>
-</div>
-<div class="mb-8">
-<span class="text-4xl font-extrabold text-on-primary">135€</span>
-<span class="text-on-primary/70 text-sm">/mes</span>
-</div>
-<ul class="space-y-4 mb-10 flex-grow">
-<li class="flex items-start gap-3 text-sm text-on-primary">
-<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
-<span>Hasta 5 usuarios incluidos</span>
-</li>
-<li class="flex items-start gap-3 text-sm text-on-primary">
-<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
-<span>Biblioteca de casos compartida</span>
-</li>
-<li class="flex items-start gap-3 text-sm text-on-primary">
-<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
-<span>API de integración básica</span>
-</li>
-<li class="flex items-start gap-3 text-sm text-on-primary">
-<span class="material-symbols-outlined text-on-primary-container text-lg" data-icon="star" data-weight="fill">star</span>
-<span>Soporte prioritario 24/7</span>
-</li>
-</ul>
-<button class="w-full py-3 rounded-lg bg-on-primary text-primary font-bold hover:bg-white transition-colors shadow-lg">Mejorar a Teams</button>
-</div>
-<!-- Custom -->
-<div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col border border-transparent hover:border-outline-variant transition-all duration-300">
-<div class="mb-8">
-<h3 class="font-headline text-xl font-bold mb-2">A Medida</h3>
-<p class="text-sm text-secondary min-h-[40px]">Soluciones Enterprise con despliegue on-premise o cloud privada.</p>
-</div>
-<div class="mb-8">
-<span class="text-4xl font-extrabold text-on-background">A medida</span>
-</div>
-<ul class="space-y-4 mb-10 flex-grow">
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
-<span>Seguridad avanzada &amp; SSO</span>
-</li>
-<li class="flex items-start gap-3 text-sm">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="verified_user">verified_user</span>
-<span>Entrenamiento con datos propios</span>
-</li>
-</ul>
-<button class="w-full py-3 rounded-lg border border-primary text-primary font-semibold hover:bg-primary/5 transition-colors">Contactar Ventas</button>
-</div>
-</div>
+
 <!-- Comparison Table -->
 <section class="mb-20 md:mb-32">
 <h2 class="font-headline text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16">Comparativa de Capacidades</h2>
@@ -248,7 +312,7 @@
 <tbody class="divide-y divide-surface-container">
 <tr>
 <td class="p-6 font-semibold">Consultas Mensuales</td>
-<td class="p-6 text-secondary">5</td>
+<td class="p-6 text-secondary">20</td>
 <td class="p-6 text-secondary">Ilimitadas</td>
 <td class="p-6 text-primary font-medium">Ilimitadas</td>
 <td class="p-6 text-secondary">Ilimitadas</td>
@@ -262,17 +326,24 @@
 </tr>
 <tr>
 <td class="p-6 font-semibold">Modelos de Redacción</td>
-<td class="p-6 text-secondary">Básico</td>
+<td class="p-6 text-secondary">4 tipos</td>
 <td class="p-6 text-secondary">Avanzado</td>
 <td class="p-6 text-primary font-medium">Avanzado + IA</td>
 <td class="p-6 text-secondary">Personalizado</td>
 </tr>
 <tr>
 <td class="p-6 font-semibold">Integración de Documentos</td>
-<td class="p-6 text-secondary">—</td>
+<td class="p-6 text-secondary">Análisis PDF IA</td>
 <td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
 <td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
 <td class="p-6"><span class="material-symbols-outlined text-primary" data-icon="check">check</span></td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">Calculadoras</td>
+<td class="p-6 text-secondary">5 usos / tipo</td>
+<td class="p-6 text-secondary">Ilimitadas</td>
+<td class="p-6 text-primary font-medium">Ilimitadas</td>
+<td class="p-6 text-secondary">Ilimitadas</td>
 </tr>
 <tr>
 <td class="p-6 font-semibold">Colaboración en Tiempo Real</td>
@@ -341,8 +412,8 @@
 <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 px-6">
 <div class="col-span-2">
 <div class="flex items-center gap-2 mb-6">
-<span class="material-symbols-outlined text-red-900 text-2xl" data-icon="gavel">gavel</span>
-<span class="text-2xl font-bold text-red-900 font-headline tracking-tight">IusPilot</span>
+<span class="material-symbols-outlined text-[#d20000] text-2xl" data-icon="gavel">gavel</span>
+<span class="text-2xl font-bold text-[#d20000] font-headline tracking-tight">IusPilot</span>
 </div>
 <p class="text-secondary max-w-sm mb-8">El Vanguardista del Derecho Digital. Elevando el estándar de la práctica legal a través de la inteligencia artificial ética.</p>
 </div>
@@ -350,6 +421,7 @@
 <h4 class="font-bold mb-6 text-on-surface uppercase text-[10px] tracking-widest">Producto</h4>
 <ul class="space-y-4 text-secondary text-sm">
 <li><a class="hover:text-primary transition-colors" href="servicios.html">Servicios</a></li>
+<li><a class="hover:text-primary transition-colors" href="calculadoras.html">Calculadoras</a></li>
 <li><a class="hover:text-primary transition-colors" href="pricing.html">Precios</a></li>
 <li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
 </ul>
@@ -379,7 +451,7 @@
 <span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
 <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Servicios</span>
 </a>
-<a class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 bg-red-50 dark:bg-red-950/30 rounded-xl px-2 py-1 transition-all" href="pricing.html">
+<a class="flex flex-col items-center justify-center text-[#d20000] dark:text-red-400 bg-red-50 dark:bg-[#600000]/30 rounded-xl px-2 py-1 transition-all" href="pricing.html">
 <span class="material-symbols-outlined" data-icon="payments">payments</span>
 <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Precios</span>
 </a>
