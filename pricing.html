@@ -92,8 +92,8 @@
   </head>
 <body class="bg-background text-on-background font-body selection:bg-primary-fixed-dim">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-24 w-full">
-<a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-20 w-auto group-hover:opacity-80 transition-opacity"></a>
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(23,28,32,0.06)] flex justify-between items-center px-4 md:px-6 h-32 w-full">
+<a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-28 w-auto group-hover:opacity-80 transition-opacity"></a>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#A02020] transition-colors px-1" href="index.html">Inicio</a>
 <a class="text-stone-600 dark:text-stone-400 hover:text-[#A02020] transition-colors px-1" href="servicios.html">Servicios</a>
@@ -105,7 +105,7 @@
 <div class="flex items-center gap-4 md:gap-8"><a href="https://ius-pilot-ai.lovable.app/login" class="text-on-surface font-semibold text-xs md:text-sm hover:text-primary transition-colors">Acceder</a><a href="https://ius-pilot-ai.lovable.app/register" class="bg-primary text-on-primary px-4 md:px-5 py-2 rounded-lg font-medium text-xs md:text-sm active:scale-95 duration-200">Prueba Gratis</a></div>
 </header>
 <!-- Main Content -->
-<main class="pt-32 md:pt-40 pb-16 md:pb-24 px-6 max-w-7xl mx-auto overflow-x-hidden">
+<main class="pt-40 md:pt-48 pb-16 md:pb-24 px-6 max-w-7xl mx-auto overflow-x-hidden">
     
     <!-- Feature-Rich Free Trial Card (As per image) -->
     <div class="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.06)] border border-stone-100 mb-20 relative overflow-hidden">
@@ -174,12 +174,12 @@
         <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-4">Planes y precios</h2>
         <p class="text-secondary text-lg mb-10">Consigue el copiloto de los profesionales jurídicos</p>
         
-        <div class="inline-flex items-center p-1 bg-stone-100 rounded-full">
-            <button class="px-6 py-2 rounded-full text-sm font-bold bg-white shadow-sm text-on-surface transition-all">Mensual</button>
-            <button class="px-6 py-2 rounded-full text-sm font-bold text-stone-500 hover:text-on-surface transition-all flex items-center gap-2">
+        <div class="inline-flex items-center p-1 bg-stone-100 rounded-full" id="billing-toggle">
+            <button class="px-6 py-2 rounded-full text-sm font-bold bg-white shadow-sm text-on-surface transition-all" data-period="monthly">Mensual</button>
+            <button class="px-6 py-2 rounded-full text-sm font-bold text-stone-500 hover:text-on-surface transition-all flex items-center gap-2" data-period="quarterly">
                 Trimestral <span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full">-11%</span>
             </button>
-            <button class="px-6 py-2 rounded-full text-sm font-bold text-stone-500 hover:text-on-surface transition-all flex items-center gap-2">
+            <button class="px-6 py-2 rounded-full text-sm font-bold text-stone-500 hover:text-on-surface transition-all flex items-center gap-2" data-period="annual">
                 Anual <span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full">-20%</span>
             </button>
         </div>
@@ -199,12 +199,12 @@
             </div>
             <div class="mb-6">
                 <div class="flex items-baseline gap-1">
-                    <span class="text-4xl font-extrabold text-on-surface">55€</span>
+                    <span class="text-4xl font-extrabold text-on-surface" id="price-calc">66,55€</span>
                     <span class="text-secondary text-sm">/mes</span>
                 </div>
-                <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider">IVA no incluido</p>
+                <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider" id="billing-calc">Facturado mensualmente · IVA incl.</p>
             </div>
-            <a href="https://ius-pilot-ai.lovable.app/register" class="w-full bg-stone-100 text-on-surface py-3 rounded-xl font-bold text-sm text-center hover:bg-stone-200 transition-all mb-8">Contratar ahora</a>
+            <a href="https://buy.stripe.com/cNi3co60KdHK72baPI8ww06" id="link-calc" class="w-full bg-stone-100 text-on-surface py-3 rounded-xl font-bold text-sm text-center hover:bg-stone-200 transition-all mb-8">Contratar ahora</a>
             
             <div class="space-y-4">
                 <ul class="space-y-3">
@@ -236,12 +236,12 @@
             </div>
             <div class="mb-8">
                 <div class="flex items-baseline gap-1">
-                    <span class="text-5xl font-extrabold text-on-surface">95€</span>
+                    <span class="text-5xl font-extrabold text-on-surface" id="price-pro">114,95€</span>
                     <span class="text-secondary text-sm">/mes</span>
                 </div>
-                <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider">IVA no incluido</p>
+                <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider" id="billing-pro">Facturado mensualmente · IVA incl.</p>
             </div>
-            <button class="w-full bg-[#A02020] text-white py-4 rounded-xl font-bold text-base hover:brightness-110 transition-all mb-10">Contratar ahora</button>
+            <a href="https://buy.stripe.com/00wcMY2OydHKgCLga28ww00" id="link-pro" class="w-full bg-[#A02020] text-white py-4 rounded-xl font-bold text-base hover:brightness-110 transition-all mb-10 text-center block">Contratar ahora</a>
             
             <div class="space-y-4">
                 <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Incluye:</p>
@@ -318,13 +318,13 @@
             </div>
             <div class="mb-8 border-b border-stone-100 pb-8">
                 <div class="flex items-baseline gap-1">
-                    <span class="text-5xl font-extrabold text-on-surface">165€</span>
+                    <span class="text-5xl font-extrabold text-on-surface" id="price-teams">199,65€</span>
                     <span class="text-secondary text-sm">/mes</span>
                 </div>
-                <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider">Incluye 2 usuarios · IVA no incluido</p>
+                <p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-wider" id="billing-teams">Facturado mensualmente · IVA incl.</p>
                 <p class="text-[10px] text-primary mt-2 font-bold uppercase tracking-wider">+45€/mes por cada usuario adicional</p>
             </div>
-            <button class="w-full border-2 border-[#A02020] text-[#A02020] py-4 rounded-xl font-bold text-base hover:bg-[#A02020]/5 transition-all mb-10">Solicitar información</button>
+            <a href="https://buy.stripe.com/3cIcMYexg47a9aj0b48ww03" id="link-teams" class="w-full border-2 border-[#A02020] text-[#A02020] py-4 rounded-xl font-bold text-base hover:bg-[#A02020]/5 transition-all mb-10 text-center block">Contratar ahora</a>
             
             <div class="space-y-4">
                 <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Incluye todo del plan Pro y además:</p>
@@ -659,17 +659,17 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-white border-t border-stone-100 py-16 px-6">
-<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 px-6">
-<div>
-<a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-20 w-auto group-hover:opacity-80 transition-opacity"></a>
-<p class="text-secondary max-w-sm mb-8">El Vanguardista del Derecho Digital. Elevando el estándar de la práctica legal a través de la inteligencia artificial ética.</p>
+<footer class="bg-white border-t border-stone-100 py-20 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12 mb-16 px-6">
+<div class="max-w-sm">
+<a href="index.html" class="flex items-center group"><img src="images/logo-iuspilot.png" alt="IusPilot Logo" class="h-24 w-auto group-hover:opacity-80 transition-opacity"></a>
+<p class="text-secondary mt-6">El Vanguardista del Derecho Digital. Elevando el estándar de la práctica legal a través de la inteligencia artificial ética.</p>
 </div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 flex-grow justify-items-end">
 <div>
 <h4 class="font-bold mb-6 text-on-surface uppercase text-[10px] tracking-widest">Producto</h4>
 <ul class="space-y-4 text-secondary text-sm">
 <li><a class="hover:text-primary transition-colors" href="servicios.html">Servicios</a></li>
-<li></li>
 <li><a class="hover:text-primary transition-colors" href="pricing.html">Precios</a></li>
 <li><a class="hover:text-primary transition-colors" href="blog.html">Blog</a></li>
 </ul>
@@ -677,11 +677,18 @@
 <div>
 <h4 class="font-bold mb-6 text-on-surface uppercase text-[10px] tracking-widest">Compañía</h4>
 <ul class="space-y-4 text-secondary text-sm">
+<li><a class="hover:text-primary transition-colors" href="nosotros.html">Sobre nosotros</a></li>
 <li><a class="hover:text-primary transition-colors" href="aviso-legal.html">Aviso Legal</a></li>
 <li><a class="hover:text-primary transition-colors" href="privacidad.html">Privacidad</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-on-surface uppercase text-[10px] tracking-widest">Legal</h4>
+<ul class="space-y-4 text-secondary text-sm">
 <li><a class="hover:text-primary transition-colors" href="terminos.html">Términos</a></li>
 <li><a class="hover:text-primary transition-colors" href="cookies.html">Cookies</a></li>
 </ul>
+</div>
 </div>
 </div>
 <div class="max-w-7xl mx-auto pt-8 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-400 uppercase tracking-widest font-medium px-6">
@@ -712,6 +719,80 @@
 <span class="font-['Inter'] text-[10px] font-medium uppercase tracking-wider">Nosotros</span>
 </a>
 </nav>
+<script>
+    const stripeLinks = {
+        monthly: {
+            calc: 'https://buy.stripe.com/cNi3co60KdHK72baPI8ww06',
+            pro: 'https://buy.stripe.com/00wcMY2OydHKgCLga28ww00',
+            teams: 'https://buy.stripe.com/3cIcMYexg47a9aj0b48ww03'
+        },
+        quarterly: {
+            calc: 'https://buy.stripe.com/cNi3co60KdHK72baPI8ww06', // Fallback to monthly as no quarterly link provided
+            pro: 'https://buy.stripe.com/28E00c2Oy5be4U35vo8ww01',
+            teams: 'https://buy.stripe.com/6oU14g1KuavyeuD8HA8ww04'
+        },
+        annual: {
+            calc: 'https://buy.stripe.com/00w7sEah0eLOgCLbTM8ww07',
+            pro: 'https://buy.stripe.com/3cI5kw9cW47aeuD0b48ww02',
+            teams: 'https://buy.stripe.com/8x2fZagFo5be3PZaPI8ww05'
+        }
+    };
+
+    const prices = {
+        monthly: { calc: '66,55€', pro: '114,95€', teams: '199,65€' },
+        quarterly: { calc: '66,55€', pro: '102,45€', teams: '177,87€' },
+        annual: { calc: '53,24€', pro: '91,96€', teams: '159,72€' }
+    };
+
+    const billingLabels = {
+        monthly: 'Facturado mensualmente · IVA incl.',
+        quarterly: (total) => `Facturado trimestralmente: ${total}€ · IVA incl.`,
+        annual: (total) => `Facturado anualmente: ${total}€ · IVA incl.`
+    };
+
+    const totals = {
+        quarterly: { pro: '307,34', teams: '533,61' },
+        annual: { calc: '638,88', pro: '1.103,52', teams: '1.916,64' }
+    };
+
+    document.querySelectorAll('#billing-toggle button').forEach(button => {
+        button.addEventListener('click', () => {
+            const period = button.dataset.period;
+            
+            // Update UI toggle
+            document.querySelectorAll('#billing-toggle button').forEach(btn => {
+                btn.classList.remove('bg-white', 'shadow-sm', 'text-on-surface');
+                btn.classList.add('text-stone-500');
+            });
+            button.classList.add('bg-white', 'shadow-sm', 'text-on-surface');
+            button.classList.remove('text-stone-500');
+
+            // Update Prices and Links
+            document.getElementById('price-calc').innerText = prices[period].calc;
+            document.getElementById('price-pro').innerText = prices[period].pro;
+            document.getElementById('price-teams').innerText = prices[period].teams;
+
+            document.getElementById('link-calc').href = stripeLinks[period].calc;
+            document.getElementById('link-pro').href = stripeLinks[period].pro;
+            document.getElementById('link-teams').href = stripeLinks[period].teams;
+
+            // Update Billing Labels
+            if (period === 'monthly') {
+                document.getElementById('billing-calc').innerText = billingLabels.monthly;
+                document.getElementById('billing-pro').innerText = billingLabels.monthly;
+                document.getElementById('billing-teams').innerText = billingLabels.monthly;
+            } else if (period === 'quarterly') {
+                document.getElementById('billing-calc').innerText = 'Solo disponible mensual/anual';
+                document.getElementById('billing-pro').innerText = billingLabels.quarterly(totals.quarterly.pro);
+                document.getElementById('billing-teams').innerText = billingLabels.quarterly(totals.quarterly.teams);
+            } else {
+                document.getElementById('billing-calc').innerText = billingLabels.annual(totals.annual.calc);
+                document.getElementById('billing-pro').innerText = billingLabels.annual(totals.annual.pro);
+                document.getElementById('billing-teams').innerText = billingLabels.annual(totals.annual.teams);
+            }
+        });
+    });
+</script>
 </body></html>
 
 
