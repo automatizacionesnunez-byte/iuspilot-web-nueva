@@ -755,24 +755,21 @@
         // Calculadoras
         document.getElementById('price-calc').innerText = `${p.calc}€`;
         document.querySelector('#price-calc + span').innerText = currentPeriod === 'annual' ? '/año' : '/mes';
-        const calcTotal = (p.calc * IVA).toFixed(2);
-        document.getElementById('billing-calc').innerText = currentPeriod === 'quarterly' ? 'Sin trimestral' : `Total: ${calcTotal}€ · IVA incl.`;
+        document.getElementById('billing-calc').innerText = currentPeriod === 'quarterly' ? 'Sin trimestral' : 'IVA no incluido';
         if (currentPeriod === 'quarterly') document.getElementById('billing-calc').classList.add('text-primary');
         else document.getElementById('billing-calc').classList.remove('text-primary');
 
         // Pro
         document.getElementById('price-pro').innerText = `${p.pro}€`;
         document.querySelector('#price-pro + span').innerText = multiplier;
-        const proTotal = (p.pro * IVA).toFixed(2);
-        document.getElementById('billing-pro').innerText = `Total: ${proTotal}€ · IVA incl.`;
+        document.getElementById('billing-pro').innerText = 'IVA no incluido';
 
         // Teams
         const additionalUsers = Math.max(0, currentUsers - 2);
         const teamsBase = p.teams + (additionalUsers * p.add);
         document.getElementById('price-teams').innerText = `${teamsBase}€`;
         document.querySelector('#price-teams + span').innerText = multiplier;
-        const teamsTotal = (teamsBase * IVA).toFixed(2);
-        document.getElementById('billing-teams').innerText = `Total: ${teamsTotal}€ · IVA incl.`;
+        document.getElementById('billing-teams').innerText = 'IVA no incluido';
         document.getElementById('teams-count').innerText = currentUsers;
 
         // Links
@@ -802,7 +799,7 @@
     });
 
     document.getElementById('teams-plus').addEventListener('click', () => {
-        if (currentUsers < 10) {
+        if (currentUsers < 5) {
             currentUsers++;
             updateDisplay();
         }
