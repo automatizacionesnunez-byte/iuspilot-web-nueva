@@ -308,9 +308,9 @@
                         <span class="text-xs font-bold uppercase tracking-widest">Usuarios</span>
                     </div>
                     <div class="flex items-center gap-3 bg-stone-100 rounded-lg p-1 px-3">
-                        <button class="text-stone-400 hover:text-on-surface transition-colors font-bold">—</button>
-                        <span class="text-sm font-bold text-on-surface">2</span>
-                        <button class="text-stone-400 hover:text-on-surface transition-colors font-bold">+</button>
+                        <button id="teams-minus" class="text-stone-400 hover:text-on-surface transition-colors font-bold">—</button>
+                        <span id="teams-count" class="text-sm font-bold text-on-surface">2</span>
+                        <button id="teams-plus" class="text-stone-400 hover:text-on-surface transition-colors font-bold">+</button>
                     </div>
                 </div>
                 <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">IusPilot Teams</h3>
@@ -720,6 +720,13 @@
 </a>
 </nav>
 <script>
+    const IVA = 1.21;
+    const basePrices = {
+        monthly: { calc: 55, pro: 95, teams: 165, add: 45 },
+        quarterly: { calc: 55, pro: 254, teams: 441, add: 120 },
+        annual: { calc: 528, pro: 912, teams: 1584, add: 432 }
+    };
+
     const stripeLinks = {
         monthly: {
             calc: 'https://buy.stripe.com/cNi3co60KdHK72baPI8ww06',
@@ -727,7 +734,7 @@
             teams: 'https://buy.stripe.com/3cIcMYexg47a9aj0b48ww03'
         },
         quarterly: {
-            calc: 'https://buy.stripe.com/cNi3co60KdHK72baPI8ww06', // Fallback to monthly as no quarterly link provided
+            calc: 'https://buy.stripe.com/cNi3co60KdHK72baPI8ww06',
             pro: 'https://buy.stripe.com/28E00c2Oy5be4U35vo8ww01',
             teams: 'https://buy.stripe.com/6oU14g1KuavyeuD8HA8ww04'
         },
@@ -738,60 +745,76 @@
         }
     };
 
-    const prices = {
-        monthly: { calc: '66,55€', pro: '114,95€', teams: '199,65€' },
-        quarterly: { calc: '66,55€', pro: '102,45€', teams: '177,87€' },
-        annual: { calc: '53,24€', pro: '91,96€', teams: '159,72€' }
-    };
+    let currentPeriod = 'monthly';
+    let currentUsers = 2;
 
-    const billingLabels = {
-        monthly: 'Facturado mensualmente · IVA incl.',
-        quarterly: (total) => `Facturado trimestralmente: ${total}€ · IVA incl.`,
-        annual: (total) => `Facturado anualmente: ${total}€ · IVA incl.`
-    };
+    function updateDisplay() {
+        const p = basePrices[currentPeriod];
+        const multiplier = currentPeriod === 'monthly' ? '/mes' : (currentPeriod === 'quarterly' ? '/trimestre' : '/año');
+        
+        // Calculadoras
+        document.getElementById('price-calc').innerText = `${p.calc}€`;
+        document.querySelector('#price-calc + span').innerText = currentPeriod === 'annual' ? '/año' : '/mes';
+        const calcTotal = (p.calc * IVA).toFixed(2);
+        document.getElementById('billing-calc').innerText = currentPeriod === 'quarterly' ? 'Sin trimestral' : `Total: ${calcTotal}€ · IVA incl.`;
+        if (currentPeriod === 'quarterly') document.getElementById('billing-calc').classList.add('text-primary');
+        else document.getElementById('billing-calc').classList.remove('text-primary');
 
-    const totals = {
-        quarterly: { pro: '307,34', teams: '533,61' },
-        annual: { calc: '638,88', pro: '1.103,52', teams: '1.916,64' }
-    };
+        // Pro
+        document.getElementById('price-pro').innerText = `${p.pro}€`;
+        document.querySelector('#price-pro + span').innerText = multiplier;
+        const proTotal = (p.pro * IVA).toFixed(2);
+        document.getElementById('billing-pro').innerText = `Total: ${proTotal}€ · IVA incl.`;
+
+        // Teams
+        const additionalUsers = Math.max(0, currentUsers - 2);
+        const teamsBase = p.teams + (additionalUsers * p.add);
+        document.getElementById('price-teams').innerText = `${teamsBase}€`;
+        document.querySelector('#price-teams + span').innerText = multiplier;
+        const teamsTotal = (teamsBase * IVA).toFixed(2);
+        document.getElementById('billing-teams').innerText = `Total: ${teamsTotal}€ · IVA incl.`;
+        document.getElementById('teams-count').innerText = currentUsers;
+
+        // Links
+        document.getElementById('link-calc').href = stripeLinks[currentPeriod].calc;
+        document.getElementById('link-pro').href = stripeLinks[currentPeriod].pro;
+        const linkTeams = document.getElementById('link-teams');
+        if (currentUsers > 2) {
+            linkTeams.innerText = 'Contactar para +2 usuarios';
+            linkTeams.href = 'nosotros.html';
+        } else {
+            linkTeams.innerText = 'Contratar ahora';
+            linkTeams.href = stripeLinks[currentPeriod].teams;
+        }
+    }
 
     document.querySelectorAll('#billing-toggle button').forEach(button => {
         button.addEventListener('click', () => {
-            const period = button.dataset.period;
-            
-            // Update UI toggle
+            currentPeriod = button.dataset.period;
             document.querySelectorAll('#billing-toggle button').forEach(btn => {
                 btn.classList.remove('bg-white', 'shadow-sm', 'text-on-surface');
                 btn.classList.add('text-stone-500');
             });
             button.classList.add('bg-white', 'shadow-sm', 'text-on-surface');
             button.classList.remove('text-stone-500');
-
-            // Update Prices and Links
-            document.getElementById('price-calc').innerText = prices[period].calc;
-            document.getElementById('price-pro').innerText = prices[period].pro;
-            document.getElementById('price-teams').innerText = prices[period].teams;
-
-            document.getElementById('link-calc').href = stripeLinks[period].calc;
-            document.getElementById('link-pro').href = stripeLinks[period].pro;
-            document.getElementById('link-teams').href = stripeLinks[period].teams;
-
-            // Update Billing Labels
-            if (period === 'monthly') {
-                document.getElementById('billing-calc').innerText = billingLabels.monthly;
-                document.getElementById('billing-pro').innerText = billingLabels.monthly;
-                document.getElementById('billing-teams').innerText = billingLabels.monthly;
-            } else if (period === 'quarterly') {
-                document.getElementById('billing-calc').innerText = 'Solo disponible mensual/anual';
-                document.getElementById('billing-pro').innerText = billingLabels.quarterly(totals.quarterly.pro);
-                document.getElementById('billing-teams').innerText = billingLabels.quarterly(totals.quarterly.teams);
-            } else {
-                document.getElementById('billing-calc').innerText = billingLabels.annual(totals.annual.calc);
-                document.getElementById('billing-pro').innerText = billingLabels.annual(totals.annual.pro);
-                document.getElementById('billing-teams').innerText = billingLabels.annual(totals.annual.teams);
-            }
+            updateDisplay();
         });
     });
+
+    document.getElementById('teams-plus').addEventListener('click', () => {
+        if (currentUsers < 10) {
+            currentUsers++;
+            updateDisplay();
+        }
+    });
+    document.getElementById('teams-minus').addEventListener('click', () => {
+        if (currentUsers > 2) {
+            currentUsers--;
+            updateDisplay();
+        }
+    });
+
+    updateDisplay();
 </script>
 </body></html>
 
