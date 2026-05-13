@@ -232,7 +232,7 @@
                     <span class="text-xs font-bold uppercase tracking-widest">1 usuario</span>
                 </div>
                 <h3 class="font-headline text-2xl font-bold text-on-surface mb-2">IusPilot Pro</h3>
-                <p class="text-sm text-secondary min-h-[40px]">Ideal para abogados independientes, autónomos y asesores jurídicos</p>
+                <p class="text-sm text-secondary min-h-[40px]">Ideal para juristas independientes, autónomos y asesores jurídicos</p>
             </div>
             <div class="mb-8">
                 <div class="flex items-baseline gap-1">
@@ -496,128 +496,204 @@
 </div>
 </div>
 </section>
-<!-- FAQs -->
-<section class="max-w-6xl mx-auto mb-20 md:mb-32">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <div class="lg:col-span-4">
-            <h2 class="font-headline text-4xl font-bold text-on-surface mb-6">Preguntas frecuentes</h2>
-            <p class="text-secondary mb-10">Resolvemos todas tus dudas. Si tienes más:</p>
-            <a href="nosotros.html" class="inline-block border border-stone-200 px-8 py-3 rounded-full font-bold text-on-surface hover:bg-stone-50 transition-all">Contacta con nosotros</a>
+<!-- FAQs Section -->
+<section class="max-w-6xl mx-auto mb-20 md:mb-32 px-4">
+    <div class="text-center mb-16">
+        <h2 class="font-headline text-3xl md:text-5xl font-bold text-on-surface mb-6">Preguntas frecuentes</h2>
+        <p class="text-secondary max-w-2xl mx-auto text-lg">Resolvemos tus dudas sobre planes, seguridad y capacidades de nuestra inteligencia artificial.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- Sidebar Contact Card -->
+        <div class="lg:col-span-4 space-y-6">
+            <div class="bg-stone-50 dark:bg-stone-900/50 p-8 rounded-[2rem] border border-stone-100 dark:border-stone-800 shadow-sm">
+                <div class="w-12 h-12 bg-[#A02020]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-[#A02020]" data-icon="support_agent">support_agent</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">¿Aún tienes dudas?</h3>
+                <p class="text-sm text-secondary mb-8 leading-relaxed">Nuestro equipo de soporte está listo para ayudarte con cualquier consulta técnica o comercial sobre IusPilot.</p>
+                <div class="space-y-4">
+                    <a href="nosotros.html" class="flex items-center justify-center gap-2 w-full bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 py-3 rounded-xl font-bold text-sm hover:bg-stone-50 dark:hover:bg-stone-800 transition-all">
+                        <span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+                        Enviar mensaje
+                    </a>
+                    <a href="nosotros.html" class="flex items-center justify-center gap-2 w-full text-stone-500 font-bold text-sm hover:text-on-surface transition-all">
+                        Ir a página de contacto
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="p-8 rounded-[2rem] border border-stone-100 dark:border-stone-800 flex items-center gap-4">
+                <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-green-600 text-lg" data-icon="security">security</span>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-secondary mb-1 text-left">Garantía de Seguridad</h4>
+                    <p class="text-[11px] text-stone-400 text-left">Tus datos están protegidos bajo estricto cumplimiento RGPD y cifrado AES-256.</p>
+                </div>
+            </div>
         </div>
         
-        <div class="lg:col-span-8 space-y-4">
-            <!-- FAQ 1 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Qué es IusPilot?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    IusPilot es la plataforma líder de inteligencia artificial aumentada diseñada específicamente para el sector jurídico. Combina modelos de lenguaje avanzados con un profundo conocimiento del derecho procesal, permitiendo a los abogados automatizar tareas técnicas, analizar jurisprudencia y redactar documentos con precisión milimétrica.
+        <!-- Accordion Section -->
+        <div class="lg:col-span-8">
+            <div class="space-y-3" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="help_outline">help_outline</span>
+                            ¿Qué es IusPilot?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            IusPilot es la plataforma líder de inteligencia artificial aumentada diseñada específicamente para el sector jurídico. Combina modelos de lenguaje avanzados con un profundo conocimiento del derecho procesal para automatizar tareas técnicas y análisis.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- FAQ 2 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿A qué profesionales está dirigido IusPilot?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Está diseñado para abogados independientes, despachos de todos los tamaños, asesores jurídicos, procuradores y departamentos legales de empresas que buscan optimizar su productividad y reducir el riesgo de errores en su práctica diaria.
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="person_search">person_search</span>
+                            ¿A qué profesionales está dirigido?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            Está diseñado para juristas independientes, despachos de todos los tamaños, asesores jurídicos, procuradores y departamentos legales de empresas.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- FAQ 3 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Con qué tipos de documentos puede trabajar IusPilot?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Puede analizar y generar una amplia gama de documentos, incluyendo demandas, recursos, contratos, escritos procesales, informes de jurisprudencia y documentos PDF de hasta cientos de páginas, además de imágenes con texto (OCR).
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="verified_user">verified_user</span>
+                            ¿Mis datos y documentos están seguros?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            Utilizamos encriptación AES-256 y cumplimos estrictamente con el RGPD. Tus documentos son privados y nunca se utilizan para entrenar modelos de IA públicos.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- FAQ 4 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Cómo funciona la prueba gratuita?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Nuestra prueba gratuita te permite explorar todas las capacidades de la plataforma con límites técnicos: 15 consultas al copiloto, 2 documentos analizados y 5 usos de nuestras calculadoras de plazos. No requiere tarjeta de crédito para comenzar.
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="experiment">experiment</span>
+                            ¿Cómo funciona la prueba gratuita?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            Te permite explorar todas las capacidades con límites: 15 consultas, 2 documentos analizados y 5 usos de calculadoras. No requiere tarjeta de crédito.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- FAQ 5 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Qué incluyen los festivos autonómicos?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Nuestra calculadora de plazos procesales integra automáticamente el calendario de festivos nacionales, autonómicos (especialmente de Extremadura) y locales. Esta herramienta está incluida en todos nuestros planes profesionales o disponible de forma independiente en nuestro plan especializado de 55€/mes.
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="autorenew">autorenew</span>
+                            ¿Puedo cambiar de plan o cancelar?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            Sí, sin compromiso de permanencia. Puedes escalar, reducir o cancelar tu suscripción en cualquier momento desde tu panel de control con un solo clic.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- FAQ 6 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Cómo puedo cancelar o modificar mi suscripción?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Puedes gestionar tu suscripción en cualquier momento desde tu panel de usuario. Puedes subir o bajar de plan, o cancelar la renovación automática con un solo clic, sin compromisos de permanencia a largo plazo.
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="groups">groups</span>
+                            ¿Qué pasa si mi equipo tiene más de 5 usuarios?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            Para equipos de más de 5 personas, nuestro plan "A Medida" ofrece licencias ilimitadas, soporte dedicado y configuraciones de seguridad avanzadas.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- FAQ 7 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Mis datos y documentos están seguros?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    La seguridad es nuestra prioridad absoluta. Utilizamos encriptación de grado militar (AES-256) para proteger todos tus datos. IusPilot cumple estrictamente con el RGPD y tus documentos nunca se utilizan para entrenar modelos de IA públicos.
-                </div>
-            </div>
-            <!-- FAQ 8 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Puedo cambiar de plan en cualquier momento?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Sí, puedes escalar de un plan Pro a uno Teams si tu despacho crece, o solicitar un plan A Medida si tus necesidades aumentan. El cambio es instantáneo y se ajusta proporcionalmente en tu facturación.
-                </div>
-            </div>
-            <!-- FAQ 9 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿Qué pasa si mi equipo tiene más de 5 usuarios?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    Para equipos de más de 5 personas, nuestro plan "A Medida" ofrece licencias ilimitadas, soporte dedicado, formación personalizada en legal prompting y configuraciones de seguridad avanzadas adaptadas a grandes organizaciones.
-                </div>
-            </div>
-            <!-- FAQ 10 -->
-            <div class="border-b border-stone-100 pb-4">
-                <button class="w-full flex justify-between items-center text-left py-4 font-bold text-on-surface hover:text-primary transition-colors group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span:last-child').classList.toggle('rotate-180')">
-                    <span>¿IusPilot sustituye el criterio del abogado?</span>
-                    <span class="material-symbols-outlined text-stone-300 group-hover:text-primary transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="hidden pb-4 text-sm text-secondary leading-relaxed">
-                    En absoluto. IusPilot es un copiloto, no un reemplazo. Nuestra visión sitúa el criterio humano en el centro: la IA se encarga de la complejidad técnica para que el jurista se enfoque en la sabiduría legal y la estrategia.
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item group border border-stone-100 dark:border-stone-800 rounded-2xl overflow-hidden bg-white dark:bg-stone-950/20 hover:border-[#A02020]/30 transition-all duration-300">
+                    <button class="w-full flex justify-between items-center text-left px-6 py-5 font-bold text-on-surface group-hover:text-[#A02020] transition-colors" onclick="toggleFaq(this)">
+                        <span class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-stone-400 group-hover:text-[#A02020] text-xl transition-colors" data-icon="gavel">gavel</span>
+                            ¿IusPilot sustituye el criterio del jurista?
+                        </span>
+                        <span class="material-symbols-outlined text-stone-300 transition-transform duration-300" data-icon="add">add</span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-stone-50/50 dark:bg-stone-900/20">
+                        <div class="px-14 pb-5 text-sm text-secondary leading-relaxed pt-2">
+                            En absoluto. IusPilot es un copiloto, no un reemplazo. Nuestra visión sitúa el criterio humano en el centro: la IA se encarga de la complejidad técnica para que el jurista se enfoque en la estrategia.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-            <div class="group bg-white p-8 rounded-3xl border border-stone-100 hover:border-primary/20 transition-all shadow-sm">
-                <button class="w-full flex justify-between items-center text-left font-bold text-on-surface text-lg">
-                    <span>¿Qué ocurre tras agotar el periodo de prueba?</span>
-                    <span class="material-symbols-outlined group-hover:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
-                </button>
-                <div class="mt-4 text-secondary leading-relaxed text-sm">
-                    Tu cuenta pasará a un estado de solo lectura. No perderás tus datos, pero para seguir generando documentos o realizando consultas deberás seleccionar uno de nuestros planes profesionales.
-                </div>
-            </div>
+
+<style>
+    .faq-content {
+        transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    }
+    .faq-item.active .faq-content {
+        max-height: 1000px;
+        transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+    }
+    .faq-item.active button span:last-child {
+        transform: rotate(45deg);
+        color: #A02020;
+    }
+    .faq-item.active {
+        border-color: rgba(160, 32, 32, 0.3);
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+    }
+</style>
+
+<script>
+    function toggleFaq(button) {
+        const item = button.parentElement;
+        const content = item.querySelector('.faq-content');
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-content').style.maxHeight = null;
+            }
+        });
+
+        // Toggle current FAQ
+        item.classList.toggle('active');
+        if (item.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = null;
+        }
+    }
+</script>
         </div>
 
         <div class="relative">
