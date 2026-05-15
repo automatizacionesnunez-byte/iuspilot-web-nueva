@@ -3,6 +3,8 @@
 <html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IusPilot Blog | Actualidad Jurídica, Legal Tech y Jurisprudencia</title>
+<meta name="description" content="Descubre las últimas tendencias en Legal Tech, análisis de jurisprudencia del TSJ de Extremadura y novedades del sector jurídico con IusPilot.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -173,86 +175,156 @@
 </section>
 <!-- Filters -->
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-surface-container pb-6">
-<div class="flex flex-wrap gap-3">
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-semibold">Todos</button>
-<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-colors">Legal Tech</button>
-<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-colors">Case Studies</button>
-<button class="bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-colors">Product Updates</button>
+    <div class="flex flex-wrap gap-3" id="category-filters">
+        <button class="filter-btn active bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-semibold transition-all" data-category="all">Todos</button>
+        <button class="filter-btn bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-all" data-category="legal-tech">Legal Tech</button>
+        <button class="filter-btn bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-all" data-category="jurisprudencia">Jurisprudencia</button>
+        <button class="filter-btn bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-all" data-category="extremadura">Extremadura</button>
+        <button class="filter-btn bg-surface-container-highest text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium hover:bg-surface-dim transition-all" data-category="actualidad">Actualidad</button>
+    </div>
+    <div class="relative group">
+        <input id="blog-search" class="bg-white border-none focus:ring-1 focus:ring-primary rounded-lg pl-10 pr-4 py-2 text-sm w-full md:w-64 editorial-shadow transition-all" placeholder="Buscar artículos..." type="text"/>
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-lg">search</span>
+    </div>
 </div>
-<div class="relative group">
-<input class="bg-white border-none focus:ring-1 focus:ring-primary rounded-lg pl-10 pr-4 py-2 text-sm w-full md:w-64 editorial-shadow transition-all" placeholder="Buscar artículos..." type="text"/>
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-lg" data-icon="search">search</span>
-</div>
-</div>
+
 <!-- Recent Posts Grid -->
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-<!-- Card 1 -->
-<article class="flex flex-col group">
-<div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
-<img alt="Law Documents" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up of elegant legal documents with a fountain pen and glasses on a wooden desk, focused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Vfyx-8yErBajg5Mut2c_FiUkYnEz_dXBbcPKi0gioVA0DYDhTKW0uwjv4I2cCh-wNBevp1Y1l8SGmN_HKbGtH0YCBou_poeJ_BVsgJW9qbnJrHkDGDSataV3_CPDdhWBGlX5dIMepsNUgMk5zKZMKCKzQ9WLJ9y4qv_EFqtJxdOyubr0lb82aiRN2PCrszrhKXm2Fxp0kxdSPTI5Pf1jt9R4gl3R7Oh1d0LD4X9lCz8HppT2psb39zfitw7iSF5uiy0PUgw-LOrt"/>
-</div>
-<div class="flex items-center gap-3 mb-3">
-<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Legal Tech</span>
-<span class="text-xs text-stone-400">•</span>
-<span class="text-xs text-stone-500">22 May, 2024</span>
-</div>
-<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Eficiencia en la gestión de expedientes: El rol de la IA generativa.</h3>
-<p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Analizamos cómo las herramientas de lenguaje natural están reduciendo hasta en un 60% el tiempo dedicado a la revisión documental en litigios complejos.</p>
-<div class="mt-auto flex items-center justify-between">
-<span class="text-xs font-medium text-stone-500 flex items-center gap-1">
-<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span> 8 min
-                    </span>
-<a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="articulo.html">
-                        Leer más 
-                        <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
-</a>
-</div>
-</article>
-<!-- Card 2 -->
-<article class="flex flex-col group">
-<div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
-<img alt="Meeting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Professional handshake between two lawyers in a modern glass office, high contrast cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1jCR7FbVmdkLwAJNJOypgejKiiBgmFSy-p40eA5VvTFkP5nU44PvUbTOY_6hpkooiwu0lY8mRs4ka9jPQu8ne8Y9hgcDHpIgxlt3Gu4LUL6EAB005f3eOaZZjBUjGPUlZfLtHCfPRAcuDFNw0oP3qC4qZmze_Q1sd6xBrQyL8uhfkfqpxokT7-J_qTFwXsHvZjPajsWsonlsSVEglo9tfz6xAK_HFemfHrjlRRVvvnICcm-ane8uLl6wif68vldQOHc1xiFTz0OUQ"/>
-</div>
-<div class="flex items-center gap-3 mb-3">
-<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Case Studies</span>
-<span class="text-xs text-stone-400">•</span>
-<span class="text-xs text-stone-500">18 May, 2024</span>
-</div>
-<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Cómo el despacho 'López &amp; Asociados' digitalizó 20 años de archivos.</h3>
-<p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Un caso real sobre la transición de lo analógico a lo digital utilizando OCR avanzado y etiquetado automático por inteligencia artificial.</p>
-<div class="mt-auto flex items-center justify-between">
-<span class="text-xs font-medium text-stone-500 flex items-center gap-1">
-<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span> 15 min
-                    </span>
-<a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="#">
-                        Informe Completo 
-                        <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
-</a>
-</div>
-</article>
-<!-- Card 3 -->
-<article class="flex flex-col group">
-<div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
-<img alt="Cybersecurity" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a server circuit board with blue glowing lights, representing high tech infrastructure and cybersecurity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8KrHrttfr85HBfAYmftZ8ZUNYnSgShRw3QqvMk6ysUYnGkHBgYoJ-Uglmpc6dQSgAVTRPTCQTeWA31qlFtqbxOLjwfvks7kn6NRx6Rk3C_AWcmTfG7KGJuxfXkPatfjmrV5HOdubamvgOMcQ16NwrbHzncZWPBh-n8uwny1t5BHQqImkaKxpvw1l1SzaytFVGtGFxLW8MZAKU0kxyviSu68KPIWmVDYV8Chv6oy-VuxzA5vChOTE91ZSp5quKZoH7aPAXDcT_0jNi"/>
-</div>
-<div class="flex items-center gap-3 mb-3">
-<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Product Updates</span>
-<span class="text-xs text-stone-400">•</span>
-<span class="text-xs text-stone-500">10 May, 2024</span>
-</div>
-<h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Actualización v2.4: Nuevos protocolos de seguridad militar.</h3>
-<p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Presentamos encriptación de extremo a extremo para chats de clientes y auditorías de acceso automáticas para garantizar la confidencialidad.</p>
-<div class="mt-auto flex items-center justify-between">
-<span class="text-xs font-medium text-stone-500 flex items-center gap-1">
-<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span> 5 min
-                    </span>
-<a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="#">
-                        Informe Completo 
-                        <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform" data-icon="north_east">north_east</span>
-</a>
-</div>
-</article>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="blog-grid">
+    <!-- Card 1: Legal Tech -->
+    <article class="blog-card flex flex-col group" data-category="legal-tech">
+        <div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+            <img alt="IA Redacción Demandas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtN9wYm3bIkyeub6mfAAuNFY3pgGeR7A8aLLx3S-pdegkmSJVTKz3fnyaWcHIG1qF3QPvZi9_VSpa8mOnZSFWmSm-W2dza78JABfkImpEUTGOI9sLRNpKWUMSIg6cf0r1dg0PP7BDCQLI0KTykZPoNc9ke9PBO6U-b9sGVL9RNr_9vqVNOy4Bq2ha1y4H8QZ0P7wJ-nWEHr1_axgNvYwkarZMNgUCjBwDKaoCt3t73tGPS53JVZAhWfXX9_X50PT2tGNN-mPbp8e2R"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Legal Tech</span>
+            <span class="text-xs text-stone-400">•</span>
+            <span class="text-xs text-stone-500">12 May, 2026</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Cómo la IA está transformando la redacción de demandas en 2026.</h3>
+        <p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Analizamos cómo las herramientas de lenguaje natural están reduciendo hasta en un 60% el tiempo dedicado a la revisión documental.</p>
+        <div class="mt-auto flex items-center justify-between">
+            <span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">auto_stories</span> 8 min
+            </span>
+            <a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="blog/ia-transformando-redaccion-demandas-2026.html">
+                Leer más 
+                <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform">north_east</span>
+            </a>
+        </div>
+    </article>
+
+    <!-- Card 2: Jurisprudencia -->
+    <article class="blog-card flex flex-col group" data-category="jurisprudencia">
+        <div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+            <img alt="TSJ Extremadura" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5gHtmyYQPtYGwtTJesLvtOLn-FBNUk5X5KtgLGLNcTR72I90UD2ITjWTtsvDaxzc1TN1LU3fsw92vwxWr6aZ_38xttfShYfTBSLy5nZ5Dl_dwubb07aCjXfXNucDGwvkZmNeS6BPuJMBxSmd6dZ5MWuZ8yHaW_raqcmdnCkOG2uI-xsGlpnZw8usP5vkKceQhQWIEPax1gv9kx8aSh4FYEClu4UGrX5W7GYUQzgrLTxj-WQHOmzZu1ghZWZ7LEUT5AVXKWfuEoVi_"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Jurisprudencia</span>
+            <span class="text-xs text-stone-400">•</span>
+            <span class="text-xs text-stone-500">08 May, 2026</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Análisis del TSJ de Extremadura: Criterios sobre propiedad rústica.</h3>
+        <p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Nuevas directrices que afectan a las explotaciones ganaderas en la región de Cáceres y Badajoz.</p>
+        <div class="mt-auto flex items-center justify-between">
+            <span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">auto_stories</span> 12 min
+            </span>
+            <a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="blog/analisis-tsj-extremadura-propiedad-rustica.html">
+                Informe Completo 
+                <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform">north_east</span>
+            </a>
+        </div>
+    </article>
+
+    <!-- Card 3: Extremadura -->
+    <article class="blog-card flex flex-col group" data-category="extremadura">
+        <div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+            <img alt="Despacho Extremadura" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1jCR7FbVmdkLwAJNJOypgejKiiBgmFSy-p40eA5VvTFkP5nU44PvUbTOY_6hpkooiwu0lY8mRs4ka9jPQu8ne8Y9hgcDHpIgxlt3Gu4LUL6EAB005f3eOaZZjBUjGPUlZfLtHCfPRAcuDFNw0oP3qC4qZmze_Q1sd6xBrQyL8uhfkfqpxokT7-J_qTFwXsHvZjPajsWsonlsSVEglo9tfz6xAK_HFemfHrjlRRVvvnICcm-ane8uLl6wif68vldQOHc1xiFTz0OUQ"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Extremadura</span>
+            <span class="text-xs text-stone-400">•</span>
+            <span class="text-xs text-stone-500">02 May, 2026</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">La digitalización del sector jurídico en Badajoz y Cáceres.</h3>
+        <p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Cómo los despachos extremeños están adoptando soluciones en la nube para mejorar el servicio al ciudadano.</p>
+        <div class="mt-auto flex items-center justify-between">
+            <span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">auto_stories</span> 10 min
+            </span>
+            <a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="blog/digitalizacion-sector-juridico-extremadura.html">
+                Leer más 
+                <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform">north_east</span>
+            </a>
+        </div>
+    </article>
+
+    <!-- Card 4: Actualidad -->
+    <article class="blog-card flex flex-col group" data-category="actualidad">
+        <div class="overflow-hidden rounded-lg mb-5 aspect-[16/10]">
+            <img alt="Seguridad" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8KrHrttfr85HBfAYmftZ8ZUNYnSgShRw3QqvMk6ysUYnGkHBgYoJ-Uglmpc6dQSgAVTRPTCQTeWA31qlFtqbxOLjwfvks7kn6NRx6Rk3C_AWcmTfG7KGJuxfXkPatfjmrV5HOdubamvgOMcQ16NwrbHzncZWPBh-n8uwny1t5BHQqImkaKxpvw1l1SzaytFVGtGFxLW8MZAKU0kxyviSu68KPIWmVDYV8Chv6oy-VuxzA5vChOTE91ZSp5quKZoH7aPAXDcT_0jNi"/>
+        </div>
+        <div class="flex items-center gap-3 mb-3">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Actualidad</span>
+            <span class="text-xs text-stone-400">•</span>
+            <span class="text-xs text-stone-500">28 Abr, 2026</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-snug">Actualización v2.4: Nuevos protocolos de seguridad militar.</h3>
+        <p class="text-secondary text-sm mb-6 line-clamp-3 leading-relaxed">Presentamos encriptación de extremo a extremo para garantizar la confidencialidad absoluta del jurista.</p>
+        <div class="mt-auto flex items-center justify-between">
+            <span class="text-xs font-medium text-stone-500 flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">auto_stories</span> 5 min
+            </span>
+            <a class="text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn" href="blog/actualizacion-seguridad-militar-v2.4.html">
+                Informe Completo 
+                <span class="material-symbols-outlined text-xs group-hover/btn:translate-x-1 transition-transform">north_east</span>
+            </a>
+        </div>
+    </article>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const searchInput = document.getElementById('blog-search');
+
+        const filterArticles = () => {
+            const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+            const searchTerm = searchInput.value.toLowerCase();
+
+            blogCards.forEach(card => {
+                const category = card.dataset.category;
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const excerpt = card.querySelector('p').textContent.toLowerCase();
+                
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        };
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                });
+                btn.classList.add('active', 'bg-primary', 'text-on-primary');
+                btn.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                filterArticles();
+            });
+        });
+
+        searchInput.addEventListener('input', filterArticles);
+    });
+</script>
+
 <!-- Newsletter Subscription -->
 <section class="mt-20 md:mt-24 bg-surface-container-highest rounded-2xl overflow-hidden relative border border-outline-variant/10">
 <div class="flex flex-col lg:flex-row items-stretch">
