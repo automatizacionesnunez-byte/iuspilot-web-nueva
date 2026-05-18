@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Admin Editor | IusPilot Premium</title>
+    <title>Panel de Administración | IusPilot Premium</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -12,7 +12,8 @@
             theme: {
               extend: {
                 colors: {
-                  "primary": "#A02020", "primary-emphasis": "#540202",
+                  "primary": "#A02020", 
+                  "primary-emphasis": "#540202",
                   "surface": "#f5faff",
                   "on-surface": "#171c20",
                   "secondary": "#515f74",
@@ -61,13 +62,17 @@
         </div>
         
         <nav class="space-y-2 flex-grow">
-            <a href="#" class="sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all">
-                <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-                Nuevo Artículo
-            </a>
-            <a href="blog.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-500 hover:bg-stone-50 transition-all font-semibold">
+            <button onclick="switchTab('edit')" id="btn-tab-edit" class="w-full sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all text-left">
+                <span class="material-symbols-outlined" id="icon-tab-edit" data-icon="edit_note">edit_note</span>
+                <span id="text-tab-edit">Crear Artículo</span>
+            </button>
+            <button onclick="switchTab('list')" id="btn-tab-list" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-stone-500 hover:bg-stone-50 transition-all font-semibold text-left">
                 <span class="material-symbols-outlined" data-icon="article">article</span>
-                Ver Blog Público
+                Ver Mis Artículos
+            </button>
+            <a href="blog.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-500 hover:bg-stone-50 transition-all font-semibold">
+                <span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+                Ir al Blog Público
             </a>
             <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-500 hover:bg-stone-50 transition-all font-semibold">
                 <span class="material-symbols-outlined" data-icon="home">home</span>
@@ -79,7 +84,7 @@
             <div class="flex items-center gap-3 p-4 bg-stone-50 rounded-2xl">
                 <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">AD</div>
                 <div>
-                    <p class="text-sm font-bold">Administrador</p>
+                    <p class="text-sm font-bold text-stone-800">Administrador</p>
                     <p class="text-[10px] text-stone-400 uppercase tracking-widest font-bold">Sesión Activa</p>
                 </div>
             </div>
@@ -90,205 +95,1087 @@
         </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="flex-grow p-6 md:p-12">
-        <div class="max-w-5xl mx-auto">
-            <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
-                        <span class="material-symbols-outlined text-[14px]" data-icon="shield">shield</span>
-                        Panel Privado
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter mb-2">Editor de Contenidos</h1>
-                    <p class="text-stone-500 max-w-lg">Cree artículos legales optimizados para SEO con soporte multimedia y previsualización dinámica.</p>
-                </div>
-                <div class="flex gap-4 w-full md:w-auto">
-                    <button class="flex-1 md:flex-none px-8 py-4 rounded-2xl font-bold text-stone-600 border border-stone-200 bg-white hover:bg-stone-50 transition-all active:scale-95">Borrador</button>
-                    <button class="flex-1 md:flex-none px-8 py-4 rounded-2xl font-bold text-white bg-primary shadow-2xl shadow-primary/30 hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined text-sm" data-icon="publish">publish</span>
-                        Publicar
-                    </button>
-                </div>
-            </header>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Editor Section -->
-                <div class="lg:col-span-7 space-y-8">
-                    <!-- Title & Category -->
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-stone-100 space-y-8">
-                        <div class="space-y-4">
-                            <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Información Principal</label>
-                            <input type="text" id="post-title" placeholder="Título del Artículo..." class="w-full px-0 py-4 text-3xl font-extrabold border-0 border-b-2 border-stone-100 focus:border-primary focus:ring-0 placeholder:text-stone-200 transition-all">
+    <!-- Main Content Container -->
+    <main class="flex-grow p-6 md:p-12 overflow-y-auto max-h-screen">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- VIEW 1: CREATION / EDITING FORM -->
+            <div id="view-edit" class="space-y-8">
+                <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="shield">shield</span>
+                            Panel Privado CMS
                         </div>
+                        <h1 id="editor-title" class="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter mb-2">Crear Artículo</h1>
+                        <p class="text-stone-500 max-w-lg">Cree y edite análisis jurídicos con inyección automática de CTAs de alta conversión y SEO.</p>
+                    </div>
+                    <div class="flex gap-4 w-full md:w-auto">
+                        <button onclick="resetForm()" class="flex-1 md:flex-none px-8 py-4 rounded-2xl font-bold text-stone-600 border border-stone-200 bg-white hover:bg-stone-50 transition-all active:scale-95">Limpiar</button>
+                        <button onclick="savePost()" class="flex-1 md:flex-none px-8 py-4 rounded-2xl font-bold text-white bg-primary shadow-2xl shadow-primary/30 hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-sm" data-icon="publish">publish</span>
+                            Guardar Cambios
+                        </button>
+                    </div>
+                </header>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Editor Section -->
+                    <div class="lg:col-span-7 space-y-8">
+                        <input type="hidden" id="post-id">
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Title & Category & Date -->
+                        <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-stone-100 space-y-6">
                             <div class="space-y-2">
-                                <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Categoría</label>
-                                <select class="w-full px-5 py-4 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all appearance-none cursor-pointer">
-                                    <option>Derecho Civil</option>
-                                    <option>Derecho Penal</option>
-                                    <option>Tecnología Legal</option>
-                                    <option>Actualidad Extremadura</option>
-                                </select>
+                                <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Título del Artículo</label>
+                                <input type="text" id="post-title" placeholder="Ej: Nueva Directiva Europea y su impacto en Extremadura..." class="w-full px-0 py-3 text-2xl md:text-3xl font-extrabold border-0 border-b-2 border-stone-100 focus:border-primary focus:ring-0 placeholder:text-stone-200 transition-all">
                             </div>
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Fecha de Publicación</label>
-                                <input type="date" class="w-full px-5 py-4 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all cursor-pointer">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Multimedia -->
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-stone-100 space-y-6">
-                        <h3 class="text-xl font-bold font-headline flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary" data-icon="video_library">video_library</span>
-                            Recursos Multimedia
-                        </h3>
-                        <div class="grid grid-cols-1 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">URL Imagen de Portada</label>
-                                <div class="relative">
-                                    <input type="url" id="cover-url" placeholder="https://source.unsplash.com/random/legal" class="w-full pl-12 pr-5 py-4 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all">
-                                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" data-icon="image">image</span>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Categoría</label>
+                                    <select id="post-category" class="w-full px-4 py-3 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all cursor-pointer">
+                                        <option value="legal-tech">Legal Tech</option>
+                                        <option value="jurisprudencia">Jurisprudencia</option>
+                                        <option value="extremadura">Extremadura</option>
+                                        <option value="actualidad">Actualidad</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Enlace de YouTube</label>
-                                <div class="relative">
-                                    <input type="url" id="youtube-url" placeholder="https://www.youtube.com/watch?v=..." class="w-full pl-12 pr-5 py-4 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all">
-                                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" data-icon="play_circle">play_circle</span>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Fecha</label>
+                                    <input type="date" id="post-date" class="w-full px-4 py-3 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all cursor-pointer">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Tiempo de Lectura</label>
+                                    <input type="text" id="post-read-time" placeholder="Ej: 8 min" class="w-full px-4 py-3 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Content -->
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-stone-100 space-y-6">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold font-headline flex items-center gap-2">
-                                <span class="material-symbols-outlined text-primary" data-icon="auto_stories">auto_stories</span>
-                                Contenido
+                        <!-- Content -->
+                        <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-stone-100 space-y-4">
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                <h3 class="text-xl font-bold font-headline flex items-center gap-2 text-stone-850">
+                                    <span class="material-symbols-outlined text-primary" data-icon="auto_stories">auto_stories</span>
+                                    Análisis Jurídico / Contenido
+                                </h3>
+                                <div class="flex flex-wrap gap-1.5 p-1 bg-stone-50 rounded-xl border border-stone-100">
+                                    <button type="button" onclick="insertFormat('bold')" title="Negrita" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600 text-lg" data-icon="format_bold">format_bold</span></button>
+                                    <button type="button" onclick="insertFormat('italic')" title="Itálica" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600 text-lg" data-icon="format_italic">format_italic</span></button>
+                                    <button type="button" onclick="insertFormat('list')" title="Lista con viñetas" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600 text-lg" data-icon="format_list_bulleted">format_list_bulleted</span></button>
+                                    <button type="button" onclick="insertFormat('link')" title="Insertar enlace (Ctrl+K)" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600 text-lg" data-icon="link">link</span></button>
+                                    <button type="button" onclick="insertFormat('h2')" title="Encabezado H2" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all text-stone-600 font-bold text-xs select-none">H2</button>
+                                    <button type="button" onclick="insertFormat('h3')" title="Subtítulo H3" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all text-stone-600 font-bold text-xs select-none">H3</button>
+                                    <button type="button" onclick="insertFormat('quote')" title="Cita" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600 text-lg" data-icon="format_quote">format_quote</span></button>
+                                </div>
+                            </div>
+                            <p class="text-xs text-stone-400">Consejo: Presione saltos de línea normales para nuevos párrafos. Puede añadir formato con los botones superiores.</p>
+                            <textarea id="post-content" rows="12" placeholder="Escriba aquí el análisis jurídico. El inyector de CTAs colocará automáticamente los banners comerciales según tus configuraciones para garantizar clientes potenciales..." class="w-full px-6 py-6 rounded-[2rem] border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all font-body leading-relaxed text-stone-700"></textarea>
+                            
+                            <div class="space-y-2 pt-2">
+                                <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Resumen del Artículo (Extracto Corto para el listado)</label>
+                                <textarea id="post-excerpt" rows="2" placeholder="Un breve resumen para la tarjeta del blog..." class="w-full px-5 py-4 rounded-xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all text-sm text-stone-600"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- CTA ENGINE (CONVERSION SETTINGS) -->
+                        <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-stone-100 space-y-6">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-emerald-600 text-2xl" data-icon="track_changes">track_changes</span>
+                                <h3 class="text-xl font-bold font-headline text-stone-900">Motor de CTAs y Conversión (CRO)</h3>
+                            </div>
+                            <p class="text-sm text-stone-500 leading-relaxed">
+                                Maximice la captura de clientes potenciales (Leads). Dependiendo de la temática del artículo, elija una plantilla de CTA especializada y active las ubicaciones óptimas.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Plantilla de Conversión Específica</label>
+                                    <select id="post-cta-template" onchange="updatePreview()" class="w-full px-4 py-3 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all cursor-pointer">
+                                        <option value="general">IusPilot General - Prueba de Software Gratuita</option>
+                                        <option value="penal">Defensa Penal IA - Generación Atestados y Escritos</option>
+                                        <option value="civil">Especialistas Civil - Eficiencia en Contratos y Divorcios</option>
+                                        <option value="tech">Tecnología y Privacidad - Encriptación Soberana Militar</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Posiciones del CTA en el Artículo</label>
+                                    <div class="flex flex-wrap gap-2 pt-1">
+                                        <label class="inline-flex items-center gap-2 bg-stone-50 px-4 py-2.5 rounded-xl border border-stone-200 cursor-pointer hover:bg-stone-100 transition-colors text-xs font-bold">
+                                            <input type="checkbox" id="cta-pos-top" checked onchange="updatePreview()" class="rounded border-stone-300 text-primary focus:ring-primary">
+                                            Inline Inicial (Top)
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-stone-50 px-4 py-2.5 rounded-xl border border-stone-200 cursor-pointer hover:bg-stone-100 transition-colors text-xs font-bold">
+                                            <input type="checkbox" id="cta-pos-mid" checked onchange="updatePreview()" class="rounded border-stone-300 text-primary focus:ring-primary">
+                                            Bento Box (Medio)
+                                        </label>
+                                        <label class="inline-flex items-center gap-2 bg-stone-50 px-4 py-2.5 rounded-xl border border-stone-200 cursor-pointer hover:bg-stone-100 transition-colors text-xs font-bold">
+                                            <input type="checkbox" id="cta-pos-bottom" checked onchange="updatePreview()" class="rounded border-stone-300 text-primary focus:ring-primary">
+                                            Hero Bottom (Final)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multimedia Resources -->
+                        <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-stone-100 space-y-6">
+                            <h3 class="text-xl font-bold font-headline flex items-center gap-2 text-stone-850">
+                                <span class="material-symbols-outlined text-primary" data-icon="video_library">video_library</span>
+                                Recursos Multimedia de Soporte
                             </h3>
-                            <div class="flex gap-2 p-1 bg-stone-50 rounded-xl border border-stone-100">
-                                <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600" data-icon="format_bold">format_bold</span></button>
-                                <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600" data-icon="format_italic">format_italic</span></button>
-                                <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600" data-icon="format_list_bulleted">format_list_bulleted</span></button>
-                                <button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm transition-all"><span class="material-symbols-outlined text-stone-600" data-icon="link">link</span></button>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">Imagen de Portada (URL o Subir Archivo)</label>
+                                    <div class="flex flex-col sm:flex-row gap-3">
+                                        <div class="relative flex-grow">
+                                            <input type="url" id="cover-url" placeholder="https://images.unsplash.com/photo-..." class="w-full pl-12 pr-4 py-3 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all text-sm">
+                                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" data-icon="image">image</span>
+                                        </div>
+                                        <div class="relative flex-shrink-0">
+                                            <input type="file" id="cover-file-upload" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                                            <button type="button" onclick="document.getElementById('cover-file-upload').click()" class="w-full sm:w-auto px-5 py-3 bg-stone-900 text-white font-bold text-xs uppercase tracking-widest rounded-2xl hover:bg-stone-800 active:scale-95 transition-all flex items-center justify-center gap-1.5 h-[46px] select-none">
+                                                <span class="material-symbols-outlined text-sm" data-icon="upload_file">upload_file</span>
+                                                Subir
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="upload-status" class="text-[10px] font-semibold text-emerald-600 hidden flex items-center gap-1 mt-1 ml-1">
+                                        <span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+                                        <span>Archivo cargado con éxito en local.</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold text-stone-400 uppercase tracking-widest ml-1">URL de Vídeo (YouTube)</label>
+                                    <div class="relative">
+                                        <input type="url" id="youtube-url" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="w-full pl-12 pr-4 py-3 rounded-2xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all text-sm">
+                                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" data-icon="play_circle">play_circle</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <textarea id="post-content" rows="15" placeholder="Escriba aquí el análisis jurídico..." class="w-full px-8 py-6 rounded-[2rem] border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all font-body leading-relaxed text-stone-700"></textarea>
                     </div>
-                </div>
 
-                <!-- Preview Section (Sticky) -->
-                <div class="lg:col-span-5 sticky top-12">
-                    <div class="space-y-6">
+                    <!-- Preview Section (Sticky) -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-8 space-y-6">
                         <div class="flex items-center justify-between px-2">
-                            <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400">Previsualización</h3>
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-stone-400">Previsualización del Artículo</h3>
                             <div class="flex items-center gap-2">
                                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">En Vivo</span>
+                                <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">Vista Previa</span>
                             </div>
                         </div>
 
-                        <div class="bg-white rounded-[3rem] shadow-[0_40px_100px_rgba(0,0,0,0.08)] overflow-hidden border border-stone-100">
+                        <div class="bg-white rounded-[3rem] shadow-[0_40px_100px_rgba(0,0,0,0.06)] overflow-hidden border border-stone-100 max-h-[85vh] overflow-y-auto">
                             <!-- Preview Hero -->
-                            <div class="h-72 bg-stone-900 flex items-center justify-center relative overflow-hidden group">
-                                <div id="preview-image" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-70"></div>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                                <div class="absolute bottom-10 left-10 right-10">
-                                    <span class="bg-primary text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-[0.2em] mb-4 inline-block shadow-lg shadow-primary/20">Jurisprudencia</span>
-                                    <h2 id="preview-title" class="text-3xl font-extrabold text-white font-headline leading-tight tracking-tight">Su título aparecerá aquí...</h2>
+                            <div class="h-64 bg-stone-900 flex items-center justify-center relative overflow-hidden group">
+                                <div id="preview-image" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 opacity-60"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/30 to-transparent"></div>
+                                <div class="absolute bottom-8 left-8 right-8 z-10">
+                                    <span id="preview-category" class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-[0.2em] mb-3 inline-block shadow-lg">Legal Tech</span>
+                                    <h2 id="preview-title" class="text-2xl md:text-3xl font-extrabold text-white font-headline leading-tight tracking-tight">Título del Artículo...</h2>
                                 </div>
-                                <div id="image-placeholder" class="relative z-10 flex flex-col items-center gap-4 text-white/30">
-                                    <span class="material-symbols-outlined text-6xl" data-icon="add_photo_alternate">add_photo_alternate</span>
-                                    <p class="text-xs font-bold uppercase tracking-widest">Añada una URL de imagen</p>
+                                <div id="image-placeholder" class="relative z-10 flex flex-col items-center gap-2 text-white/30">
+                                    <span class="material-symbols-outlined text-4xl" data-icon="add_photo_alternate">add_photo_alternate</span>
+                                    <p class="text-[10px] font-bold uppercase tracking-widest">Sin Imagen de Portada</p>
                                 </div>
                             </div>
 
                             <!-- Preview Body -->
-                            <div class="p-12 space-y-6">
-                                <div class="flex items-center gap-4 pb-8 border-b border-stone-50">
-                                    <div class="w-12 h-12 rounded-2xl bg-stone-100 flex items-center justify-center text-primary font-bold">AD</div>
-                                    <div class="text-sm">
-                                        <p class="font-bold text-stone-900">Administrador IusPilot</p>
-                                        <p class="text-stone-400">Publicado hoy</p>
+                            <div class="p-8 space-y-6">
+                                <div class="flex items-center gap-3 pb-6 border-b border-stone-100">
+                                    <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-primary font-bold text-sm">AD</div>
+                                    <div class="text-xs">
+                                        <p class="font-bold text-stone-900">Equipo IusPilot</p>
+                                        <p class="text-stone-400" id="preview-date">Publicado hoy</p>
                                     </div>
                                 </div>
-                                <div id="preview-text" class="text-stone-600 leading-relaxed space-y-4">
-                                    <p class="italic text-stone-400">El contenido comenzará a visualizarse aquí mientras escribe...</p>
+
+                                <!-- TOP CTA INLINE PREVIEW -->
+                                <div id="preview-cta-top" class="hidden bg-stone-50 border-l-4 border-primary p-4 rounded-r-xl text-xs space-y-2">
+                                    <p class="font-semibold text-stone-800" id="preview-cta-top-text"></p>
+                                </div>
+
+                                <div id="preview-text" class="text-stone-600 leading-relaxed text-sm space-y-4">
+                                    <p class="italic text-stone-400">El análisis jurídico comenzará a renderizarse aquí a tiempo real...</p>
+                                </div>
+
+                                <!-- MID CTA BENTO BOX PREVIEW -->
+                                <div id="preview-cta-mid" class="hidden bg-gradient-to-br from-stone-900 to-stone-950 p-6 rounded-3xl border border-stone-800 text-white space-y-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary text-xl" data-icon="gavel">gavel</span>
+                                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-stone-400">IusPilot Premium</span>
+                                    </div>
+                                    <h4 class="text-base font-headline font-bold" id="preview-cta-mid-title"></h4>
+                                    <p class="text-xs text-stone-300 leading-relaxed" id="preview-cta-mid-desc"></p>
+                                    <button type="button" class="w-full bg-primary hover:bg-primary/95 text-white py-2 rounded-xl text-xs font-bold transition-all uppercase tracking-widest shadow-md">
+                                        Pruébalo Gratis Ahora →
+                                    </button>
                                 </div>
 
                                 <!-- Youtube Preview (Conditional) -->
-                                <div id="youtube-preview" class="hidden mt-8 rounded-2xl overflow-hidden aspect-video bg-stone-900 flex items-center justify-center group cursor-pointer relative shadow-xl">
-                                    <span class="material-symbols-outlined text-white/40 text-6xl group-hover:text-primary transition-colors" data-icon="play_circle">play_circle</span>
-                                    <p class="absolute bottom-4 text-[10px] text-white/50 font-bold uppercase tracking-widest">Vídeo adjunto detectado</p>
+                                <div id="youtube-preview" class="hidden mt-6 rounded-xl overflow-hidden aspect-video bg-stone-950 flex items-center justify-center relative shadow-lg">
+                                    <span class="material-symbols-outlined text-white/40 text-5xl hover:text-primary transition-colors" data-icon="play_circle">play_circle</span>
+                                    <p class="absolute bottom-3 text-[9px] text-white/40 font-bold uppercase tracking-widest">Vídeo de YouTube Incorporado</p>
+                                </div>
+
+                                <!-- BOTTOM CTA HERO PREVIEW -->
+                                <div id="preview-cta-bottom" class="hidden bg-gradient-to-tr from-primary/10 via-primary/5 to-white p-8 rounded-3xl border border-primary/20 text-stone-900 space-y-4">
+                                    <span class="bg-primary/10 text-primary text-[9px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Acelera Tu Despacho</span>
+                                    <h4 class="text-lg font-headline font-extrabold" id="preview-cta-bottom-title"></h4>
+                                    <p class="text-xs text-stone-600 leading-relaxed" id="preview-cta-bottom-desc"></p>
+                                    <button type="button" class="w-full bg-primary text-white py-3 rounded-xl text-xs font-bold hover:brightness-110 transition-all uppercase tracking-widest">
+                                        Registrarse y Probar la Demo Gratis
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="bg-primary/5 p-6 rounded-[2rem] border border-primary/10 flex items-center gap-4">
-                            <span class="material-symbols-outlined text-primary" data-icon="info">info</span>
-                            <p class="text-[11px] text-primary/70 font-medium leading-relaxed">Este editor genera la estructura necesaria para el blog. Para ver los cambios en producción, contacte con el soporte técnico o exporte el código generado.</p>
+
+                        <!-- ASISTENTE SEO ON-PAGE -->
+                        <div class="bg-stone-900 text-stone-100 p-6 rounded-[2.5rem] shadow-xl border border-stone-800 space-y-5">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-sm font-bold font-headline uppercase tracking-widest flex items-center gap-2 text-primary">
+                                    <span class="material-symbols-outlined text-lg" data-icon="troubleshoot">troubleshoot</span>
+                                    Asistente SEO On-Page
+                                </h3>
+                                <span class="bg-primary/20 text-primary text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">En Vivo</span>
+                            </div>
+                            
+                            <!-- Keyword Input -->
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold text-stone-400 uppercase tracking-widest block ml-1">Palabra Clave Objetivo (Keyword)</label>
+                                <div class="relative">
+                                    <input type="text" id="seo-keyword" placeholder="Ej: Abogados de Badajoz" oninput="updateSeoAnalysis()" class="w-full pl-10 pr-4 py-2.5 rounded-xl border-stone-850 bg-stone-850 focus:bg-stone-800 focus:border-primary focus:ring-primary/10 transition-all text-xs text-white placeholder:text-stone-500">
+                                    <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500 text-sm" data-icon="search">search</span>
+                                </div>
+                            </div>
+
+                            <!-- List of Checks -->
+                            <div class="space-y-3 pt-2 text-xs">
+                                <!-- Word count -->
+                                <div class="flex items-center justify-between border-b border-stone-800 pb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span id="seo-check-words-icon" class="material-symbols-outlined text-stone-500 text-base" data-icon="cancel">cancel</span>
+                                        <span class="text-stone-300">Cantidad de palabras</span>
+                                    </div>
+                                    <span id="seo-words-count" class="font-bold text-stone-400">0 / 300</span>
+                                </div>
+
+                                <!-- Keyword Density -->
+                                <div class="flex items-center justify-between border-b border-stone-800 pb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span id="seo-check-density-icon" class="material-symbols-outlined text-stone-500 text-base" data-icon="cancel">cancel</span>
+                                        <span class="text-stone-300">Densidad de keyword</span>
+                                    </div>
+                                    <span id="seo-density-val" class="font-bold text-stone-400">0.0%</span>
+                                </div>
+
+                                <!-- Keyword in Title -->
+                                <div class="flex items-center justify-between border-b border-stone-800 pb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span id="seo-check-title-icon" class="material-symbols-outlined text-stone-500 text-base" data-icon="cancel">cancel</span>
+                                        <span class="text-stone-300">Keyword en el título</span>
+                                    </div>
+                                    <span id="seo-title-status" class="font-bold text-stone-500 uppercase tracking-widest text-[9px]">Falta</span>
+                                </div>
+
+                                <!-- Keyword in Intro -->
+                                <div class="flex items-center justify-between border-b border-stone-800 pb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span id="seo-check-intro-icon" class="material-symbols-outlined text-stone-500 text-base" data-icon="cancel">cancel</span>
+                                        <span class="text-stone-300">Keyword en primer párrafo</span>
+                                    </div>
+                                    <span id="seo-intro-status" class="font-bold text-stone-500 uppercase tracking-widest text-[9px]">Falta</span>
+                                </div>
+
+                                <!-- Header Hierarchy -->
+                                <div class="flex items-center justify-between border-b border-stone-800 pb-2">
+                                    <div class="flex items-center gap-2">
+                                        <span id="seo-check-headings-icon" class="material-symbols-outlined text-stone-500 text-base" data-icon="cancel">cancel</span>
+                                        <span class="text-stone-300">Jerarquía de encabezados (H2/H3)</span>
+                                    </div>
+                                    <span id="seo-headings-status" class="font-bold text-stone-500 uppercase tracking-widest text-[9px]">Sin Subtítulos</span>
+                                </div>
+
+                                <!-- Links -->
+                                <div class="flex items-center justify-between pb-1">
+                                    <div class="flex items-center gap-2">
+                                        <span id="seo-check-links-icon" class="material-symbols-outlined text-stone-500 text-base" data-icon="cancel">cancel</span>
+                                        <span class="text-stone-300">Enlaces de valor</span>
+                                    </div>
+                                    <span id="seo-links-status" class="font-bold text-stone-500 uppercase tracking-widest text-[9px]">Falta</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- VIEW 2: POSTS LIST / CRUD TABLE -->
+            <div id="view-list" class="hidden space-y-8">
+                <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="table_chart">table_chart</span>
+                            Gestión de Artículos
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter mb-2">Mis Artículos</h1>
+                        <p class="text-stone-500 max-w-lg">Administre el catálogo de artículos existentes, edite sus parámetros o elimine entradas de LocalStorage.</p>
+                    </div>
+                    <button onclick="switchTab('edit'); resetForm();" class="px-8 py-4 rounded-2xl font-bold text-white bg-primary shadow-2xl shadow-primary/30 hover:brightness-110 transition-all active:scale-95 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        Nuevo Artículo
+                    </button>
+                </header>
+
+                <div class="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] border border-stone-100 overflow-hidden">
+                    <div class="p-6 border-b border-stone-100 flex flex-col md:flex-row justify-between gap-4">
+                        <div class="relative flex-grow max-w-md">
+                            <input type="text" id="list-search" oninput="renderPostsTable()" placeholder="Buscar por título o categoría..." class="w-full pl-12 pr-4 py-3 rounded-xl border-stone-200 bg-stone-50/50 focus:bg-white focus:border-primary focus:ring-primary/10 transition-all text-sm">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" data-icon="search">search</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-stone-400 uppercase tracking-widest">Mostrar:</span>
+                            <select id="list-filter-category" onchange="renderPostsTable()" class="rounded-xl border-stone-200 bg-stone-50/50 focus:bg-white text-xs font-semibold py-2 px-4">
+                                <option value="all">Todas las Categorías</option>
+                                <option value="legal-tech">Legal Tech</option>
+                                <option value="jurisprudencia">Jurisprudencia</option>
+                                <option value="extremadura">Extremadura</option>
+                                <option value="actualidad">Actualidad</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-stone-50 text-stone-400 text-[10px] font-bold uppercase tracking-widest border-b border-stone-100">
+                                    <th class="px-8 py-4">Artículo</th>
+                                    <th class="px-8 py-4">Categoría</th>
+                                    <th class="px-8 py-4">Fecha</th>
+                                    <th class="px-8 py-4">CTA Config</th>
+                                    <th class="px-8 py-4 text-right">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="posts-table-body" class="divide-y divide-stone-100 text-sm">
+                                <!-- Dynamic rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div id="empty-state" class="hidden p-20 flex flex-col items-center justify-center text-center space-y-4">
+                        <span class="material-symbols-outlined text-6xl text-stone-300" data-icon="folder_off">folder_off</span>
+                        <div>
+                            <h3 class="text-lg font-bold text-stone-800">No se encontraron artículos</h3>
+                            <p class="text-sm text-stone-400 max-w-sm mt-1">Cree un nuevo artículo dinámico o limpie sus filtros para comenzar a ver su lista.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <script>
-        // DOM Elements
+        // Default static database templates
+        const defaultPosts = [
+            {
+                id: "default-1",
+                title: "Cómo la IA está transformando la redacción de demandas en 2026.",
+                category: "legal-tech",
+                date: "2026-05-12",
+                readTime: "8 min",
+                excerpt: "Analizamos cómo las herramientas de lenguaje natural están reduciendo hasta en un 60% el tiempo dedicado a la revisión documental.",
+                content: "La Inteligencia Artificial ha dejado de ser una promesa de futuro para convertirse en el núcleo operativo de los despachos más vanguardistas en 2026.\n\nEn este artículo analizamos exhaustivamente cómo el procesamiento de lenguaje natural avanzado está redefiniendo por completo los flujos de trabajo tradicionales de los juristas en Extremadura y en toda España. La redacción de demandas, contestaciones y escritos complejos se beneficia de un ahorro de hasta el 60% en tiempos de ejecución.\n\n### Automatización estructurada\n\nEl uso de plantillas enriquecidas con análisis predictivo permite prever argumentos de la contraparte basándose en precedentes judiciales históricos. Esto aporta una ventaja estratégica inigualable.\n\n### Seguridad en el almacenamiento local\n\nUno de los pilares críticos a la hora de adoptar estas tecnologías es asegurar la confidencialidad absoluta del cliente legal. IusPilot soluciona esta brecha mediante encriptación nativa y procesamiento en local sin compartir información confidencial con servidores comerciales externos.",
+                coverUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCtN9wYm3bIkyeub6mfAAuNFY3pgGeR7A8aLLx3S-pdegkmSJVTKz3fnyaWcHIG1qF3QPvZi9_VSpa8mOnZSFWmSm-W2dza78JABfkImpEUTGOI9sLRNpKWUMSIg6cf0r1dg0PP7BDCQLI0KTykZPoNc9ke9PBO6U-b9sGVL9RNr_9vqVNOy4Bq2ha1y4H8QZ0P7wJ-nWEHr1_axgNvYwkarZMNgUCjBwDKaoCt3t73tGPS53JVZAhWfXX9_X50PT2tGNN-mPbp8e2R",
+                youtubeUrl: "",
+                ctaTemplate: "tech",
+                ctaPositions: { top: true, mid: true, bottom: true }
+            },
+            {
+                id: "default-2",
+                title: "Análisis del TSJ de Extremadura: Criterios sobre propiedad rústica.",
+                category: "jurisprudencia",
+                date: "2026-05-08",
+                readTime: "12 min",
+                excerpt: "Nuevas directrices que afectan a las explotaciones ganaderas en la región de Cáceres y Badajoz.",
+                content: "El Tribunal Superior de Justicia de Extremadura ha emitido una serie de pronunciamientos recientes clave para los titulares de explotaciones rústicas.\n\nLas nuevas sentencias establecen criterios rigurosos de demarcación, uso y servidumbres de paso en las provincias de Badajoz y Cáceres, afectando de forma directa a la ganadería extensiva y los derechos tradicionales del suelo.\n\n### Impacto práctico en el campo extremeño\n\nEs fundamental que los abogados y asesores locales estén al tanto de estos cambios para guiar a sus clientes rústicos. IusPilot ha entrenado su base de conocimiento con estas directrices específicas para Extremadura.\n\n### Automatización de la argumentación en la nube local\n\nAl procesar recursos relativos a servidumbres y delimitaciones rústicas, disponer de una base documental indexada permite emitir opiniones fundadas en tiempo récord y con la máxima precisión jurídica.",
+                coverUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB5gHtmyYQPtYGwtTJesLvtOLn-FBNUk5X5KtgLGLNcTR72I90UD2ITjWTtsvDaxzc1TN1LU3fsw92vwxWr6aZ_38xttfShYfTBSLy5nZ5Dl_dwubb07aCjXfXNucDGwvkZmNeS6BPuJMBxSmd6dZ5MWuZ8yHaW_raqcmdnCkOG2uI-xsGlpnZw8usP5vkKceQhQWIEPax1gv9kx8aSh4FYEClu4UGrX5W7GYUQzgrLTxj-WQHOmzZu1ghZWZ7LEUT5AVXKWfuEoVi_",
+                youtubeUrl: "",
+                ctaTemplate: "civil",
+                ctaPositions: { top: false, mid: true, bottom: true }
+            },
+            {
+                id: "default-3",
+                title: "La digitalización del sector jurídico en Badajoz y Cáceres.",
+                category: "extremadura",
+                date: "2026-05-02",
+                readTime: "10 min",
+                excerpt: "Cómo los despachos extremeños están adoptando soluciones en la nube para mejorar el servicio al ciudadano.",
+                content: "La geografía extremeña y la dispersión demográfica plantean retos singulares para la provisión de asistencia legal. Sin embargo, la digitalización está acortando distancias a pasos agigantados.\n\nDespachos pioneros en Badajoz, Mérida, Cáceres y Plasencia están implementando software de vanguardia para brindar servicios jurídicos remotos impecables y de alto valor sin perder la cercanía ni la calidad tradicional.\n\n### Ventajas competitivas de la modernización\n\n1. Centralización documental integrada y segura.\n2. Gestión de expedientes en tiempo real.\n3. Optimización de la comunicación interna en el bufete.\n\nCon IusPilot, liderar la revolución jurídica regional está al alcance de cualquier despacho con orgullo extremeño y proyección nacional.",
+                coverUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuD1jCR7FbVmdkLwAJNJOypgejKiiBgmFSy-p40eA5VvTFkP5nU44PvUbTOY_6hpkooiwu0lY8mRs4ka9jPQu8ne8Y9hgcDHpIgxlt3Gu4LUL6EAB005f3eOaZZjBUjGPUlZfLtHCfPRAcuDFNw0oP3qC4qZmze_Q1sd6xBrQyL8uhfkfqpxokT7-J_qTFwXsHvZjPajsWsonlsSVEglo9tfz6xAK_HFemfHrjlRRVvvnICcm-ane8uLl6wif68vldQOHc1xiFTz0OUQ",
+                youtubeUrl: "",
+                ctaTemplate: "general",
+                ctaPositions: { top: true, mid: false, bottom: true }
+            },
+            {
+                id: "default-4",
+                title: "Actualización v2.4: Nuevos protocolos de seguridad militar.",
+                category: "actualidad",
+                date: "2026-04-28",
+                readTime: "5 min",
+                excerpt: "Presentamos encriptación de extremo a extremo para garantizar la confidencialidad absoluta del jurista.",
+                content: "La confidencialidad es la piedra angular del ejercicio del derecho. En la versión 2.4 de IusPilot, implementamos una infraestructura de encriptación inspirada en estándares militares.\n\nTodos los datos analizados, documentos generados y consultas de jurisprudencia se protegen de manera nativa en el dispositivo del usuario. Esto hace que sea matemáticamente imposible que terceros no autorizados puedan acceder a su secreto profesional.\n\n### Principales novedades técnicas de la v2.4:\n\n* Encriptación simétrica AES-256 en reposo.\n* Cero logs en servidores externos de bases de datos.\n* Cumplimiento automático del esquema de seguridad nacional.\n\nDisfrute de la tranquilidad de estar totalmente a salvo de filtraciones corporativas o hackeos de bases de datos convencionales.",
+                coverUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8KrHrttfr85HBfAYmftZ8ZUNYnSgShRw3QqvMk6ysUYnGkHBgYoJ-Uglmpc6dQSgAVTRPTCQTeWA31qlFtqbxOLjwfvks7kn6NRx6Rk3C_AWcmTfG7KGJuxfXkPatfjmrV5HOdubamvgOMcQ16NwrbHzncZWPBh-n8uwny1t5BHQqImkaKxpvw1l1SzaytFVGtGFxLW8MZAKU0kxyviSu68KPIWmVDYV8Chv6oy-VuxzA5vChOTE91ZSp5quKZoH7aPAXDcT_0jNi",
+                youtubeUrl: "",
+                ctaTemplate: "tech",
+                ctaPositions: { top: true, mid: true, bottom: true }
+            }
+        ];
+
+        // CTA Content Templates Matrix (CRO-Focused Legal Copy)
+        const ctaData = {
+            general: {
+                top: "💡 ¿Eres jurista? Ahorra hasta un 60% de tiempo redactando demandas y escritos complejos con la IA de IusPilot. <a href='index.html#registro' class='underline text-primary font-bold hover:text-primary-emphasis transition-all'>Probar Gratis Ahora →</a>",
+                midTitle: "Únete a la Vanguardia Legal con IusPilot",
+                midDesc: "Optimiza los flujos de trabajo de tu despacho. Diseñado específicamente para juristas españoles, automatiza borradores, analiza jurisprudencia en Cáceres y Badajoz, y reduce el papeleo innecesario hoy mismo.",
+                bottomTitle: "Empieza a Redactar en Segundos. Gratis.",
+                bottomDesc: "Cientos de abogados en Extremadura y en el resto de España ya han revolucionado su práctica diaria. Regístrate en menos de 1 minuto y recibe 10 créditos premium para probar todas las funciones avanzadas."
+            },
+            penal: {
+                top: "⚖️ ¿Abogado penalista? Genera alegaciones de defensa inmediatas y analiza atestados policiales con IusPilot Penal. <a href='index.html#registro' class='underline text-primary font-bold hover:text-primary-emphasis transition-all'>Acceso Directo →</a>",
+                midTitle: "Precisión y Velocidad en Casos Penales",
+                midDesc: "Ante una detención o un plazo procesal inminente, cada segundo cuenta. La IA penalista de IusPilot estructura defensas completas basándose en la última jurisprudencia penal del Tribunal Supremo español.",
+                bottomTitle: "Domina el Turno de Oficio y tus Casos Particulares",
+                bottomDesc: "Reduce el tiempo de redacción de querellas y recursos de apelación de forma rigurosa y fundamentada. Crea tu cuenta gratuita y eleva la tasa de éxito de tus escritos jurídicos penales."
+            },
+            civil: {
+                top: "💼 Simplifica la redacción de contratos, demandas de divorcio y herencias con la IA civilista especializada de IusPilot. <a href='index.html#registro' class='underline text-primary font-bold hover:text-primary-emphasis transition-all'>Probar Gratis →</a>",
+                midTitle: "El Asistente Definitivo en Derecho Civil",
+                midDesc: "Automatice demandas de cantidad, desahucios, reclamaciones contractuales y derecho sucesorio. Reduzca errores de redacción y asegúrese de que todos los artículos de la Ley de Enjuiciamiento Civil estén en regla.",
+                bottomTitle: "Su bufete civilista a máxima velocidad",
+                bottomDesc: "Cree plantillas dinámicas e inteligentes de alta calidad. Proteja la rentabilidad de su despacho automatizando los escritos civilistas de mayor volumen comercial."
+            },
+            tech: {
+                top: "🔒 Soberanía tecnológica y secreto profesional absoluto. IusPilot cuenta con encriptación militar local. <a href='index.html#registro' class='underline text-primary font-bold hover:text-primary-emphasis transition-all'>Prueba Segura →</a>",
+                midTitle: "Soberanía de Datos para el Abogado Moderno",
+                midDesc: "No comparta la información confidencial de sus clientes con modelos comerciales públicos. IusPilot protege sus expedientes de Cáceres y Badajoz en su propia máquina de forma blindada bajo el RGPD europeo.",
+                bottomTitle: "Seguridad Militar en sus Escritos Legales",
+                bottomDesc: "Garantice un cumplimiento estricto del esquema nacional de seguridad nacional. Regístrese ahora para implementar la IA soberana local en su bufete corporativo."
+            }
+        };
+
+        // Initialize dynamic posts array if not present
+        if (!localStorage.getItem('iuspilot_dynamic_blog_posts')) {
+            localStorage.setItem('iuspilot_dynamic_blog_posts', JSON.stringify(defaultPosts));
+        }
+
+        // DOM Elements for view-edit
         const titleInput = document.getElementById('post-title');
+        const categorySelect = document.getElementById('post-category');
+        const dateInput = document.getElementById('post-date');
+        const readTimeInput = document.getElementById('post-read-time');
         const contentInput = document.getElementById('post-content');
+        const excerptInput = document.getElementById('post-excerpt');
+        const ctaSelect = document.getElementById('post-cta-template');
         const coverInput = document.getElementById('cover-url');
         const youtubeInput = document.getElementById('youtube-url');
+        const postIdInput = document.getElementById('post-id');
 
+        // Checkboxes for positions
+        const ctaPosTop = document.getElementById('cta-pos-top');
+        const ctaPosMid = document.getElementById('cta-pos-mid');
+        const ctaPosBottom = document.getElementById('cta-pos-bottom');
+
+        // Preview Elements
         const previewTitle = document.getElementById('preview-title');
+        const previewCategory = document.getElementById('preview-category');
+        const previewDate = document.getElementById('preview-date');
         const previewText = document.getElementById('preview-text');
         const previewImage = document.getElementById('preview-image');
         const imagePlaceholder = document.getElementById('image-placeholder');
         const youtubePreview = document.getElementById('youtube-preview');
 
-        // Logic
-        titleInput.addEventListener('input', (e) => {
-            previewTitle.innerText = e.target.value || 'Su título aparecerá aquí...';
-        });
+        // CTA Preview Elements
+        const previewCtaTop = document.getElementById('preview-cta-top');
+        const previewCtaTopText = document.getElementById('preview-cta-top-text');
+        const previewCtaMid = document.getElementById('preview-cta-mid');
+        const previewCtaMidTitle = document.getElementById('preview-cta-mid-title');
+        const previewCtaMidDesc = document.getElementById('preview-cta-mid-desc');
+        const previewCtaBottom = document.getElementById('preview-cta-bottom');
+        const previewCtaBottomTitle = document.getElementById('preview-cta-bottom-title');
+        const previewCtaBottomDesc = document.getElementById('preview-cta-bottom-desc');
 
-        contentInput.addEventListener('input', (e) => {
-            if (e.target.value) {
-                previewText.innerHTML = e.target.value.split('\n').map(p => `<p>${p}</p>`).join('');
-            } else {
-                previewText.innerHTML = '<p class="italic text-stone-400">El contenido comenzará a visualizarse aquí mientras escribe...</p>';
+        // Set default date to today
+        dateInput.value = new Date().toISOString().substring(0, 10);
+
+        // REAL-TIME PREVIEW & SEO EVENT LISTENERS
+        titleInput.addEventListener('input', () => { updatePreview(); updateSeoAnalysis(); });
+        categorySelect.addEventListener('change', () => { updatePreview(); updateSeoAnalysis(); });
+        dateInput.addEventListener('input', () => { updatePreview(); updateSeoAnalysis(); });
+        contentInput.addEventListener('input', () => { updatePreview(); updateSeoAnalysis(); });
+        coverInput.addEventListener('input', () => { updatePreview(); updateSeoAnalysis(); });
+        youtubeInput.addEventListener('input', () => { updatePreview(); updateSeoAnalysis(); });
+
+        // Add Ctrl+K (or Cmd+K) event listener to content textarea
+        contentInput.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                insertFormat('link');
             }
         });
 
-        coverInput.addEventListener('input', (e) => {
-            if (e.target.value) {
-                previewImage.style.backgroundImage = `url('${e.target.value}')`;
-                previewImage.classList.add('opacity-70');
+        // Parse Inline Markdown helper for titles and body paragraphs
+        function parseInlineMarkdown(text) {
+            if (!text) return "";
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/\[(.*?)\]\(((?:https?:\/\/|mailto:|[.#\/])[^\s\)]+)\)/g, '<a href="$2" target="_blank" class="text-primary hover:underline font-semibold inline-flex items-center gap-0.5">$1<span class="material-symbols-outlined text-[10px] select-none" data-icon="open_in_new">open_in_new</span></a>');
+        }
+
+        // Live Image Uploader converting local file to Base64 String
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (file.size > 1.5 * 1024 * 1024) {
+                alert("Atención: Recomendamos usar imágenes optimizadas menores a 1.5 MB para no saturar la capacidad de almacenamiento offline (LocalStorage).");
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Url = e.target.result;
+                coverInput.value = base64Url;
+                
+                const statusEl = document.getElementById('upload-status');
+                if (statusEl) {
+                    statusEl.classList.remove('hidden');
+                    setTimeout(() => {
+                        statusEl.classList.add('hidden');
+                    }, 4000);
+                }
+
+                updatePreview();
+                updateSeoAnalysis();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Live SEO analysis computing
+        function updateSeoAnalysis() {
+            const keywordEl = document.getElementById('seo-keyword');
+            if (!keywordEl) return;
+            const keyword = keywordEl.value.trim().toLowerCase();
+            const title = titleInput.value.trim();
+            const content = contentInput.value.trim();
+
+            // Word Count
+            const words = content ? content.split(/\s+/).filter(w => w.length > 0) : [];
+            const wordCount = words.length;
+            const wordsCountEl = document.getElementById('seo-words-count');
+            const checkWordsIcon = document.getElementById('seo-check-words-icon');
+            
+            if (wordsCountEl && checkWordsIcon) {
+                wordsCountEl.innerText = `${wordCount} / 300`;
+                if (wordCount >= 300) {
+                    wordsCountEl.className = "font-bold text-emerald-500";
+                    checkWordsIcon.innerText = "check_circle";
+                    checkWordsIcon.className = "material-symbols-outlined text-emerald-500 text-base select-none";
+                } else {
+                    wordsCountEl.className = "font-bold text-stone-400";
+                    checkWordsIcon.innerText = "cancel";
+                    checkWordsIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                }
+            }
+
+            // Keyword Density
+            const checkDensityIcon = document.getElementById('seo-check-density-icon');
+            const densityValEl = document.getElementById('seo-density-val');
+            const checkTitleIcon = document.getElementById('seo-check-title-icon');
+            const titleStatusEl = document.getElementById('seo-title-status');
+            const checkIntroIcon = document.getElementById('seo-check-intro-icon');
+            const introStatusEl = document.getElementById('seo-intro-status');
+
+            if (checkDensityIcon && densityValEl && checkTitleIcon && titleStatusEl && checkIntroIcon && introStatusEl) {
+                if (!keyword) {
+                    checkDensityIcon.innerText = "cancel";
+                    checkDensityIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                    densityValEl.innerText = "0.0%";
+                    densityValEl.className = "font-bold text-stone-400";
+
+                    checkTitleIcon.innerText = "cancel";
+                    checkTitleIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                    titleStatusEl.innerText = "Falta Keyword";
+                    titleStatusEl.className = "font-bold text-stone-500 uppercase tracking-widest text-[9px]";
+
+                    checkIntroIcon.innerText = "cancel";
+                    checkIntroIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                    introStatusEl.innerText = "Falta Keyword";
+                    introStatusEl.className = "font-bold text-stone-500 uppercase tracking-widest text-[9px]";
+                } else {
+                    // Density
+                    let occurrences = 0;
+                    if (content && wordCount > 0) {
+                        const escapedK = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        const regex = new RegExp(escapedK, 'gi');
+                        const matches = content.match(regex);
+                        if (matches) {
+                            occurrences = matches.length;
+                        }
+                    }
+                    const density = wordCount > 0 ? ((occurrences / wordCount) * 100) : 0;
+                    densityValEl.innerText = `${density.toFixed(1)}%`;
+                    
+                    if (density >= 0.5 && density <= 2.5) {
+                        densityValEl.className = "font-bold text-emerald-500";
+                        checkDensityIcon.innerText = "check_circle";
+                        checkDensityIcon.className = "material-symbols-outlined text-emerald-500 text-base select-none";
+                    } else if (density > 2.5) {
+                        densityValEl.className = "font-bold text-amber-500";
+                        checkDensityIcon.innerText = "warning";
+                        checkDensityIcon.className = "material-symbols-outlined text-amber-500 text-base select-none";
+                        densityValEl.innerText = `${density.toFixed(1)}% (Alta)`;
+                    } else {
+                        densityValEl.className = "font-bold text-stone-400";
+                        checkDensityIcon.innerText = "cancel";
+                        checkDensityIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                    }
+
+                    // Title
+                    const hasKeywordInTitle = title.toLowerCase().includes(keyword);
+                    if (hasKeywordInTitle) {
+                        titleStatusEl.innerText = "Excelente";
+                        titleStatusEl.className = "font-bold text-emerald-500 uppercase tracking-widest text-[9px]";
+                        checkTitleIcon.innerText = "check_circle";
+                        checkTitleIcon.className = "material-symbols-outlined text-emerald-500 text-base select-none";
+                    } else {
+                        titleStatusEl.innerText = "No contiene";
+                        titleStatusEl.className = "font-bold text-amber-500 uppercase tracking-widest text-[9px]";
+                        checkTitleIcon.innerText = "cancel";
+                        checkTitleIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                    }
+
+                    // Intro
+                    const paragraphs = content.split('\n\n').filter(p => p.trim().length > 0);
+                    const firstParagraph = paragraphs.length > 0 ? paragraphs[0].toLowerCase() : "";
+                    const hasKeywordInIntro = firstParagraph.includes(keyword);
+                    if (hasKeywordInIntro) {
+                        introStatusEl.innerText = "Excelente";
+                        introStatusEl.className = "font-bold text-emerald-500 uppercase tracking-widest text-[9px]";
+                        checkIntroIcon.innerText = "check_circle";
+                        checkIntroIcon.className = "material-symbols-outlined text-emerald-500 text-base select-none";
+                    } else {
+                        introStatusEl.innerText = "No contiene";
+                        introStatusEl.className = "font-bold text-amber-500 uppercase tracking-widest text-[9px]";
+                        checkIntroIcon.innerText = "cancel";
+                        checkIntroIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                    }
+                }
+            }
+
+            // Headings
+            const checkHeadingsIcon = document.getElementById('seo-check-headings-icon');
+            const headingsStatusEl = document.getElementById('seo-headings-status');
+            if (checkHeadingsIcon && headingsStatusEl) {
+                const hasH1s = content.match(/^#\s/gm);
+                const hasH2s = content.match(/^##\s/gm);
+                const hasH3s = content.match(/^###\s/gm);
+                
+                if (hasH1s && hasH1s.length > 0) {
+                    headingsStatusEl.innerText = "Evitar H1 extra";
+                    headingsStatusEl.className = "font-bold text-amber-500 uppercase tracking-widest text-[9px]";
+                    checkHeadingsIcon.innerText = "warning";
+                    checkHeadingsIcon.className = "material-symbols-outlined text-amber-500 text-base select-none";
+                } else if (hasH2s || hasH3s) {
+                    headingsStatusEl.innerText = "Correcto (H2/H3)";
+                    headingsStatusEl.className = "font-bold text-emerald-500 uppercase tracking-widest text-[9px]";
+                    checkHeadingsIcon.innerText = "check_circle";
+                    checkHeadingsIcon.className = "material-symbols-outlined text-emerald-500 text-base select-none";
+                } else {
+                    headingsStatusEl.innerText = "Sin Subtítulos";
+                    headingsStatusEl.className = "font-bold text-stone-500 uppercase tracking-widest text-[9px]";
+                    checkHeadingsIcon.innerText = "cancel";
+                    checkHeadingsIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                }
+            }
+
+            // Links
+            const checkLinksIcon = document.getElementById('seo-check-links-icon');
+            const linksStatusEl = document.getElementById('seo-links-status');
+            if (checkLinksIcon && linksStatusEl) {
+                const hasLinks = content.match(/\[(.*?)\]\(((?:https?:\/\/|mailto:|[.#\/])[^\s\)]+)\)/g);
+                if (hasLinks && hasLinks.length > 0) {
+                    linksStatusEl.innerText = `${hasLinks.length} Enlaces`;
+                    linksStatusEl.className = "font-bold text-emerald-500 uppercase tracking-widest text-[9px]";
+                    checkLinksIcon.innerText = "check_circle";
+                    checkLinksIcon.className = "material-symbols-outlined text-emerald-500 text-base select-none";
+                } else {
+                    linksStatusEl.innerText = "0 Enlaces";
+                    linksStatusEl.className = "font-bold text-stone-500 uppercase tracking-widest text-[9px]";
+                    checkLinksIcon.innerText = "cancel";
+                    checkLinksIcon.className = "material-symbols-outlined text-stone-500 text-base select-none";
+                }
+            }
+        }
+
+        function updatePreview() {
+            // Title
+            previewTitle.innerText = titleInput.value || 'Título del Artículo...';
+            
+            // Category
+            const selectedOpt = categorySelect.options[categorySelect.selectedIndex];
+            previewCategory.innerText = selectedOpt ? selectedOpt.text : 'Legal Tech';
+            
+            // Date
+            if (dateInput.value) {
+                const dateObj = new Date(dateInput.value);
+                const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                previewDate.innerText = `Publicado: ${dateObj.toLocaleDateString('es-ES', options)}`;
+            } else {
+                previewDate.innerText = 'Publicado hoy';
+            }
+
+            // Cover Image
+            if (coverInput.value) {
+                previewImage.style.backgroundImage = `url('${coverInput.value}')`;
+                previewImage.classList.remove('opacity-0');
+                previewImage.classList.add('opacity-60');
                 imagePlaceholder.classList.add('hidden');
             } else {
                 previewImage.style.backgroundImage = 'none';
-                previewImage.classList.remove('opacity-70');
+                previewImage.classList.add('opacity-0');
+                previewImage.classList.remove('opacity-60');
                 imagePlaceholder.classList.remove('hidden');
             }
-        });
 
-        youtubeInput.addEventListener('input', (e) => {
-            if (e.target.value) {
+            // YouTube Video Embed
+            if (youtubeInput.value) {
                 youtubePreview.classList.remove('hidden');
             } else {
                 youtubePreview.classList.add('hidden');
             }
-        });
+
+            // Content Text Formatting preview
+            if (contentInput.value) {
+                previewText.innerHTML = contentInput.value
+                    .split('\n\n')
+                    .map(p => {
+                        let trimmed = p.trim();
+                        if (trimmed.startsWith('# ')) {
+                            return `<h1 class="text-2xl font-bold text-stone-900 font-headline mt-6 mb-3">${parseInlineMarkdown(trimmed.substring(2))}</h1>`;
+                        }
+                        if (trimmed.startsWith('## ')) {
+                            return `<h2 class="text-xl font-bold text-stone-900 font-headline mt-5 mb-2">${parseInlineMarkdown(trimmed.substring(3))}</h2>`;
+                        }
+                        if (trimmed.startsWith('### ')) {
+                            return `<h3 class="text-lg font-bold text-stone-900 font-headline mt-4 mb-2">${parseInlineMarkdown(trimmed.substring(4))}</h3>`;
+                        }
+                        if (trimmed.startsWith('> ')) {
+                            return `<blockquote class="border-l-4 border-primary pl-4 py-1.5 my-3 bg-stone-50/50 rounded-r-xl text-stone-600 italic font-medium">${parseInlineMarkdown(trimmed.substring(2))}</blockquote>`;
+                        }
+                        if (trimmed.startsWith('* ')) {
+                            const items = trimmed.split('\n* ').map(i => i.startsWith('* ') ? i.substring(2) : i);
+                            return `<ul class="list-disc pl-5 my-2 space-y-1">${items.map(item => `<li>${parseInlineMarkdown(item)}</li>`).join('')}</ul>`;
+                        }
+                        return `<p class="leading-relaxed text-stone-600 my-2">${parseInlineMarkdown(trimmed)}</p>`;
+                    })
+                    .join('');
+            } else {
+                previewText.innerHTML = '<p class="italic text-stone-400">El análisis jurídico comenzará a renderizarse aquí a tiempo real...</p>';
+            }
+
+            // CTA Previews updating according to CRO selections
+            const ctaType = ctaSelect.value;
+            const template = ctaData[ctaType] || ctaData.general;
+
+            // Top inline
+            if (ctaPosTop.checked) {
+                previewCtaTop.classList.remove('hidden');
+                previewCtaTopText.innerHTML = template.top;
+            } else {
+                previewCtaTop.classList.add('hidden');
+            }
+
+            // Mid Bento Box
+            if (ctaPosMid.checked) {
+                previewCtaMid.classList.remove('hidden');
+                previewCtaMidTitle.innerText = template.midTitle;
+                previewCtaMidDesc.innerText = template.midDesc;
+            } else {
+                previewCtaMid.classList.add('hidden');
+            }
+
+            // Bottom Hero
+            if (ctaPosBottom.checked) {
+                previewCtaBottom.classList.remove('hidden');
+                previewCtaBottomTitle.innerText = template.bottomTitle;
+                previewCtaBottomDesc.innerText = template.bottomDesc;
+            } else {
+                previewCtaBottom.classList.add('hidden');
+            }
+        }
+
+        // Insert Rich Formatting tags helper
+        function insertFormat(type) {
+            const startPos = contentInput.selectionStart;
+            const endPos = contentInput.selectionEnd;
+            const text = contentInput.value;
+            const selectedText = text.substring(startPos, endPos);
+            let replacement = "";
+
+            switch(type) {
+                case 'bold':
+                    replacement = `**${selectedText || 'texto en negrita'}**`;
+                    break;
+                case 'italic':
+                    replacement = `*${selectedText || 'texto en itálica'}*`;
+                    break;
+                case 'list':
+                    replacement = `\n* Elemento 1\n* Elemento 2`;
+                    break;
+                case 'link':
+                    const url = prompt("Ingrese la dirección URL para el enlace:", "https://");
+                    if (url === null) return;
+                    replacement = `[${selectedText || 'enlace legal'}](${url || 'https://'})`;
+                    break;
+                case 'h2':
+                    replacement = `\n## ${selectedText || 'Encabezado Temático H2'}\n`;
+                    break;
+                case 'h3':
+                    replacement = `\n### ${selectedText || 'Subtítulo Temático H3'}\n`;
+                    break;
+                case 'quote':
+                    replacement = `\n> ${selectedText || 'Cita o transcripción de jurisprudencia.'}\n`;
+                    break;
+            }
+
+            contentInput.value = text.substring(0, startPos) + replacement + text.substring(endPos, text.length);
+            updatePreview();
+            updateSeoAnalysis();
+            contentInput.focus();
+        }
+
+        // Tab views navigation switching
+        function switchTab(tab) {
+            const viewEdit = document.getElementById('view-edit');
+            const viewList = document.getElementById('view-list');
+            const btnEdit = document.getElementById('btn-tab-edit');
+            const btnList = document.getElementById('btn-tab-list');
+
+            if (tab === 'edit') {
+                viewEdit.classList.remove('hidden');
+                viewList.classList.add('hidden');
+                btnEdit.className = "w-full sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all text-left";
+                btnList.className = "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-stone-500 hover:bg-stone-50 transition-all font-semibold text-left";
+            } else {
+                viewEdit.classList.add('hidden');
+                viewList.classList.remove('hidden');
+                btnEdit.className = "w-full flex items-center gap-3 px-4 py-3 rounded-xl text-stone-500 hover:bg-stone-50 transition-all font-semibold text-left";
+                btnList.className = "w-full sidebar-item-active flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all text-left";
+                renderPostsTable();
+            }
+        }
+
+        // Reset creation form
+        function resetForm() {
+            postIdInput.value = "";
+            titleInput.value = "";
+            categorySelect.value = "legal-tech";
+            dateInput.value = new Date().toISOString().substring(0, 10);
+            readTimeInput.value = "";
+            contentInput.value = "";
+            excerptInput.value = "";
+            ctaSelect.value = "general";
+            coverInput.value = "";
+            youtubeInput.value = "";
+            ctaPosTop.checked = true;
+            ctaPosMid.checked = true;
+            ctaPosBottom.checked = true;
+            
+            document.getElementById('editor-title').innerText = "Crear Artículo";
+            updatePreview();
+        }
+
+        // LocalStorage CRUD Save / Update
+        function savePost() {
+            if (!titleInput.value.trim() || !contentInput.value.trim()) {
+                alert("Por favor, rellene el título y el análisis jurídico antes de guardar.");
+                return;
+            }
+
+            const posts = JSON.parse(localStorage.getItem('iuspilot_dynamic_blog_posts') || '[]');
+            const currentId = postIdInput.value;
+
+            const postObj = {
+                id: currentId || "post-" + new Date().getTime(),
+                title: titleInput.value.trim(),
+                category: categorySelect.value,
+                date: dateInput.value || new Date().toISOString().substring(0, 10),
+                readTime: readTimeInput.value.trim() || "8 min",
+                excerpt: excerptInput.value.trim() || (contentInput.value.substring(0, 140) + "..."),
+                content: contentInput.value.trim(),
+                coverUrl: coverInput.value.trim() || "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+                youtubeUrl: youtubeInput.value.trim(),
+                ctaTemplate: ctaSelect.value,
+                ctaPositions: {
+                    top: ctaPosTop.checked,
+                    mid: ctaPosMid.checked,
+                    bottom: ctaPosBottom.checked
+                }
+            };
+
+            if (currentId) {
+                // Editing existing
+                const idx = posts.findIndex(p => p.id === currentId);
+                if (idx !== -1) {
+                    posts[idx] = postObj;
+                } else {
+                    posts.push(postObj);
+                }
+            } else {
+                // Creating new
+                posts.unshift(postObj);
+            }
+
+            localStorage.setItem('iuspilot_dynamic_blog_posts', JSON.stringify(posts));
+            alert("¡Artículo guardado con éxito! Integrado en el blog dinámico con el motor de conversión.");
+            
+            resetForm();
+            switchTab('list');
+        }
+
+        // Edit Action handler
+        function editPost(id) {
+            const posts = JSON.parse(localStorage.getItem('iuspilot_dynamic_blog_posts') || '[]');
+            const post = posts.find(p => p.id === id);
+
+            if (!post) {
+                alert("No se ha podido encontrar el artículo.");
+                return;
+            }
+
+            postIdInput.value = post.id;
+            titleInput.value = post.title;
+            categorySelect.value = post.category;
+            dateInput.value = post.date;
+            readTimeInput.value = post.readTime || "";
+            contentInput.value = post.content;
+            excerptInput.value = post.excerpt || "";
+            ctaSelect.value = post.ctaTemplate || "general";
+            coverInput.value = post.coverUrl || "";
+            youtubeInput.value = post.youtubeUrl || "";
+            
+            ctaPosTop.checked = post.ctaPositions ? post.ctaPositions.top : true;
+            ctaPosMid.checked = post.ctaPositions ? post.ctaPositions.mid : true;
+            ctaPosBottom.checked = post.ctaPositions ? post.ctaPositions.bottom : true;
+
+            document.getElementById('editor-title').innerText = "Editar Artículo";
+            
+            switchTab('edit');
+            updatePreview();
+        }
+
+        // Delete Action handler
+        function deletePost(id) {
+            if (!confirm("¿Está seguro de que desea eliminar este artículo de forma permanente? Esta acción no se puede deshacer.")) {
+                return;
+            }
+
+            let posts = JSON.parse(localStorage.getItem('iuspilot_dynamic_blog_posts') || '[]');
+            posts = posts.filter(p => p.id !== id);
+            localStorage.setItem('iuspilot_dynamic_blog_posts', JSON.stringify(posts));
+            
+            renderPostsTable();
+        }
+
+        // Render dashboard grid / table list of posts
+        function renderPostsTable() {
+            const posts = JSON.parse(localStorage.getItem('iuspilot_dynamic_blog_posts') || '[]');
+            const tableBody = document.getElementById('posts-table-body');
+            const searchVal = document.getElementById('list-search').value.toLowerCase();
+            const catFilter = document.getElementById('list-filter-category').value;
+            const emptyState = document.getElementById('empty-state');
+
+            tableBody.innerHTML = "";
+
+            const filtered = posts.filter(p => {
+                const matchesSearch = p.title.toLowerCase().includes(searchVal) || p.category.toLowerCase().includes(searchVal);
+                const matchesCat = catFilter === 'all' || p.category === catFilter;
+                return matchesSearch && matchesCat;
+            });
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            filtered.forEach(p => {
+                // Formatting date nicely
+                const d = new Date(p.date);
+                const formattedDate = isNaN(d.getTime()) ? p.date : d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' });
+                
+                // Formulate category badge color
+                let catColor = "bg-stone-100 text-stone-700";
+                if (p.category === 'legal-tech') catColor = "bg-indigo-50 text-indigo-700 border border-indigo-100";
+                if (p.category === 'jurisprudencia') catColor = "bg-primary/5 text-primary border border-primary/10";
+                if (p.category === 'extremadura') catColor = "bg-emerald-50 text-emerald-700 border border-emerald-100";
+                if (p.category === 'actualidad') catColor = "bg-amber-50 text-amber-700 border border-amber-100";
+
+                const isPreset = p.id.startsWith("default-");
+
+                const row = document.createElement('tr');
+                row.className = "hover:bg-stone-50/50 transition-colors";
+                row.innerHTML = `
+                    <td class="px-8 py-5">
+                        <div class="flex items-center gap-4 max-w-md">
+                            <div class="w-12 h-12 rounded-xl overflow-hidden bg-stone-100 flex-shrink-0">
+                                <img src="${p.coverUrl}" class="w-full h-full object-cover" alt="Portada">
+                            </div>
+                            <div>
+                                <p class="font-bold text-stone-900 line-clamp-1">${p.title}</p>
+                                <p class="text-xs text-stone-400 mt-0.5 line-clamp-1">${p.excerpt}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-8 py-5">
+                        <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${catColor}">
+                            ${p.category.toUpperCase()}
+                        </span>
+                    </td>
+                    <td class="px-8 py-5 text-stone-500 font-medium text-xs">
+                        ${formattedDate}
+                    </td>
+                    <td class="px-8 py-5">
+                        <div class="flex items-center gap-1.5">
+                            <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-[9px] font-bold uppercase">${p.ctaTemplate.toUpperCase()}</span>
+                            <span class="text-[10px] text-stone-400">
+                                (${p.ctaPositions ? [p.ctaPositions.top?'T':'', p.ctaPositions.mid?'M':'', p.ctaPositions.bottom?'B':''].filter(Boolean).join('-') : 'T-M-B'})
+                            </span>
+                        </div>
+                    </td>
+                    <td class="px-8 py-5 text-right space-x-1">
+                        <button onclick="editPost('${p.id}')" title="Editar artículo" class="w-8 h-8 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 inline-flex items-center justify-center transition-colors">
+                            <span class="material-symbols-outlined text-base" data-icon="edit">edit</span>
+                        </button>
+                        <button onclick="deletePost('${p.id}')" title="Eliminar artículo" class="w-8 h-8 rounded-lg bg-primary/5 hover:bg-primary/10 text-primary inline-flex items-center justify-center transition-colors">
+                            <span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
 
         function logout() {
             localStorage.removeItem('iuspilot_admin_session');
             window.location.href = 'admin-login.html';
         }
+
+        // Initialize preview at startup
+        updatePreview();
     </script>
 </body>
 </html>
-
-
